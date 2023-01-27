@@ -1,6 +1,6 @@
 # Project-Staj
 
-There will be a character standing in the middle of the screen in the game. <\b>
+There will be a character standing in the middle of the screen in the game.
 He will fire at the nearest enemy automatically every 2 seconds. 
 (First fire will be only towards the front of the character, when an enemy reached a certain distance, shooter will target it)
 Enemies spawn on the outside of the screen and move towards our character.
