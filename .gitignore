@@ -1,2 +1,5 @@
 
 *.dwlt
+*.json
+*.dwlt
+*.asset
