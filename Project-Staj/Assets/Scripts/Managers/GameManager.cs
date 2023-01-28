@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,6 +36,10 @@ public class GameManager : MonoBehaviour
     #region Monobehaviour Functions
     private void Start()
     {
+        Application.targetFrameRate = 30;
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        
+        
         Time.timeScale = 1;
     }
     private void Update()
