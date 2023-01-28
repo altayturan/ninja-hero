@@ -26,7 +26,14 @@ public class GoldManager : MonoBehaviour
     #endregion
 
     #region Variables
-    [SerializeField] private int gold = 0;
+    [SerializeField] private int gold = 999999999;
+    public int attackSpeedCost = 30;
+    public int damageCost = 30;
+    public int numberShotCost = 30;
+    public int diagonalShotCost = 30;
+    public int damageAllCost = 30;
+    public int highAttackSpeedCost = 30;
+    
     #endregion
 
 

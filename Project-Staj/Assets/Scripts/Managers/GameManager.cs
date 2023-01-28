@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     #region Variables
 
     public bool isPlayerAlive = true;
-    [SerializeField] private float gameTime = 60f;
+    public float gameTime = 120f;
     public List<EnemyController> enemyControllers;
 
     #endregion

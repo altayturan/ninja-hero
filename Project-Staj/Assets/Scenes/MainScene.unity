@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerAlive: 1
-  gameTime: 60
+  gameTime: 120
   enemyControllers: []
 --- !u!114 &784361191
 MonoBehaviour:
@@ -689,7 +689,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4f35497d9a96d4abf824d994f76360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
+  gold: 9999
+  attackSpeedCost: 35
+  damageCost: 40
+  numberShotCost: 25
+  diagonalShotCost: 60
+  damageAllCost: 85
+  highAttackSpeedCost: 90
 --- !u!1 &901532755
 GameObject:
   m_ObjectHideFlags: 0
