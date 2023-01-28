@@ -26,6 +26,7 @@ public class SpawnManager : MonoBehaviour
     {
         Vector3 spawnPosition = new Vector3(spawnerTransform.position.x, 0.5f, spawnerTransform.position.z);
         GameObject spawnedEnemy = Instantiate(enemyObject, spawnPosition, Quaternion.identity);
+        GameManager.Instance.enemyControllers.Add(spawnedEnemy.GetComponent<EnemyController>());
     }
 
     private IEnumerator SpawnCountdown()

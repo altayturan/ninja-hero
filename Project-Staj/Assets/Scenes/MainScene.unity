@@ -655,6 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerAlive: 1
   gameTime: 60
+  enemyControllers: []
 --- !u!114 &784361191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,11 +670,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 1000
   playerSpeed: 10
-  fireInterval: 0.5
+  fireInterval: 2
   bulletSpeed: 8
   bulletDamage: 50
-  numberOfShots: 2
-  diagonalShot: 1
+  numberOfShots: 1
+  diagonalShot: 0
   enemyHealthMultiplier: 1.1
   spawnIntervalMultiplier: 0.9
 --- !u!114 &784361192

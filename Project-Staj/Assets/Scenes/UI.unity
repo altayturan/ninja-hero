@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 87104404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1209956406}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: StartHighAttackSpeedCountDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &87104404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +340,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 703356476}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1209956406}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: LevelUpAttackSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &703356476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,7 +744,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 821792856}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1209956406}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: LevelUpDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &821792856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,7 +878,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 924843245}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1209956406}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: AddDiagonalShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &924843245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1099,7 +1147,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1046459342}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1209956406}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: LevelUpNumberShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1046459342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1339,6 +1399,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1209956405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1209956407}
+  - component: {fileID: 1209956406}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1209956406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209956405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c8c4be423c0b04497bb95a0504541c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeedLevel: 1
+  damageLevel: 1
+  numberShotLevel: 0
+  damageAllCountdownTime: 15
+  damageAmount: 100
+  HighAttackSpeedCountdownTime: 15
+  attackSpeedButton: {fileID: 703356473}
+  damageButton: {fileID: 821792853}
+  numberShotButton: {fileID: 1046459339}
+  diagonalButton: {fileID: 924843242}
+  damageAllButton: {fileID: 1906632801}
+  highAttackSpeedButton: {fileID: 87104401}
+--- !u!4 &1209956407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209956405}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 180.49136, y: 1212.1547, z: -122.55682}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1372952816
 GameObject:
@@ -1743,7 +1859,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1906632804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1209956406}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: StartDamageAllCountdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1906632804
 MonoBehaviour:
   m_ObjectHideFlags: 0
