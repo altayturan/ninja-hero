@@ -482,6 +482,12 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c4d054687a71ec418cac7c8c16d6ccd, type: 3}
+--- !u!1 &705055367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5523789699596325684, guid: 3f35dece22660f1489a912425c12663b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5076033672287759544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1155,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5076033672287759544}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753737476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705055367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76dfbbcff2772254c8c23607fd1f6f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  speed: 5
+  bulletObject: {fileID: 317595139483679824, guid: c8ddc69d3849c514b85dc7b981379831,
+    type: 3}
+  fireInterval: 2
+  numberOfShots: 3
+  diagonalShot: 1
 --- !u!1001 &1938545906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1308,7 +1333,7 @@ PrefabInstance:
     - target: {fileID: 3560071137679140091, guid: 3f35dece22660f1489a912425c12663b,
         type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 5523789699596325684, guid: 3f35dece22660f1489a912425c12663b,
         type: 3}

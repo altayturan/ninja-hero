@@ -10,6 +10,7 @@ public class BulletController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Enemy"))
         {
+            Debug.Log("Girdi");
             GiveDamage(collision.gameObject);
             Destroy(this.gameObject);
         }
