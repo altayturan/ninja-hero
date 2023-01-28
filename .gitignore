@@ -3,6 +3,7 @@
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 /[Ll]ibrary/
+/Project-Staj/Library/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
