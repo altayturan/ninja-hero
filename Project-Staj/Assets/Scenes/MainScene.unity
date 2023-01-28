@@ -1171,9 +1171,9 @@ MonoBehaviour:
   speed: 5
   bulletObject: {fileID: 317595139483679824, guid: c8ddc69d3849c514b85dc7b981379831,
     type: 3}
-  fireInterval: 2
-  numberOfShots: 3
-  diagonalShot: 1
+  fireInterval: 0.5
+  numberOfShots: 1
+  diagonalShot: 0
 --- !u!1001 &1938545906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1333,7 +1333,7 @@ PrefabInstance:
     - target: {fileID: 3560071137679140091, guid: 3f35dece22660f1489a912425c12663b,
         type: 3}
       propertyPath: m_Constraints
-      value: 116
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 5523789699596325684, guid: 3f35dece22660f1489a912425c12663b,
         type: 3}

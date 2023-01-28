@@ -6,6 +6,10 @@ public class BulletController : MonoBehaviour
 {
     [SerializeField] private float bulletDamage;
 
+    private void Start()
+    {
+        Destroy(this.gameObject,6f);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Enemy"))

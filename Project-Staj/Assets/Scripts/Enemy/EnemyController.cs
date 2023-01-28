@@ -14,6 +14,10 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region Monobehavior Functions
+    private void Update()
+    {
+        if (health <= 0) Destroy(gameObject);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
