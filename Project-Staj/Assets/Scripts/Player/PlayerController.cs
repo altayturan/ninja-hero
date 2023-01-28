@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     #region Variables
     public float health;
     public float speed;
-    public float damageMultiplier = 1.1f;
+    public float fireInterval = 2f;
     #endregion
 
     #region Monobehavior Functions
@@ -37,13 +37,11 @@ public class PlayerController : MonoBehaviour
 
     #region Functions
 
-    public void GiveDamage(GameObject target, float damage)
+    private IEnumerator FireBullet()
     {
-        if (target.GetComponent<EnemyController>() == null) return;
-
-        target.GetComponent<EnemyController>().health -= damage;
+        Instantiate();
+        yield return new WaitForSeconds(fireInterval);
+        yield return FireBullet();
     }
-
-
     #endregion
 }

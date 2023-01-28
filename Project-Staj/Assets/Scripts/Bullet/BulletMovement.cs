@@ -9,7 +9,6 @@ public class BulletMovement : MonoBehaviour
     private Rigidbody rb;
     private Vector3 direction;
 
-
     public Transform target;
     #endregion
 
