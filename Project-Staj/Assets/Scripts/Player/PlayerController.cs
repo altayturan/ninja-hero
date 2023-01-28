@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletObject;
 
 
-    private float range = 6.5f;
+    [SerializeField] private float range = 10f;
     private Collider[] objectsInRange;
     private GameObject closestEnemy;
     private float closestDistance = Mathf.Infinity;

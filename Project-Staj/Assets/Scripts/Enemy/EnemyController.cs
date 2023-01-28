@@ -19,7 +19,11 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            GoldManager.Instance.ChangeGoldWithAmount(30);
+        }
         Debug.Log(Time.timeSinceLevelLoad);
     }
     private void OnCollisionEnter(Collision collision)
