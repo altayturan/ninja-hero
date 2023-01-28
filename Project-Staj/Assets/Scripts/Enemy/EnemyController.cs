@@ -5,18 +5,22 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-
-
     #region Variables
-    public float health;
-    public float speed;
-    public float damage;
+    [SerializeField] private float health;
+    [SerializeField] private float speed;
+    [SerializeField] private float damage;
     #endregion
 
     #region Monobehavior Functions
+    private void Start()
+    {
+        health *= StatisticManager.Instance.enemyHealthMultiplier;
+    }
+
     private void Update()
     {
         if (health <= 0) Destroy(gameObject);
+        Debug.Log(Time.timeSinceLevelLoad);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -32,7 +36,17 @@ public class EnemyController : MonoBehaviour
     #region Functions
     public void GiveDamage(GameObject target)
     {
-        target.GetComponent<PlayerController>().health -= damage;
+        target.GetComponent<PlayerController>().ChangeHealthWithAmount(-damage);
+    }
+
+    public void ChangeHealthWithAmount(float changeAmount)
+    {
+        health += changeAmount;
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
     }
 
     #endregion

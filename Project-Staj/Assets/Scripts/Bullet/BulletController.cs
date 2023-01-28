@@ -8,6 +8,7 @@ public class BulletController : MonoBehaviour
 
     private void Start()
     {
+        bulletDamage = StatisticManager.Instance.bulletDamage;
         Destroy(this.gameObject,6f);
     }
     private void OnCollisionEnter(Collision collision)
@@ -23,6 +24,6 @@ public class BulletController : MonoBehaviour
     public void GiveDamage(GameObject target)
     {
         if (target.GetComponent<EnemyController>() == null) return;
-        target.GetComponent<EnemyController>().health -= bulletDamage;
+        target.GetComponent<EnemyController>().ChangeHealthWithAmount(-bulletDamage);
     }
 }

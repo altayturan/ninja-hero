@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     #region Variables
 
     [SerializeField] private Transform[] spawners;
-    [SerializeField] private float spawnInterval = 2;
+    [SerializeField] private float defaultSpawnInterval = 3f;
     [SerializeField] private GameObject enemyObject;
 
     #endregion
@@ -31,7 +31,7 @@ public class SpawnManager : MonoBehaviour
     private IEnumerator SpawnCountdown()
     {
         Spawn(spawners[Random.Range(0, spawners.Length)]);
-        yield return new WaitForSeconds(spawnInterval);
+        yield return new WaitForSeconds(defaultSpawnInterval * StatisticManager.Instance.spawnIntervalMultiplier);
         yield return SpawnCountdown();
     }
 

@@ -598,6 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784361189}
   - component: {fileID: 784361188}
+  - component: {fileID: 784361190}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -644,6 +645,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &784361190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784361187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba63bbc122b55f4da0e0a650d59fc8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayerAlive: 1
+  gameTime: 60
 --- !u!1 &901532755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,11 +1182,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76dfbbcff2772254c8c23607fd1f6f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10000
   speed: 5
   bulletObject: {fileID: 317595139483679824, guid: c8ddc69d3849c514b85dc7b981379831,
     type: 3}
-  fireInterval: 0.5
+  fireInterval: 40
   numberOfShots: 1
   diagonalShot: 0
 --- !u!1001 &1938545906

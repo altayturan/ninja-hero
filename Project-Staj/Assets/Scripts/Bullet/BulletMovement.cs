@@ -17,9 +17,4 @@ public class BulletMovement : MonoBehaviour
     #endregion
 
 
-    #region Functions
-
-
-    #endregion
-
 }

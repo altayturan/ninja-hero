@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7337917611032514569}
   - component: {fileID: 7690645967732029172}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Speedy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18e9762f38fb624389837c72eff9d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 11400000, guid: 1c8c0d4e1954621479e024145560c0bd, type: 2}
   health: 50
   speed: 5
   damage: 5

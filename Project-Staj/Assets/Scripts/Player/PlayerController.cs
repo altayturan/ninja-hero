@@ -26,13 +26,10 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Variables
-    public float health;
-    public float speed;
-    public GameObject bulletObject;
+    [SerializeField] private float health;
+    [SerializeField] private float speed;
+    [SerializeField] private GameObject bulletObject;
 
-    public float fireInterval = 2f;
-    public int numberOfShots = 1;
-    public bool diagonalShot = false;
 
     private float range = 6.5f;
     private Collider[] objectsInRange;
@@ -43,22 +40,29 @@ public class PlayerController : MonoBehaviour
     #region Monobehavior Functions
     private void Start()
     {
+        health = StatisticManager.Instance.playerHealth;
+        speed = StatisticManager.Instance.playerSpeed;
+
         StartCoroutine(FireBullet());
     }
 
     private void Update()
     {
+
+        if (health <= 0) GameManager.Instance.isPlayerAlive = false;
+
+
         objectsInRange = Physics.OverlapSphere(transform.position, range);
-        
+
         if (closestEnemy == null)
         {
             closestDistance = Mathf.Infinity;
             transform.eulerAngles = Vector3.zero;
         }
-        else 
+        else
             transform.LookAt(closestEnemy.transform);  // Dönüþler animasyon yapýlacak.
-        
-        
+
+
         foreach (Collider collider in objectsInRange)
         {
             if (!collider.CompareTag("Enemy")) continue;
@@ -82,9 +86,9 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator FireBullet()
     {
-        for (int i = 0; i < numberOfShots; i++)
+        for (int i = 0; i < StatisticManager.Instance.numberOfShots; i++)
         {
-            if (!diagonalShot) { Instantiate(bulletObject, transform.position, transform.rotation); }
+            if (!StatisticManager.Instance.diagonalShot) { Instantiate(bulletObject, transform.position, transform.rotation); }
             else
             {
                 Instantiate(bulletObject, transform.position, transform.rotation * Quaternion.Euler(0, 30, 0));  // Þimdilik sadece 3 atýþlýk bir kod ama shot sayýsýna göre otomatik açý
@@ -93,10 +97,19 @@ public class PlayerController : MonoBehaviour
             }
             yield return new WaitForSeconds(0.3f);
         }
-        yield return new WaitForSeconds(fireInterval);
+        yield return new WaitForSeconds(StatisticManager.Instance.fireInterval);
         yield return FireBullet();
     }
+    
+    public void ChangeHealthWithAmount(float changeAmount)
+    {
+        health += changeAmount;
+    }
 
+    public float GetSpeed()
+    {
+        return speed;
+    }
 
     #endregion
 }
