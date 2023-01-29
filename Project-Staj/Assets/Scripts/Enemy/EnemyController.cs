@@ -24,7 +24,6 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
             GoldManager.Instance.ChangeGoldWithAmount(30);
         }
-        Debug.Log(Time.timeSinceLevelLoad);
     }
     private void OnCollisionEnter(Collision collision)
     {

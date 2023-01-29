@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Variables
-    [SerializeField] private float health;
-    [SerializeField] private float speed;
+    [SerializeField] float health;
+    [SerializeField] float speed;
     [SerializeField] private GameObject bulletObject;
 
 
@@ -111,5 +111,9 @@ public class PlayerController : MonoBehaviour
         return speed;
     }
 
+    public float GetHealth()
+    {
+        return health;
+    }
     #endregion
 }

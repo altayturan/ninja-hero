@@ -26,7 +26,7 @@ public class StatisticManager : MonoBehaviour
     #endregion
 
     #region Variables
-    [Header("Player Stats")]
+    [Header("Player Stats (These values are default values.)")]
     public float playerHealth;
     public float playerSpeed;
     

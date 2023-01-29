@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 30;
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        SceneManager.LoadScene(2, LoadSceneMode.Additive);
         
         
         Time.timeScale = 1;
@@ -60,12 +60,18 @@ public class GameManager : MonoBehaviour
 
     private void LoseGame()
     {
-        Time.timeScale = 0;  // UI ÇIKACAK
+        Time.timeScale = 0;
+        UIManager.Instance.LoseScreen.SetActive(true);
+        UIManager.Instance.Hud.SetActive(false);
     }
 
     private void WinGame()
     {
-        Time.timeScale = 0;  // UI ÇIKACAK
+        Time.timeScale = 0;  
+        UIManager.Instance.WinScreen.SetActive(true);
+        UIManager.Instance.Hud.SetActive(false);
     }
+
+    
     #endregion
 }

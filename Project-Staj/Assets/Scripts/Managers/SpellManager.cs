@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class SpellManager : MonoBehaviour
 {
-    [SerializeField] private int attackSpeedLevel = 1;
-    [SerializeField] private int damageLevel = 1;
+    [SerializeField] private int attackSpeedLevel = 0;
+    [SerializeField] private int damageLevel = 0;
     [SerializeField] private int numberShotLevel = 0;
     [SerializeField] private float damageAllCountdownTime = 15f;
     [SerializeField] private float damageAmount = 100f;
@@ -29,7 +29,7 @@ public class SpellManager : MonoBehaviour
     {
         if (attackSpeedLevel >= 11) { attackSpeedButton.GetComponent<Button>().interactable = false; return; }
         if (GoldManager.Instance.GetGold() < GoldManager.Instance.attackSpeedCost) return;
-        
+
         GoldManager.Instance.ChangeGoldWithAmount(-GoldManager.Instance.attackSpeedCost);
         attackSpeedLevel++;
         UIManager.Instance.attackSpeedLevelText.text = "Lvl. " + attackSpeedLevel.ToString();
@@ -54,7 +54,7 @@ public class SpellManager : MonoBehaviour
 
         GoldManager.Instance.ChangeGoldWithAmount(-GoldManager.Instance.numberShotCost);
         numberShotLevel++;
-        UIManager.Instance.numberShotLevelText.text = "Lvl. "+numberShotLevel.ToString();
+        UIManager.Instance.numberShotLevelText.text = "Lvl. " + numberShotLevel.ToString();
         StatisticManager.Instance.numberOfShots += 1;
     }
 

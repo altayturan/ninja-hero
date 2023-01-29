@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -28,10 +30,6 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
-
-
-
-
     [SerializeField] private TMP_Text timeText;
     [SerializeField] private TMP_Text goldText;
 
@@ -41,6 +39,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text diagonalCostText;
     [SerializeField] private TMP_Text damageAllCostText;
     [SerializeField] private TMP_Text highAttackSpeedCostText;
+
+    [SerializeField] private Slider healthBar;
+
+    public GameObject WinScreen;
+    public GameObject LoseScreen;
+    public GameObject Hud;
 
     public TMP_Text attackSpeedLevelText;
     public TMP_Text damageLevelText;
@@ -59,5 +63,18 @@ public class UIManager : MonoBehaviour
         diagonalCostText.text = GoldManager.Instance.diagonalShotCost.ToString();
         damageAllCostText.text = GoldManager.Instance.damageAllCost.ToString();
         highAttackSpeedCostText.text = GoldManager.Instance.highAttackSpeedCost.ToString();
+
+        UpdateHealthBar();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.maxValue = StatisticManager.Instance.playerHealth;
+        healthBar.value = PlayerController.Instance.GetHealth();
     }
 }
