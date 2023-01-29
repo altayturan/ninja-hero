@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float health;
     [SerializeField] float speed;
     [SerializeField] private GameObject bulletObject;
+    [SerializeField] private Transform bulletSpawner;
 
 
     [SerializeField] private float range = 10f;
@@ -88,12 +89,12 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < StatisticManager.Instance.numberOfShots; i++)
         {
-            if (!StatisticManager.Instance.diagonalShot) { Instantiate(bulletObject, transform.position, transform.rotation); }
+            if (!StatisticManager.Instance.diagonalShot) { Instantiate(bulletObject, bulletSpawner.position, transform.rotation); }
             else
             {
-                Instantiate(bulletObject, transform.position, transform.rotation * Quaternion.Euler(0, 30, 0));  // Þimdilik sadece 3 atýþlýk bir kod ama shot sayýsýna göre otomatik açý
-                Instantiate(bulletObject, transform.position, transform.rotation * Quaternion.Euler(0, -30, 0)); // ayarlayan bir kod yazýlabilir.
-                Instantiate(bulletObject, transform.position, transform.rotation);
+                Instantiate(bulletObject, bulletSpawner.position, transform.rotation * Quaternion.Euler(0, 30, 0));  // Þimdilik sadece 3 atýþlýk bir kod ama shot sayýsýna göre otomatik açý
+                Instantiate(bulletObject, bulletSpawner.position, transform.rotation * Quaternion.Euler(0, -30, 0)); // ayarlayan bir kod yazýlabilir.
+                Instantiate(bulletObject, bulletSpawner.position, transform.rotation);
             }
             yield return new WaitForSeconds(0.3f);
         }

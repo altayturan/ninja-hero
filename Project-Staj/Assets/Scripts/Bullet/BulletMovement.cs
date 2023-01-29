@@ -5,13 +5,14 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
     #region Variables
-    [SerializeField] private float speed;
+    private float speed;
 
     #endregion
 
     #region Monobehavior Functions
     private void Update()
     {
+        speed = StatisticManager.Instance.bulletSpeed;
         transform.Translate(Time.deltaTime * Vector3.forward * speed);
     }
     #endregion

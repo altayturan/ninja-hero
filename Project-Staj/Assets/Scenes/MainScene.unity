@@ -802,6 +802,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1654629002}
     m_Modifications:
+    - target: {fileID: 8135886326569738820, guid: 56fae09712773584fb63896d473a98ee,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.3019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135886326569738820, guid: 56fae09712773584fb63896d473a98ee,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.3019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135886326569738820, guid: 56fae09712773584fb63896d473a98ee,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.3019608
+      objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1355,6 +1370,12 @@ Transform:
   m_Father: {fileID: 963194228}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1644212374 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8766558400662685669, guid: 3f35dece22660f1489a912425c12663b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5076033672287759544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1654628998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1723,11 @@ PrefabInstance:
       propertyPath: health
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2830277088387702652, guid: 3f35dece22660f1489a912425c12663b,
+        type: 3}
+      propertyPath: bulletSpawner
+      value: 
+      objectReference: {fileID: 1644212374}
     - target: {fileID: 3560071137679140091, guid: 3f35dece22660f1489a912425c12663b,
         type: 3}
       propertyPath: m_Constraints
