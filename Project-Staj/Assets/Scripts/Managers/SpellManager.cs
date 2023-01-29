@@ -91,8 +91,9 @@ public class SpellManager : MonoBehaviour
         highAttackSpeedButton.GetComponent<Button>().interactable = false;
         float oldValue = StatisticManager.Instance.fireInterval;
         StatisticManager.Instance.fireInterval = 0.1f;
-        yield return new WaitForSeconds(HighAttackSpeedCountdownTime);
+        yield return new WaitForSeconds(5);
         StatisticManager.Instance.fireInterval = oldValue;
+        yield return new WaitForSeconds(HighAttackSpeedCountdownTime);
         highAttackSpeedButton.GetComponent<Button>().interactable = true;
     }
 

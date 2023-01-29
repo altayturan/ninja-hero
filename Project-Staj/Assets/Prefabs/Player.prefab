@@ -165,7 +165,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &6362106864522680226
 BoxCollider:
@@ -192,10 +192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76dfbbcff2772254c8c23607fd1f6f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10000
-  speed: 5
   bulletObject: {fileID: 317595139483679824, guid: c8ddc69d3849c514b85dc7b981379831,
     type: 3}
+  bulletSpawner: {fileID: 0}
   range: 10
 --- !u!114 &3721560040105891501
 MonoBehaviour:

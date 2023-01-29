@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private DynamicJoystick joystick;
     private float speed;
+    [SerializeField] private Animator animator;
 
 
 
@@ -14,5 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         speed = PlayerController.Instance.GetSpeed();
         rb.velocity = new Vector3(joystick.Horizontal * speed, 0, joystick.Vertical * speed);
+        if(rb.velocity != Vector3.zero) { animator.SetBool("isRunning", true); }
+        else { animator.SetBool("isRunning", false); }
     }
 }

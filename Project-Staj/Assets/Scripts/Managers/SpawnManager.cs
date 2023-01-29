@@ -7,8 +7,8 @@ public class SpawnManager : MonoBehaviour
     #region Variables
 
     [SerializeField] private Transform[] spawners;
+    [SerializeField] private GameObject[] enemies;
     [SerializeField] private float defaultSpawnInterval = 3f;
-    [SerializeField] private GameObject enemyObject;
 
     #endregion
 
@@ -24,8 +24,8 @@ public class SpawnManager : MonoBehaviour
 
     private void Spawn(Transform spawnerTransform)
     {
-        Vector3 spawnPosition = new Vector3(spawnerTransform.position.x, 0.5f, spawnerTransform.position.z);
-        GameObject spawnedEnemy = Instantiate(enemyObject, spawnPosition, Quaternion.identity);
+        Vector3 spawnPosition = new Vector3(spawnerTransform.position.x, 0, spawnerTransform.position.z);
+        GameObject spawnedEnemy = Instantiate(enemies[Random.Range(0,enemies.Length)], spawnPosition, Quaternion.identity);
         GameManager.Instance.enemyControllers.Add(spawnedEnemy.GetComponent<EnemyController>());
     }
 

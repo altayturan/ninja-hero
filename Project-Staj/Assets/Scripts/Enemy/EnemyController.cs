@@ -9,12 +9,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private float speed;
     [SerializeField] private float damage;
+    [SerializeField] private Animator animator;
     #endregion
 
     #region Monobehavior Functions
     private void Start()
     {
         health *= StatisticManager.Instance.enemyHealthMultiplier;
+        animator.SetBool("isRunning", true);
     }
 
     private void Update()
@@ -30,6 +32,7 @@ public class EnemyController : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             GiveDamage(collision.gameObject);
+            GameManager.Instance.enemyControllers.Remove(this.gameObject.GetComponent<EnemyController>());
             Destroy(this.gameObject);
         }
     }
