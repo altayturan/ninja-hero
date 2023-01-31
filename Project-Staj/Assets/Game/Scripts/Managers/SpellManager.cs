@@ -117,7 +117,10 @@ public class SpellManager : MonoBehaviour
         StartCoroutine(HighAttackSpeedCountDown());
     }
 
-
+    public void AddGold()
+    {
+        GoldManager.Instance.ChangeGoldWithAmount(100);
+    }
 
 
 }
