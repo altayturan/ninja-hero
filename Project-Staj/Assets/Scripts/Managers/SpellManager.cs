@@ -27,33 +27,37 @@ public class SpellManager : MonoBehaviour
     }
     public void LevelUpAttackSpeed()
     {
-        if (attackSpeedLevel >= 11) { attackSpeedButton.GetComponent<Button>().interactable = false; return; }
         if (GoldManager.Instance.GetGold() < GoldManager.Instance.attackSpeedCost) return;
+        
+        attackSpeedLevel++;
+        if (attackSpeedLevel + 1 > 11) { attackSpeedButton.GetComponent<Button>().interactable = false; }
 
         GoldManager.Instance.ChangeGoldWithAmount(-GoldManager.Instance.attackSpeedCost);
-        attackSpeedLevel++;
         UIManager.Instance.attackSpeedLevelText.text = "Lvl. " + attackSpeedLevel.ToString();
         StatisticManager.Instance.fireInterval -= 0.1f;
     }
 
     public void LevelUpDamage()
     {
-        if (damageLevel >= 42) { damageButton.GetComponent<Button>().interactable = false; return; }
-        if (GoldManager.Instance.GetGold() < GoldManager.Instance.damageCost) return;
 
-        GoldManager.Instance.ChangeGoldWithAmount(-GoldManager.Instance.damageCost);
+        if (GoldManager.Instance.GetGold() < GoldManager.Instance.damageCost) return;
+        
         damageLevel++;
+        if (damageLevel + 1 > 42) { damageButton.GetComponent<Button>().interactable = false; }
+        
+        GoldManager.Instance.ChangeGoldWithAmount(-GoldManager.Instance.damageCost);
         UIManager.Instance.damageLevelText.text = "Lvl. " + damageLevel.ToString();
         StatisticManager.Instance.bulletDamage *= 1.1f;
     }
 
     public void LevelUpNumberShot()
     {
-        if (numberShotLevel >= 3) { numberShotButton.GetComponent<Button>().interactable = false; return; }
         if (GoldManager.Instance.GetGold() < GoldManager.Instance.numberShotCost) return;
+        
+        numberShotLevel++;
+        if (numberShotLevel + 1 > 3) { numberShotButton.GetComponent<Button>().interactable = false; }
 
         GoldManager.Instance.ChangeGoldWithAmount(-GoldManager.Instance.numberShotCost);
-        numberShotLevel++;
         UIManager.Instance.numberShotLevelText.text = "Lvl. " + numberShotLevel.ToString();
         StatisticManager.Instance.numberOfShots += 1;
     }
