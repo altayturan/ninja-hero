@@ -8,9 +8,9 @@ public class SpellManager : MonoBehaviour
     [SerializeField] private int attackSpeedLevel = 0;
     [SerializeField] private int damageLevel = 0;
     [SerializeField] private int numberShotLevel = 0;
-    [SerializeField] private float damageAllCountdownTime = 15f;
     [SerializeField] private float damageAmount = 100f;
-    [SerializeField] private float HighAttackSpeedCountdownTime = 15f;
+    public float damageAllCountdownTime = 15f;
+    public float HighAttackSpeedCountdownTime = 15f;
 
     [SerializeField] private GameObject attackSpeedButton;
     [SerializeField] private GameObject damageButton;
@@ -18,6 +18,10 @@ public class SpellManager : MonoBehaviour
     [SerializeField] private GameObject diagonalButton;
     [SerializeField] private GameObject damageAllButton;
     [SerializeField] private GameObject highAttackSpeedButton;
+
+    public bool damageAllCasted = false;
+    public bool highAttackSpeedCasted = false;
+
 
     private void Start()
     {
@@ -74,12 +78,14 @@ public class SpellManager : MonoBehaviour
     private IEnumerator DamageAllCountdown()
     {
         damageAllButton.GetComponent<Button>().interactable = false;
+        damageAllCasted = true;
         foreach (EnemyController ec in GameManager.Instance.enemyControllers)
         {
             ec.ChangeHealthWithAmount(-damageAmount);
         }
         yield return new WaitForSeconds(damageAllCountdownTime);
         damageAllButton.GetComponent<Button>().interactable = true;
+        damageAllCasted = false;
     }
 
     public void StartDamageAllCountdown()
@@ -93,12 +99,14 @@ public class SpellManager : MonoBehaviour
     private IEnumerator HighAttackSpeedCountDown()
     {
         highAttackSpeedButton.GetComponent<Button>().interactable = false;
+        highAttackSpeedCasted = true;
         float oldValue = StatisticManager.Instance.fireInterval;
         StatisticManager.Instance.fireInterval = 0.1f;
         yield return new WaitForSeconds(5);
         StatisticManager.Instance.fireInterval = oldValue;
         yield return new WaitForSeconds(HighAttackSpeedCountdownTime);
         highAttackSpeedButton.GetComponent<Button>().interactable = true;
+        highAttackSpeedCasted = false;
     }
 
     public void StartHighAttackSpeedCountDown()
