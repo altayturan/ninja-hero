@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 60315974}
   - component: {fileID: 60315973}
   m_Layer: 5
-  m_Name: Countdown
+  m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1037,7 +1037,7 @@ RectTransform:
   m_GameObject: {fileID: 747939855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.72598, y: 0.72598, z: 0.72598}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 974179814}
@@ -1695,7 +1695,7 @@ RectTransform:
   m_GameObject: {fileID: 870208412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75243, y: 0.75243, z: 0.75243}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 844400867}
@@ -1906,7 +1906,7 @@ RectTransform:
   m_GameObject: {fileID: 973376196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.72598, y: 0.72598, z: 0.72598}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 974179814}
@@ -2449,8 +2449,8 @@ MonoBehaviour:
   damageLevel: 0
   numberShotLevel: 0
   damageAmount: 100
-  damageAllCountdownTime: 15
-  HighAttackSpeedCountdownTime: 15
+  damageAllCooldownTime: 15
+  highAttackSpeedCooldownTime: 15
   attackSpeedButton: {fileID: 703356473}
   damageButton: {fileID: 821792853}
   numberShotButton: {fileID: 1046459339}
@@ -2513,8 +2513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817bc507deab2634192d29072eaa2f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAllCountdowner: {fileID: 60315973}
-  highAttackSpeedCountdowner: {fileID: 2143791053}
+  damageAllCooldowner: {fileID: 60315973}
+  highAttackSpeedCooldowner: {fileID: 2143791053}
   spellManager: {fileID: 1209956406}
 --- !u!1 &1214152165
 GameObject:
@@ -4322,7 +4322,7 @@ RectTransform:
   m_GameObject: {fileID: 2106421608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.61991, y: 0.61991, z: 0.61991}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 844400867}
@@ -4439,7 +4439,7 @@ GameObject:
   - component: {fileID: 2143791054}
   - component: {fileID: 2143791053}
   m_Layer: 5
-  m_Name: Countdown
+  m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

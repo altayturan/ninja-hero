@@ -9,8 +9,8 @@ public class SpellManager : MonoBehaviour
     [SerializeField] private int damageLevel = 0;
     [SerializeField] private int numberShotLevel = 0;
     [SerializeField] private float damageAmount = 100f;
-    public float damageAllCountdownTime = 15f;
-    public float HighAttackSpeedCountdownTime = 15f;
+    public float damageAllCooldownTime = 15f;
+    public float highAttackSpeedCooldownTime = 15f;
 
     [SerializeField] private GameObject attackSpeedButton;
     [SerializeField] private GameObject damageButton;
@@ -83,7 +83,7 @@ public class SpellManager : MonoBehaviour
         {
             ec.ChangeHealthWithAmount(-damageAmount);
         }
-        yield return new WaitForSeconds(damageAllCountdownTime);
+        yield return new WaitForSeconds(damageAllCooldownTime);
         damageAllButton.GetComponent<Button>().interactable = true;
         damageAllCasted = false;
     }
@@ -104,7 +104,7 @@ public class SpellManager : MonoBehaviour
         StatisticManager.Instance.fireInterval = 0.1f;
         yield return new WaitForSeconds(5);
         StatisticManager.Instance.fireInterval = oldValue;
-        yield return new WaitForSeconds(HighAttackSpeedCountdownTime);
+        yield return new WaitForSeconds(highAttackSpeedCooldownTime);
         highAttackSpeedButton.GetComponent<Button>().interactable = true;
         highAttackSpeedCasted = false;
     }

@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles = Vector3.zero;
         }
         else
-            transform.LookAt(closestEnemy.transform);  // Dönüþler animasyon yapýlacak.
+            transform.LookAt(closestEnemy.transform);  
 
 
         foreach (Collider collider in objectsInRange)
