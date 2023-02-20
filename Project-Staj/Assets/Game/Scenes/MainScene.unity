@@ -3974,7 +3974,6 @@ GameObject:
   - component: {fileID: 784361188}
   - component: {fileID: 784361190}
   - component: {fileID: 784361191}
-  - component: {fileID: 784361192}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -4058,25 +4057,6 @@ MonoBehaviour:
   diagonalShot: 0
   enemyHealthMultiplier: 1.1
   spawnIntervalMultiplier: 0.9
---- !u!114 &784361192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784361187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f4f35497d9a96d4abf824d994f76360, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gold: 0
-  attackSpeedCost: 20
-  damageCost: 30
-  numberShotCost: 30
-  diagonalShotCost: 60
-  damageAllCost: 80
-  highAttackSpeedCost: 80
 --- !u!4 &796445451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2733845855538509057, guid: 61364f025cf3e32469d90fbb605b101a,

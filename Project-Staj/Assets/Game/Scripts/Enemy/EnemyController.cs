@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            GoldManager.Instance.ChangeGoldWithAmount(30);
+            //GoldManager.Instance.ChangeGoldWithAmount(30);
         }
     }
     private void OnCollisionEnter(Collision collision)

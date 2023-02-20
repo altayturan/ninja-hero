@@ -55,14 +55,14 @@ public class UIManager : MonoBehaviour
         if (GameManager.Instance.gameTime > 0)
             timeText.text = (Mathf.FloorToInt(GameManager.Instance.gameTime / 60)).ToString("00") + ":" + (Mathf.FloorToInt(GameManager.Instance.gameTime % 60)).ToString("00");
 
-        goldText.text = GoldManager.Instance.GetGold().ToString();
+        //goldText.text = GoldManager.Instance.GetGold().ToString();
 
-        attackSpeedCostText.text = GoldManager.Instance.attackSpeedCost.ToString();
-        damageCostText.text = GoldManager.Instance.damageCost.ToString();
-        numberShotCostText.text = GoldManager.Instance.numberShotCost.ToString();
-        diagonalCostText.text = GoldManager.Instance.diagonalShotCost.ToString();
-        damageAllCostText.text = GoldManager.Instance.damageAllCost.ToString();
-        highAttackSpeedCostText.text = GoldManager.Instance.highAttackSpeedCost.ToString();
+        //attackSpeedCostText.text = GoldManager.Instance.attackSpeedCost.ToString();
+        //damageCostText.text = GoldManager.Instance.damageCost.ToString();
+        //numberShotCostText.text = GoldManager.Instance.numberShotCost.ToString();
+        //diagonalCostText.text = GoldManager.Instance.diagonalShotCost.ToString();
+        //damageAllCostText.text = GoldManager.Instance.damageAllCost.ToString();
+        //highAttackSpeedCostText.text = GoldManager.Instance.highAttackSpeedCost.ToString();
 
         UpdateHealthBar();
     }
