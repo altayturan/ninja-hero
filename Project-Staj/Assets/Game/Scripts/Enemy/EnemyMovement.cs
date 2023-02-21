@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    #region Variables
-    private EnemyController enemyController;
     private Transform playerTransform;
     private Rigidbody rb;
     private Vector3 direction;
-    #endregion
 
-    #region Monobehavior Functions
+    [SerializeField] private EnemyData enemyData;
+
     private void Start()
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
-        enemyController = GetComponent<EnemyController>();
     }
     private void Update()
     {
@@ -28,17 +25,10 @@ public class EnemyMovement : MonoBehaviour
         Move();
     }
 
-
-    #endregion
-
-
-    #region Functions
-
     private void Move()
     {
-        rb.velocity = direction * enemyController.Speed;
+        rb.velocity = direction * enemyData.Speed.Amount;
     }
 
-    #endregion
 
 }

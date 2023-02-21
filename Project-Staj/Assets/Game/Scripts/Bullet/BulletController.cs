@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private float bulletDamage;
-    public float BulletDamage
-    {
-        get
-        {
-            return bulletDamage;
-        }
-    }
     private void Start()
     {
-        bulletDamage = StatisticManager.Instance.bulletDamage;
         Destroy(this.gameObject, 6f);
     }
     private void OnCollisionEnter(Collision collision)

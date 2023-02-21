@@ -8,4 +8,8 @@ public class EnemyData : ScriptableObject
     [SerializeField] private Stat health;
     [SerializeField] private Stat speed;
     [SerializeField] private Stat damage;
+
+    public Stat Health { get { return health; }  }
+    public Stat Speed { get { return speed; } }
+    public Stat Damage { get { return damage;} }
 }

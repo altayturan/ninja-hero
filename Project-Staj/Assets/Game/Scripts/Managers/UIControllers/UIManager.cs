@@ -39,9 +39,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text diagonalCostText;
     [SerializeField] private TMP_Text damageAllCostText;
     [SerializeField] private TMP_Text highAttackSpeedCostText;
-
     [SerializeField] private Slider healthBar;
 
+    [SerializeField] private PlayerData playerData;
+    
     public GameObject WinScreen;
     public GameObject LoseScreen;
     public GameObject Hud;
@@ -74,7 +75,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar.maxValue = StatisticManager.Instance.playerHealth;
-        healthBar.value = PlayerController.Instance.Health;
+        healthBar.maxValue = playerData.MaxHealth.Amount;
+        healthBar.value = playerData.Health.Amount;
     }
 }

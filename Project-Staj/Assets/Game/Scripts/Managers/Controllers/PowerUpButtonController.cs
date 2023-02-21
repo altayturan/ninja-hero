@@ -8,8 +8,9 @@ using static Cinemachine.DocumentationSortingAttribute;
 public class PowerUpButtonController : MonoBehaviour
 {
     [SerializeField] private Resource gold;
-
     [SerializeField] private PowerUp powerUp;
+    [SerializeField] private PlayerData playerData;
+
     [SerializeField] private TMP_Text levelText;
     private Button powerUpButton;
 
@@ -24,7 +25,7 @@ public class PowerUpButtonController : MonoBehaviour
         if (powerUp.Level + 1 > powerUp.MaxLevel) { powerUpButton.interactable = false; return; }
 
         powerUp.LevelUp();
-        StatisticManager.Instance.fireInterval -= 0.1f;
+        playerData.FireInterval.Amount -= 0.1f;
     }
 
     public void SetLevelText()

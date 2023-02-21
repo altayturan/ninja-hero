@@ -26,25 +26,15 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Variables
-    private float health;
-    private float speed;
+
+    [SerializeField] private PlayerData playerData;
     [SerializeField] private GameEvent OnPlayerDieEvent;
     [SerializeField] private TargetEnemy targetEnemy;
     [SerializeField] private Stat range;
 
-
-
-    public float Health { get { return health; } }
-    public float Speed { get { return speed; } }
     #endregion
 
     #region Monobehavior Functions
-    private void Start()
-    {
-        health = StatisticManager.Instance.playerHealth;
-        speed = StatisticManager.Instance.playerSpeed;
-
-    }
     public void RotatePlayer()
     {
         if (targetEnemy.GetTarget(out Transform target))
@@ -63,8 +53,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out EnemyController enemyController))
         {
-            health -= enemyController.Damage;
-            if (health <= 0)
+            playerData.Health.Amount -= enemyController.Damage;
+            if (playerData.Health.Amount <= 0)
             {
                 OnPlayerDieEvent.Invoke();
             }
