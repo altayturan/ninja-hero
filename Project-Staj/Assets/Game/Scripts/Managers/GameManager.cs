@@ -27,48 +27,13 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Variables
-
-    public bool isPlayerAlive = true;
     public List<EnemyController> enemyControllers;
 
     #endregion
-
-    #region Monobehaviour Functions
     private void Start()
     {
         Application.targetFrameRate = 30;
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
         Time.timeScale = 1;
     }
-    private void Update()
-    {
-        CheckForEnding();
-    }
-    #endregion
-
-    #region Functions
-
-    private void CheckForEnding()
-    {
-        if (isPlayerAlive == false) LoseGame();
-        if (gameTime <= 0 && isPlayerAlive == true) WinGame();
-    }
-
-    public void LoseGame()
-    {
-        Time.timeScale = 0;
-        UIManager.Instance.LoseScreen.SetActive(true);
-        UIManager.Instance.Hud.SetActive(false);
-    }
-
-    public void WinGame()
-    {
-        Time.timeScale = 0;  
-        UIManager.Instance.WinScreen.SetActive(true);
-        UIManager.Instance.Hud.SetActive(false);
-    }
-
-    
-    
-    #endregion
 }

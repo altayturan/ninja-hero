@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private float speed;
     [SerializeField] private GameObject bulletObject;
     [SerializeField] private Transform bulletSpawner;
-
+    [SerializeField] private GameEvent OnPlayerDieEvent;
 
     [SerializeField] private float range = 10f;
     private Collider[] objectsInRange;
@@ -90,6 +90,10 @@ public class PlayerController : MonoBehaviour
         if(collision.collider.TryGetComponent(out EnemyController enemyController))
         {
             health -= enemyController.Damage;
+            if (health <= 0)
+            {
+                OnPlayerDieEvent.Invoke();
+            }
         }
     }
     #region Functions
