@@ -235,7 +235,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95015863764320770
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -252,7 +252,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!54 &6290727842735291281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -298,6 +298,7 @@ MonoBehaviour:
   speed: 9
   damage: 50
   animator: {fileID: 95015863764320770}
+  EnemyOnDie: {fileID: 11400000, guid: 16a96494af07228488a62f73b1d86822, type: 2}
 --- !u!114 &2481629666387241583
 MonoBehaviour:
   m_ObjectHideFlags: 0
