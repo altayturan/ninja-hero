@@ -4,33 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    #region Singleton
-    private PlayerController playerController;
-    private static PlayerController _instance;
-
-    public static PlayerController Instance { get { return _instance; } }
-
-    private void Awake()
-    {
-
-        if (_instance != null && _instance != this)  // SINGLETON
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-        playerController = new PlayerController();
-    }
-    #endregion
-
     #region Variables
 
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private EnemyData enemyData;
     [SerializeField] private GameEvent OnPlayerDieEvent;
     [SerializeField] private TargetEnemy targetEnemy;
-    [SerializeField] private Stat range;
 
     #endregion
 
@@ -45,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range.Amount);
+        Gizmos.DrawWireSphere(transform.position, playerData.Range.Amount);
     }
     #endregion
 
@@ -53,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out EnemyController enemyController))
         {
-            playerData.Health.Amount -= enemyController.Damage;
+            playerData.Health.Amount -= enemyData.Health.Amount;
             if (playerData.Health.Amount <= 0)
             {
                 OnPlayerDieEvent.Invoke();

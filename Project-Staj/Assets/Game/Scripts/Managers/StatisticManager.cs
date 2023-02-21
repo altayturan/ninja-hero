@@ -4,55 +4,25 @@ using UnityEngine;
 
 public class StatisticManager : MonoBehaviour
 {
-    #region Singleton
-    private StatisticManager statisticManager;
-    private static StatisticManager _instance;
-
-    public static StatisticManager Instance { get { return _instance; } }
-
-    private void Awake()
-    {
-
-        if (_instance != null && _instance != this)  // SINGLETON
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-        statisticManager = new StatisticManager();
-    }
-    #endregion
-
-    #region Variables
-    
     public bool diagonalShot;
-    
-    [Header("Multipliers")]
-    public float enemyHealthMultiplier;
-    public float spawnIntervalMultiplier;
-    #endregion
 
-    #region Monobehaviour Functions
+    [SerializeField] private Stat enemyHealthMultiplier;
+    [SerializeField] private Stat spawnIntervalMultiplier;
+
     private void Start()
     {
         InvokeRepeating("IncreaseEnemyHealthMultiplier",10f,15f);
         InvokeRepeating("IncreaseSpawnIntervalMultiplier",10f,15f);
 
     }
-    #endregion
-
-    #region Functions
 
     private void IncreaseEnemyHealthMultiplier()
     {
-        enemyHealthMultiplier *= 1.1f;
+        enemyHealthMultiplier.Amount *= 1.1f;
     }
     private void IncreaseSpawnIntervalMultiplier()
     {
-        spawnIntervalMultiplier *= 0.9f;
+        spawnIntervalMultiplier.Amount *= 0.9f;
     }
-    #endregion
 
 }

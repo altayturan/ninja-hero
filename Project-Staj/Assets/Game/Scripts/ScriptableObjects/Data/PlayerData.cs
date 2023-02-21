@@ -18,5 +18,5 @@ public class PlayerData : ScriptableObject
     public Stat MaxHealth { get { return maxHealth; } }
     public Stat FireInterval { get { return fireInterval; } }
     public Stat NumberOfShots { get { return numberOfShots; } }
-    public Stat Rang { get { return range; } }
+    public Stat Range { get { return range; } }
 }

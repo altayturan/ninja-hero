@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private Transform[] spawners;
     [SerializeField] private GameObject[] enemies;
-    [SerializeField] private float defaultSpawnInterval = 3f;
+    [SerializeField] private Stat spawnInterval;
 
     #endregion
 
@@ -25,13 +25,13 @@ public class SpawnManager : MonoBehaviour
     private void Spawn(Transform spawnerTransform)
     {
         Vector3 spawnPosition = new Vector3(spawnerTransform.position.x, 0, spawnerTransform.position.z);
-        GameObject spawnedEnemy = Instantiate(enemies[Random.Range(0,enemies.Length)], spawnPosition, Quaternion.identity);
+        Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPosition, Quaternion.identity);
     }
 
     private IEnumerator SpawnCountdown()
     {
         Spawn(spawners[Random.Range(0, spawners.Length)]);
-        yield return new WaitForSeconds(defaultSpawnInterval * StatisticManager.Instance.spawnIntervalMultiplier);
+        yield return new WaitForSeconds(spawnInterval.Amount * StatisticManager.Instance.spawnIntervalMultiplier);
         yield return SpawnCountdown();
     }
 
