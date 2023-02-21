@@ -1410,6 +1410,8 @@ GameObject:
   - component: {fileID: 821792857}
   - component: {fileID: 821792856}
   - component: {fileID: 821792855}
+  - component: {fileID: 821792859}
+  - component: {fileID: 821792858}
   m_Layer: 5
   m_Name: IncreaseDamageButton
   m_TagString: Untagged
@@ -1484,9 +1486,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1209956406}
-        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: LevelUpDamage
+      - m_Target: {fileID: 821792859}
+        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+        m_MethodName: OnClickPowerUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1534,6 +1536,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821792853}
   m_CullTransparentMesh: 1
+--- !u!114 &821792858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821792853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 73697bce446a2a9418d58d8cec9df6ca, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 821792859}
+        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+        m_MethodName: SetLevelText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &821792859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821792853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6257c028b86042b44865e45b63b24f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
+  powerUp: {fileID: 11400000, guid: 91508db24e7e7e44e8527f168e361675, type: 2}
+  levelText: {fileID: 2026621708}
 --- !u!1 &844400863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,6 +2158,8 @@ GameObject:
   - component: {fileID: 1046459343}
   - component: {fileID: 1046459342}
   - component: {fileID: 1046459341}
+  - component: {fileID: 1046459345}
+  - component: {fileID: 1046459344}
   m_Layer: 5
   m_Name: IncreaseNumberShotButton
   m_TagString: Untagged
@@ -2187,9 +2234,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1209956406}
-        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: LevelUpNumberShot
+      - m_Target: {fileID: 1046459344}
+        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+        m_MethodName: OnClickPowerUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2237,6 +2284,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046459339}
   m_CullTransparentMesh: 1
+--- !u!114 &1046459344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046459339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6257c028b86042b44865e45b63b24f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
+  powerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e, type: 2}
+  levelText: {fileID: 1760475481}
+--- !u!114 &1046459345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046459339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 74acedb33d1607741b2bab4a8e6707d9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1046459344}
+        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+        m_MethodName: SetLevelText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1058142117
 GameObject:
   m_ObjectHideFlags: 0
