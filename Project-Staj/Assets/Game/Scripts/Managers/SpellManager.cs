@@ -9,6 +9,7 @@ public class SpellManager : MonoBehaviour
     //{
     //    if (GoldManager.Instance.GetGold() < GoldManager.Instance.diagonalShotCost) return;
 
+
     //    GoldManager.Instance.ChangeGoldWithAmount(-GoldManager.Instance.diagonalShotCost);
     //    StatisticManager.Instance.diagonalShot = true;
     //    diagonalButton.GetComponent<Button>().interactable = false;
