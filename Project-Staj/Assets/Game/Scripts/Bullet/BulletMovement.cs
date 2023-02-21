@@ -23,7 +23,7 @@ public class BulletMovement : MonoBehaviour
         {
             direction = Vector3.forward;
         }
-        GetComponent<Rigidbody>().velocity = direction.normalized * bulletData.Speed.Amount;
+        GetComponent<Rigidbody>().velocity = direction.normalized * bulletData.Speed;
     }
     #endregion
 

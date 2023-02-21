@@ -17,9 +17,9 @@ public class BulletShooter : MonoBehaviour
     private IEnumerator FireBullet()
     {
         OnFireEvent.Invoke();
-        for (int i = 0; i < playerData.NumberOfShots.Amount; i++)
+        for (int i = 0; i < playerData.NumberOfShots; i++)
         {
-            if (!StatisticManager.Instance.diagonalShot) { Instantiate(bulletData.BulletObject, bulletSpawner.position, transform.rotation); }
+            if (!playerData.DiagonalShot) { Instantiate(bulletData.BulletObject, bulletSpawner.position, transform.rotation); }
             else
             {
                 Instantiate(bulletData.BulletObject, bulletSpawner.position, transform.rotation * Quaternion.Euler(0, 30, 0));  // Þimdilik sadece 3 atýþlýk bir kod ama shot sayýsýna göre otomatik açý
@@ -29,7 +29,7 @@ public class BulletShooter : MonoBehaviour
 
             yield return new WaitForSeconds(0.3f);
         }
-        yield return new WaitForSeconds(playerData.FireInterval.Amount);
+        yield return new WaitForSeconds(playerData.FireInterval);
         yield return FireBullet();
     }
 }

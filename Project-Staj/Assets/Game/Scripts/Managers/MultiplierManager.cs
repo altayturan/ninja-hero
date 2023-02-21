@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatisticManager : MonoBehaviour
+public class MultiplierManager : MonoBehaviour
 {
     public bool diagonalShot;
 
@@ -13,7 +13,6 @@ public class StatisticManager : MonoBehaviour
     {
         InvokeRepeating("IncreaseEnemyHealthMultiplier",10f,15f);
         InvokeRepeating("IncreaseSpawnIntervalMultiplier",10f,15f);
-
     }
 
     private void IncreaseEnemyHealthMultiplier()

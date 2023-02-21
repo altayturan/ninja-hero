@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar.maxValue = playerData.MaxHealth.Amount;
-        healthBar.value = playerData.Health.Amount;
+        healthBar.maxValue = playerData.MaxHealth;
+        healthBar.value = playerData.Health;
     }
 }

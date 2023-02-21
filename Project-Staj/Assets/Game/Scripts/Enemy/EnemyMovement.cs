@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Move()
     {
-        rb.velocity = direction * enemyData.Speed.Amount;
+        rb.velocity = direction * enemyData.Speed;
     }
 
 

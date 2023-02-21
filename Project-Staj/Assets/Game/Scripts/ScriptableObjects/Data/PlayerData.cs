@@ -6,17 +6,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerData", menuName = "Data/Create Player Data")]
 public class PlayerData : ScriptableObject
 {
-    [SerializeField] private Stat speed;
-    [SerializeField] private Stat health;
-    [SerializeField] private Stat maxHealth;
-    [SerializeField] private Stat fireInterval;
-    [SerializeField] private Stat numberOfShots;
-    [SerializeField] private Stat range;
+    [SerializeField] private float speed;
+    [SerializeField] private float health;
+    [SerializeField] private int maxHealth;
+    [SerializeField] private float fireInterval;
+    [SerializeField] private int numberOfShots;
+    [SerializeField] private float range;
+    [SerializeField] private bool diagonalShot = false;
 
-    public Stat Speed { get { return speed; } }
-    public Stat Health { get { return health; } }
-    public Stat MaxHealth { get { return maxHealth; } }
-    public Stat FireInterval { get { return fireInterval; } }
-    public Stat NumberOfShots { get { return numberOfShots; } }
-    public Stat Range { get { return range; } }
+    public float Speed { get { return speed; } }
+    public float Health { get { return health; } set { health = value;} }
+    public int MaxHealth { get { return maxHealth; } }
+    public float FireInterval { get { return fireInterval; } set { fireInterval = value; } }
+    public float NumberOfShots { get { return numberOfShots; } }
+    public float Range { get { return range; } }
+
+    public bool DiagonalShot { get { return diagonalShot; } }
 }

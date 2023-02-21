@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private Transform[] spawners;
     [SerializeField] private GameObject[] enemies;
     [SerializeField] private Stat spawnInterval;
+    [SerializeField] private Stat spawnIntervalMultiplier;
 
     #endregion
 
@@ -31,7 +32,7 @@ public class SpawnManager : MonoBehaviour
     private IEnumerator SpawnCountdown()
     {
         Spawn(spawners[Random.Range(0, spawners.Length)]);
-        yield return new WaitForSeconds(spawnInterval.Amount * StatisticManager.Instance.spawnIntervalMultiplier);
+        yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
         yield return SpawnCountdown();
     }
 

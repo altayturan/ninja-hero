@@ -10,13 +10,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameEvent EnemyOnDie;
     [SerializeField] private BulletData bulletData;
     [SerializeField] private EnemyData enemyData;
+    [SerializeField] private float enemyHealthMultiplier;
 
     #endregion
 
     #region Monobehavior Functions
     private void Start()
     {
-        enemyData.Health.Amount *= StatisticManager.Instance.enemyHealthMultiplier;
+        enemyData.Health *= enemyHealthMultiplier;
         animator.SetBool("isRunning", true);
     }
     private void OnCollisionEnter(Collision collision)
@@ -28,8 +29,8 @@ public class EnemyController : MonoBehaviour
 
         if (collision.collider.TryGetComponent(out BulletController bulletController))
         {
-            enemyData.Health.Amount -= bulletData.Damage.Amount;
-            if (enemyData.Health.Amount <= 0)
+            enemyData.Health -= bulletData.Damage;
+            if (enemyData.Health <= 0)
             {
                 Destroy(gameObject);
                 EnemyOnDie.Invoke();

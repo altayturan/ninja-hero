@@ -25,7 +25,7 @@ public class PowerUpButtonController : MonoBehaviour
         if (powerUp.Level + 1 > powerUp.MaxLevel) { powerUpButton.interactable = false; return; }
 
         powerUp.LevelUp();
-        playerData.FireInterval.Amount -= 0.1f;
+        playerData.FireInterval -= 0.1f;
     }
 
     public void SetLevelText()

@@ -5,11 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Enemy Data", menuName = "Data/Create Enemy Data")]
 public class EnemyData : ScriptableObject
 {
-    [SerializeField] private Stat health;
-    [SerializeField] private Stat speed;
-    [SerializeField] private Stat damage;
+    [SerializeField] private float health;
+    [SerializeField] private float speed;
+    [SerializeField] private float damage;
 
-    public Stat Health { get { return health; }  }
-    public Stat Speed { get { return speed; } }
-    public Stat Damage { get { return damage;} }
+    public float Health { get { return health; } set { health = value; }  }
+    public float Speed { get { return speed; } }
+    public float Damage { get { return damage;} }
 }

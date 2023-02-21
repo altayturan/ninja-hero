@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, playerData.Range.Amount);
+        Gizmos.DrawWireSphere(transform.position, playerData.Range);
     }
     #endregion
 
@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out EnemyController enemyController))
         {
-            playerData.Health.Amount -= enemyData.Health.Amount;
-            if (playerData.Health.Amount <= 0)
+            playerData.Health -= enemyData.Damage;
+            if (playerData.Health <= 0)
             {
                 OnPlayerDieEvent.Invoke();
             }
