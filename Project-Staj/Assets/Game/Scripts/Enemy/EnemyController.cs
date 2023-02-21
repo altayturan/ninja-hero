@@ -40,7 +40,6 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out PlayerController playerController))
         {
-            GameManager.Instance.enemyControllers.Remove(this);
             Destroy(this.gameObject);
         }
 

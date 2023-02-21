@@ -5,8 +5,6 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     private float bulletDamage;
-
-
     public float BulletDamage
     {
         get
