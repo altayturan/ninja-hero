@@ -5,15 +5,25 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
     #region Variables
-    private float speed;
+    [SerializeField] private TargetEnemy targetEnemy;
+    [SerializeField] private BulletData bulletData;
 
+    private Vector3 direction;
     #endregion
 
     #region Monobehavior Functions
-    private void Update()
+
+    private void Start()
     {
-        speed = StatisticManager.Instance.bulletSpeed;
-        transform.Translate(Time.deltaTime * Vector3.forward * speed);
+        if(targetEnemy.GetTarget(out Transform target))
+        {
+            direction = target.position - transform.position;
+        }
+        else
+        {
+            direction = Vector3.forward;
+        }
+        GetComponent<Rigidbody>().velocity = direction.normalized * bulletData.Speed.Amount;
     }
     #endregion
 

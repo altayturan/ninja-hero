@@ -26,15 +26,7 @@ public class StatisticManager : MonoBehaviour
     #endregion
 
     #region Variables
-    [Header("Player Stats (These values are default values.)")]
-    public float playerHealth;
-    public float playerSpeed;
     
-    [Header("Shooting Stats")]
-    public float fireInterval;
-    public float bulletSpeed;
-    public float bulletDamage;
-    public int numberOfShots;
     public bool diagonalShot;
     
     [Header("Multipliers")]
