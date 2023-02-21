@@ -8,6 +8,7 @@ public class TimeEventFunctions : MonoBehaviour
 
     public void OnTimeEnd()
     {
+        
         OnWinGameEvent.Invoke();
     }
 }

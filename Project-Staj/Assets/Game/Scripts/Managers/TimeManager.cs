@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TimeManager : MonoBehaviour
 {
-    private float gameTime = 120f;
+    [SerializeField] private float gameTime = 120f;
     public float GameTime { get { return gameTime; } }
 
     [SerializeField] private GameEvent OnTimeEndEvent;
@@ -21,5 +22,11 @@ public class TimeManager : MonoBehaviour
         {
             OnTimeEndEvent.Invoke();
         }
+    }
+
+    [ContextMenu("Set Time 5 Seconds")]
+    private void SetTime5Seconds()
+    {
+        gameTime = 5f;
     }
 }

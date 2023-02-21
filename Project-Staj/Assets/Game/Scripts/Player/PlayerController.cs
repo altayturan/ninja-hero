@@ -53,9 +53,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        if (health <= 0) GameManager.Instance.isPlayerAlive = false;
-
-
         objectsInRange = Physics.OverlapSphere(transform.position, range);
 
         if (closestEnemy == null)
