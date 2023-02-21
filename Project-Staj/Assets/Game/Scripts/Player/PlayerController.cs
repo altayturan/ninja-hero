@@ -82,7 +82,13 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.TryGetComponent(out EnemyController enemyController))
+        {
+            health -= enemyController.Damage;
+        }
+    }
     #region Functions
 
     private IEnumerator FireBullet()
@@ -102,10 +108,6 @@ public class PlayerController : MonoBehaviour
         yield return FireBullet();
     }
     
-    public void ChangeHealthWithAmount(float changeAmount)
-    {
-        health += changeAmount;
-    }
 
     public float GetSpeed()
     {

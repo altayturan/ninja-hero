@@ -57,14 +57,14 @@ public class GameManager : MonoBehaviour
         if (gameTime <= 0 && isPlayerAlive == true) WinGame();
     }
 
-    private void LoseGame()
+    public void LoseGame()
     {
         Time.timeScale = 0;
         UIManager.Instance.LoseScreen.SetActive(true);
         UIManager.Instance.Hud.SetActive(false);
     }
 
-    private void WinGame()
+    public void WinGame()
     {
         Time.timeScale = 0;  
         UIManager.Instance.WinScreen.SetActive(true);

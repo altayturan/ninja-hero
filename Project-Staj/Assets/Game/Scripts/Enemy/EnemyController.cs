@@ -10,6 +10,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float damage;
     [SerializeField] private Animator animator;
+
+    public float Damage
+    {
+        get
+        {
+            return damage;
+        }
+    }
     #endregion
 
     #region Monobehavior Functions
@@ -31,19 +39,23 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            GiveDamage(collision.gameObject);
             GameManager.Instance.enemyControllers.Remove(this.gameObject.GetComponent<EnemyController>());
             Destroy(this.gameObject);
+        }
+
+        if(collision.collider.TryGetComponent(out BulletController bulletController))
+        {
+            health -= bulletController.BulletDamage;
+            if (health <= 0)
+            {
+                
+            }
         }
     }
     #endregion
 
 
     #region Functions
-    public void GiveDamage(GameObject target)
-    {
-        target.GetComponent<PlayerController>().ChangeHealthWithAmount(-damage);
-    }
 
     public void ChangeHealthWithAmount(float changeAmount)
     {
@@ -55,5 +67,10 @@ public class EnemyController : MonoBehaviour
         return speed;
     }
 
+    public void KillEnemy()
+    {
+        Destroy(gameObject);
+        //GoldManager.Instance.ChangeGoldWithAmount(30);
+    }
     #endregion
 }

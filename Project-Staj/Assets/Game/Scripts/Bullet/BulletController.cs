@@ -6,27 +6,28 @@ public class BulletController : MonoBehaviour
 {
     private float bulletDamage;
 
+
+    public float BulletDamage
+    {
+        get
+        {
+            return bulletDamage;
+        }
+    }
     private void Start()
     {
         bulletDamage = StatisticManager.Instance.bulletDamage;
-        Destroy(this.gameObject,6f);
+        Destroy(this.gameObject, 6f);
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Enemy"))
+        if (collision.collider.TryGetComponent(out EnemyController enemyController))
         {
-            GiveDamage(collision.gameObject);
             Destroy(this.gameObject);
         }
         if (collision.collider.CompareTag("Rock"))
         {
             Destroy(this.gameObject);
         }
-    }
-
-    public void GiveDamage(GameObject target)
-    {
-        if (target.GetComponent<EnemyController>() == null) return;
-        target.GetComponent<EnemyController>().ChangeHealthWithAmount(-bulletDamage);
     }
 }
