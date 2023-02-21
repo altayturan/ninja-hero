@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Move()
     {
-        rb.velocity = direction * enemyController.GetSpeed();
+        rb.velocity = direction * enemyController.Speed;
     }
 
     #endregion

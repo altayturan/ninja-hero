@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     private Collider[] objectsInRange;
     private GameObject closestEnemy;
     private float closestDistance = Mathf.Infinity;
+
+    public float Health { get { return health; }  }
+    public float Speed { get { return speed;} }
     #endregion
 
     #region Monobehavior Functions
@@ -109,14 +112,6 @@ public class PlayerController : MonoBehaviour
     }
     
 
-    public float GetSpeed()
-    {
-        return speed;
-    }
-
-    public float GetHealth()
-    {
-        return health;
-    }
+    
     #endregion
 }

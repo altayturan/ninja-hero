@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        speed = PlayerController.Instance.GetSpeed();
+        speed = PlayerController.Instance.Speed;
         rb.velocity = new Vector3(joystick.Horizontal * speed, 0, joystick.Vertical * speed);
         if(rb.velocity != Vector3.zero) { animator.SetBool("isRunning", true); }
         else { animator.SetBool("isRunning", false); }

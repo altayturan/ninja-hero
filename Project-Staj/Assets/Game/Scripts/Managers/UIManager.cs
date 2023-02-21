@@ -52,8 +52,8 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.gameTime > 0)
-            timeText.text = (Mathf.FloorToInt(GameManager.Instance.gameTime / 60)).ToString("00") + ":" + (Mathf.FloorToInt(GameManager.Instance.gameTime % 60)).ToString("00");
+        //if (GameManager.Instance.gameTime > 0)
+        //    timeText.text = (Mathf.FloorToInt(GameManager.Instance.gameTime / 60)).ToString("00") + ":" + (Mathf.FloorToInt(GameManager.Instance.gameTime % 60)).ToString("00");
 
         //goldText.text = GoldManager.Instance.GetGold().ToString();
 
@@ -75,6 +75,6 @@ public class UIManager : MonoBehaviour
     private void UpdateHealthBar()
     {
         healthBar.maxValue = StatisticManager.Instance.playerHealth;
-        healthBar.value = PlayerController.Instance.GetHealth();
+        healthBar.value = PlayerController.Instance.Health;
     }
 }

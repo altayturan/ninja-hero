@@ -20,6 +20,14 @@ public class EnemyController : MonoBehaviour
             return damage;
         }
     }
+
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+    }
     #endregion
 
     #region Monobehavior Functions
@@ -30,9 +38,9 @@ public class EnemyController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.TryGetComponent(out PlayerController playerController))
         {
-            GameManager.Instance.enemyControllers.Remove(this.gameObject.GetComponent<EnemyController>());
+            GameManager.Instance.enemyControllers.Remove(this);
             Destroy(this.gameObject);
         }
 

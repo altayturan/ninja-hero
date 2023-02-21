@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     #region Variables
 
     public bool isPlayerAlive = true;
-    public float gameTime = 120f;
     public List<EnemyController> enemyControllers;
 
     #endregion
@@ -39,8 +38,6 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 30;
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
-        InvokeRepeating("ReduceTime", 1f, 1f);
-        
         Time.timeScale = 1;
     }
     private void Update()
@@ -71,10 +68,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.Hud.SetActive(false);
     }
 
-    private void ReduceTime()
-    {
-        gameTime--;
-    }
+    
     
     #endregion
 }
