@@ -4009,6 +4009,7 @@ GameObject:
   - component: {fileID: 784361190}
   - component: {fileID: 784361191}
   - component: {fileID: 784361192}
+  - component: {fileID: 784361193}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -4040,7 +4041,9 @@ MonoBehaviour:
   enemies:
   - {fileID: 1144028080539786, guid: b5e8d403db2eb7e4eb759eed9c756f99, type: 3}
   - {fileID: 1404409735730676, guid: b52f45c7201d1784b8e2d4b4e4341259, type: 3}
-  defaultSpawnInterval: 3
+  spawnInterval: {fileID: 11400000, guid: 01a400feca3815c45a15a2a254d38079, type: 2}
+  spawnIntervalMultiplier: {fileID: 11400000, guid: 9b0d350006bb35648bf886cd6ded3e1f,
+    type: 2}
 --- !u!4 &784361189
 Transform:
   m_ObjectHideFlags: 0
@@ -4080,15 +4083,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b958f6b5d2699b84584bed516343c3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 500
-  playerSpeed: 8
-  fireInterval: 2
-  bulletSpeed: 20
-  bulletDamage: 50
-  numberOfShots: 1
   diagonalShot: 0
-  enemyHealthMultiplier: 1.1
-  spawnIntervalMultiplier: 0.9
+  enemyHealthMultiplier: {fileID: 11400000, guid: d4b9a74aa8e351040b36ff6fafdcdbb3,
+    type: 2}
+  spawnIntervalMultiplier: {fileID: 11400000, guid: 9b0d350006bb35648bf886cd6ded3e1f,
+    type: 2}
 --- !u!114 &784361192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4103,6 +4102,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTime: 120
   OnTimeEndEvent: {fileID: 11400000, guid: 30cd3df41e9931a40af225dae32b060d, type: 2}
+--- !u!114 &784361193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784361187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4955410024f8f1146a976887cc53b6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletData: {fileID: 0}
+  playerData: {fileID: 0}
+  speedyData: {fileID: 0}
+  tankData: {fileID: 0}
+  attackSpeedPowerUp: {fileID: 0}
+  damagePowerUp: {fileID: 0}
+  numberOfShotsPowerUp: {fileID: 0}
+  gold: {fileID: 0}
+  spawnInterval: {fileID: 0}
+  enemyHealthMultiplier: {fileID: 0}
+  spawnIntervalMultiplier: {fileID: 0}
 --- !u!4 &796445451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2733845855538509057, guid: 61364f025cf3e32469d90fbb605b101a,
@@ -9802,6 +9824,7 @@ MonoBehaviour:
   rb: {fileID: 4109836095431572067}
   joystick: {fileID: 1567643101}
   animator: {fileID: 4109836095431572065}
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
 --- !u!114 &4109836095431572069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9814,9 +9837,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76dfbbcff2772254c8c23607fd1f6f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   OnPlayerDieEvent: {fileID: 11400000, guid: cff93daa06bc14b488d0ea9c94f9a267, type: 2}
   targetEnemy: {fileID: 11400000, guid: bf03d83ec0885534abdd0cae9a83d570, type: 2}
-  range: {fileID: 11400000, guid: 67c520be56047804caf0925ea6c7f0b4, type: 2}
 --- !u!114 &4109836095431572070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9829,9 +9852,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d75891c3e233f43aca7b45aebc6deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletObject: {fileID: 171642, guid: 70a640a2f3135a245818b33c0cdfcb87, type: 3}
   bulletSpawner: {fileID: 959937978}
   OnFireEvent: {fileID: 11400000, guid: a3206285d9cd69649ae2dea48c7d50d8, type: 2}
+  bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
 --- !u!114 &4109836095431572071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9844,7 +9868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d617d78910a5cf43bd1a27521f44cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: {fileID: 11400000, guid: 67c520be56047804caf0925ea6c7f0b4, type: 2}
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   targetEnemy: {fileID: 11400000, guid: bf03d83ec0885534abdd0cae9a83d570, type: 2}
 --- !u!1 &4242746420396333619
 GameObject:

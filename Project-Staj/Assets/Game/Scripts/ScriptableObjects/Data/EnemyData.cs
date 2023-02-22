@@ -10,6 +10,6 @@ public class EnemyData : ScriptableObject
     [SerializeField] private float damage;
 
     public float Health { get { return health; } set { health = value; }  }
-    public float Speed { get { return speed; } }
+    public float Speed { get { return speed; } set { speed = value; } }
     public float Damage { get { return damage;} }
 }

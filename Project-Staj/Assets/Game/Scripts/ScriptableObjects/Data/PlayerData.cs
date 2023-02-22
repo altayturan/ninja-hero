@@ -14,12 +14,12 @@ public class PlayerData : ScriptableObject
     [SerializeField] private float range;
     [SerializeField] private bool diagonalShot = false;
 
-    public float Speed { get { return speed; } }
+    public float Speed { get { return speed; } set { speed = value; } }
     public float Health { get { return health; } set { health = value;} }
-    public int MaxHealth { get { return maxHealth; } }
+    public int MaxHealth { get { return maxHealth; } set { maxHealth = value; } }
     public float FireInterval { get { return fireInterval; } set { fireInterval = value; } }
-    public float NumberOfShots { get { return numberOfShots; } }
-    public float Range { get { return range; } }
+    public int NumberOfShots { get { return numberOfShots; } set { numberOfShots = value; } }
+    public float Range { get { return range; } set { range = value; } }
 
-    public bool DiagonalShot { get { return diagonalShot; } }
+    public bool DiagonalShot { get { return diagonalShot; } set { diagonalShot = value; } }
 }

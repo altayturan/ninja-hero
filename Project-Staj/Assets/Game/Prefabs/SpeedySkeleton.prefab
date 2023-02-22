@@ -294,11 +294,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18e9762f38fb624389837c72eff9d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  speed: 9
-  damage: 50
   animator: {fileID: 95015863764320770}
   EnemyOnDie: {fileID: 11400000, guid: 16a96494af07228488a62f73b1d86822, type: 2}
+  bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
+  enemyData: {fileID: 11400000, guid: dbbdfe0a933797b47a75e949afe199a1, type: 2}
+  enemyHealthMultiplier: {fileID: 11400000, guid: d4b9a74aa8e351040b36ff6fafdcdbb3,
+    type: 2}
 --- !u!114 &2481629666387241583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabe41962af1fff4fa8a0fe428fcd545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: dbbdfe0a933797b47a75e949afe199a1, type: 2}
 --- !u!1 &1147489988858412
 GameObject:
   m_ObjectHideFlags: 0

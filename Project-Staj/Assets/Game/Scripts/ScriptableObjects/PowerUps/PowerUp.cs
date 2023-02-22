@@ -12,14 +12,12 @@ public class PowerUp : ScriptableObject
     [SerializeField] private float statChangeAmount;
 
     [SerializeField] private GameEvent OnLevelChanged;
-    [SerializeField] private Stat stat;
     public int Cost
     {
         get { return cost; }
         set
         {
             cost = value;
-
         }
     }
     public int Level
@@ -35,11 +33,21 @@ public class PowerUp : ScriptableObject
     public int MaxLevel
     {
         get { return maxLevel; }
+        set
+        {
+            maxLevel = value;
+        }
     }
-
+    public float StatChangeAmount
+    {
+        get { return statChangeAmount; }
+        set
+        {
+            statChangeAmount = value;
+        }
+    }
     public void LevelUp()
     {
         Level++;
-        stat.Amount += statChangeAmount;
     }
 }

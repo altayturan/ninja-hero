@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Cinemachine.DocumentationSortingAttribute;
 
-public class PowerUpButtonController : MonoBehaviour
+public class BasePowerUpButtonController : MonoBehaviour
 {
     [SerializeField] private Resource gold;
-    [SerializeField] private PowerUp powerUp;
-    [SerializeField] private PlayerData playerData;
+    [SerializeField] internal PowerUp powerUp;
+    [SerializeField] internal PlayerData playerData;
 
     [SerializeField] private TMP_Text levelText;
     private Button powerUpButton;
@@ -17,15 +17,14 @@ public class PowerUpButtonController : MonoBehaviour
     private void Start()
     {
         powerUpButton = GetComponent<Button>();
+        levelText.text = "Lvl. " + powerUp.Level.ToString();
     }
 
-    public void OnClickPowerUp()
+    public virtual void OnClickPowerUp()
     {
         if (!gold.isEnough(powerUp.Cost)) return;
-        if (powerUp.Level + 1 > powerUp.MaxLevel) { powerUpButton.interactable = false; return; }
-
         powerUp.LevelUp();
-        playerData.FireInterval -= 0.1f;
+        if (powerUp.Level + 1 > powerUp.MaxLevel) { powerUpButton.interactable = false; return; }
     }
 
     public void SetLevelText()

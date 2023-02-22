@@ -718,8 +718,8 @@ GameObject:
   - component: {fileID: 703356477}
   - component: {fileID: 703356476}
   - component: {fileID: 703356475}
-  - component: {fileID: 703356479}
   - component: {fileID: 703356478}
+  - component: {fileID: 703356479}
   m_Layer: 5
   m_Name: AttackSpeedButton
   m_TagString: Untagged
@@ -795,7 +795,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 703356479}
-        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+        m_TargetAssemblyTypeName: AttackSpeedPowerUp, Assembly-CSharp
         m_MethodName: OnClickPowerUp
         m_Mode: 1
         m_Arguments:
@@ -861,7 +861,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 703356479}
-        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+        m_TargetAssemblyTypeName: BasePowerUpButtonController, Assembly-CSharp
         m_MethodName: SetLevelText
         m_Mode: 1
         m_Arguments:
@@ -881,11 +881,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 703356473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6257c028b86042b44865e45b63b24f59, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a4f2609569cd594198bc246e65f55e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
   powerUp: {fileID: 11400000, guid: 85f1971d4b934244e938e11c554078cc, type: 2}
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   levelText: {fileID: 767730462}
 --- !u!1 &733557910
 GameObject:
@@ -1410,8 +1411,8 @@ GameObject:
   - component: {fileID: 821792857}
   - component: {fileID: 821792856}
   - component: {fileID: 821792855}
-  - component: {fileID: 821792859}
   - component: {fileID: 821792858}
+  - component: {fileID: 821792859}
   m_Layer: 5
   m_Name: IncreaseDamageButton
   m_TagString: Untagged
@@ -1487,7 +1488,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 821792859}
-        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+        m_TargetAssemblyTypeName: DamagePowerUp, Assembly-CSharp
         m_MethodName: OnClickPowerUp
         m_Mode: 1
         m_Arguments:
@@ -1553,7 +1554,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 821792859}
-        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+        m_TargetAssemblyTypeName: BasePowerUpButtonController, Assembly-CSharp
         m_MethodName: SetLevelText
         m_Mode: 1
         m_Arguments:
@@ -1573,12 +1574,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 821792853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6257c028b86042b44865e45b63b24f59, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e72d0556f9e4ea45b88e5e2f4045e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
   powerUp: {fileID: 11400000, guid: 91508db24e7e7e44e8527f168e361675, type: 2}
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   levelText: {fileID: 2026621708}
+  bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
 --- !u!1 &844400863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,7 +2162,7 @@ GameObject:
   - component: {fileID: 1046459342}
   - component: {fileID: 1046459341}
   - component: {fileID: 1046459345}
-  - component: {fileID: 1046459344}
+  - component: {fileID: 1046459346}
   m_Layer: 5
   m_Name: IncreaseNumberShotButton
   m_TagString: Untagged
@@ -2234,8 +2237,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1046459344}
-        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+      - m_Target: {fileID: 1046459346}
+        m_TargetAssemblyTypeName: NumberOfShotsPowerUp, Assembly-CSharp
         m_MethodName: OnClickPowerUp
         m_Mode: 1
         m_Arguments:
@@ -2284,21 +2287,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046459339}
   m_CullTransparentMesh: 1
---- !u!114 &1046459344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046459339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6257c028b86042b44865e45b63b24f59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
-  powerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e, type: 2}
-  levelText: {fileID: 1760475481}
 --- !u!114 &1046459345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,8 +2303,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1046459344}
-        m_TargetAssemblyTypeName: PowerUpButtonController, Assembly-CSharp
+      - m_Target: {fileID: 1046459346}
+        m_TargetAssemblyTypeName: BasePowerUpButtonController, Assembly-CSharp
         m_MethodName: SetLevelText
         m_Mode: 1
         m_Arguments:
@@ -2327,6 +2315,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1046459346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046459339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39be7fa21f41b7f44bacf647a36e05c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
+  powerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e, type: 2}
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
+  levelText: {fileID: 1760475481}
 --- !u!1 &1058142117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,23 +2717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c8c4be423c0b04497bb95a0504541c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeedLevel: 0
-  damageLevel: 0
-  numberShotLevel: 0
-  damageAmount: 100
-  damageAllCooldownTime: 15
-  highAttackSpeedCooldownTime: 15
-  attackSpeedButton: {fileID: 703356473}
-  damageButton: {fileID: 821792853}
-  numberShotButton: {fileID: 1046459339}
-  diagonalButton: {fileID: 924843242}
-  damageAllButton: {fileID: 1906632801}
-  highAttackSpeedButton: {fileID: 87104401}
-  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
-  attackSpeed: {fileID: 11400000, guid: 85f1971d4b934244e938e11c554078cc, type: 2}
-  OnCastAttackSpeed: {fileID: 0}
-  damageAllCasted: 0
-  highAttackSpeedCasted: 0
 --- !u!4 &1209956407
 Transform:
   m_ObjectHideFlags: 0
@@ -2766,6 +2753,7 @@ MonoBehaviour:
   damageAllCostText: {fileID: 1981391324}
   highAttackSpeedCostText: {fileID: 1434228047}
   healthBar: {fileID: 733557912}
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   WinScreen: {fileID: 974179810}
   LoseScreen: {fileID: 844400863}
   Hud: {fileID: 1580796457}

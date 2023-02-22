@@ -10,14 +10,18 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameEvent EnemyOnDie;
     [SerializeField] private BulletData bulletData;
     [SerializeField] private EnemyData enemyData;
-    [SerializeField] private float enemyHealthMultiplier;
+    [SerializeField] private Stat enemyHealthMultiplier;
 
+    public float GetDamage()
+    {
+        return enemyData.Damage;
+    }
     #endregion
 
     #region Monobehavior Functions
     private void Start()
     {
-        enemyData.Health *= enemyHealthMultiplier;
+        enemyData.Health *= enemyHealthMultiplier.Amount;
         animator.SetBool("isRunning", true);
     }
     private void OnCollisionEnter(Collision collision)

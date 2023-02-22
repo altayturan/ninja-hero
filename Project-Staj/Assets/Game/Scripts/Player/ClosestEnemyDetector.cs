@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClosestEnemyDetector : MonoBehaviour
 {
-    [SerializeField] private Stat range;
+    [SerializeField] private PlayerData playerData;
     [SerializeField] private TargetEnemy targetEnemy;
     
     private Collider[] objectsInRange;
@@ -16,7 +16,7 @@ public class ClosestEnemyDetector : MonoBehaviour
         closestDistance = Mathf.Infinity;
         closestEnemy = null;
 
-        objectsInRange = Physics.OverlapSphere(transform.position, range.Amount);
+        objectsInRange = Physics.OverlapSphere(transform.position, playerData.Range);
 
         foreach (Collider collider in objectsInRange)
         {

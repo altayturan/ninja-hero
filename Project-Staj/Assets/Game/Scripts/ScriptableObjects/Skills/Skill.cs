@@ -7,5 +7,7 @@ public class Skill : ScriptableObject
 {
     private int cost;
     private float cooldown;
-    private Stat stat;
+    [SerializeField] private PlayerData playerData;
+
+    
 }

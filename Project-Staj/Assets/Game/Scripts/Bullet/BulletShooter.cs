@@ -16,9 +16,11 @@ public class BulletShooter : MonoBehaviour
 
     private IEnumerator FireBullet()
     {
-        OnFireEvent.Invoke();
+        
         for (int i = 0; i < playerData.NumberOfShots; i++)
         {
+            OnFireEvent.Invoke();
+            
             if (!playerData.DiagonalShot) { Instantiate(bulletData.BulletObject, bulletSpawner.position, transform.rotation); }
             else
             {
