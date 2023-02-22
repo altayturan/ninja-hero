@@ -1,9 +1,10 @@
+using ninjahero.events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "New Cost", menuName = "Create Cost")]
+[CreateAssetMenu(fileName = "New PowerUp", menuName = "Create PowerUp")]
 public class PowerUp : ScriptableObject
 {
     [SerializeField] private int cost;

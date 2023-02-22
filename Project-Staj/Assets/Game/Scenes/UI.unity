@@ -540,6 +540,8 @@ GameObject:
   - component: {fileID: 314767594}
   - component: {fileID: 314767596}
   - component: {fileID: 314767595}
+  - component: {fileID: 314767598}
+  - component: {fileID: 314767597}
   m_Layer: 5
   m_Name: Cost
   m_TagString: Untagged
@@ -664,6 +666,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314767593}
   m_CullTransparentMesh: 1
+--- !u!114 &314767597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 532b34505e1e86f44b1ab1e9dd649d9d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 314767598}
+        m_TargetAssemblyTypeName: GoldTextUpdater, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &314767598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bdeacffe9c43448bd351168489cf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: {fileID: 11400000, guid: 85f1971d4b934244e938e11c554078cc, type: 2}
 --- !u!1 &567844522
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +905,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 703356479}
         m_TargetAssemblyTypeName: BasePowerUpButtonController, Assembly-CSharp
-        m_MethodName: SetLevelText
+        m_MethodName: UpdatePowerUpUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -888,6 +931,7 @@ MonoBehaviour:
   powerUp: {fileID: 11400000, guid: 85f1971d4b934244e938e11c554078cc, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   levelText: {fileID: 767730462}
+  goldText: {fileID: 314767595}
 --- !u!1 &733557910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1243,8 @@ GameObject:
   - component: {fileID: 767730461}
   - component: {fileID: 767730463}
   - component: {fileID: 767730462}
+  - component: {fileID: 767730465}
+  - component: {fileID: 767730464}
   m_Layer: 5
   m_Name: Level
   m_TagString: Untagged
@@ -1323,6 +1369,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767730460}
   m_CullTransparentMesh: 1
+--- !u!114 &767730464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767730460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 532b34505e1e86f44b1ab1e9dd649d9d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 767730465}
+        m_TargetAssemblyTypeName: LevelTextUpdater, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &767730465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767730460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d1be90d23c42c4d812302d7f2c0481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: {fileID: 11400000, guid: 85f1971d4b934244e938e11c554078cc, type: 2}
 --- !u!1 &806186138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,8 +1520,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2026621707}
-  - {fileID: 1786077458}
   - {fileID: 1390686666}
+  - {fileID: 1786077458}
   m_Father: {fileID: 567844523}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1555,7 +1642,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 821792859}
         m_TargetAssemblyTypeName: BasePowerUpButtonController, Assembly-CSharp
-        m_MethodName: SetLevelText
+        m_MethodName: UpdatePowerUpUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1581,6 +1668,7 @@ MonoBehaviour:
   powerUp: {fileID: 11400000, guid: 91508db24e7e7e44e8527f168e361675, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   levelText: {fileID: 2026621708}
+  goldText: {fileID: 1786077459}
   bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
 --- !u!1 &844400863
 GameObject:
@@ -2305,7 +2393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1046459346}
         m_TargetAssemblyTypeName: BasePowerUpButtonController, Assembly-CSharp
-        m_MethodName: SetLevelText
+        m_MethodName: UpdatePowerUpUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2331,6 +2419,7 @@ MonoBehaviour:
   powerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   levelText: {fileID: 1760475481}
+  goldText: {fileID: 1652051710}
 --- !u!1 &1058142117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,22 +2833,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127613b356156ab4d99bc676b29fd415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeText: {fileID: 1911794600}
-  goldText: {fileID: 1214152166}
-  attackSpeedCostText: {fileID: 314767595}
-  damageCostText: {fileID: 1786077459}
-  numberShotCostText: {fileID: 1652051710}
-  diagonalCostText: {fileID: 242666489}
-  damageAllCostText: {fileID: 1981391324}
-  highAttackSpeedCostText: {fileID: 1434228047}
-  healthBar: {fileID: 733557912}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
-  WinScreen: {fileID: 974179810}
-  LoseScreen: {fileID: 844400863}
-  Hud: {fileID: 1580796457}
-  attackSpeedLevelText: {fileID: 767730462}
-  damageLevelText: {fileID: 2026621708}
-  numberShotLevelText: {fileID: 1760475481}
+  attackSpeedPowerUp: {fileID: 0}
+  damagePowerUp: {fileID: 0}
+  numberOfShotsPowerUp: {fileID: 0}
 --- !u!114 &1209956409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3094,7 +3171,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 821792854}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3677,6 +3754,8 @@ GameObject:
   - component: {fileID: 1652051709}
   - component: {fileID: 1652051711}
   - component: {fileID: 1652051710}
+  - component: {fileID: 1652051713}
+  - component: {fileID: 1652051712}
   m_Layer: 5
   m_Name: Cost
   m_TagString: Untagged
@@ -3801,6 +3880,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652051708}
   m_CullTransparentMesh: 1
+--- !u!114 &1652051712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652051708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 74acedb33d1607741b2bab4a8e6707d9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1652051713}
+        m_TargetAssemblyTypeName: GoldTextUpdater, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1652051713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652051708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bdeacffe9c43448bd351168489cf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e, type: 2}
 --- !u!1 &1760475479
 GameObject:
   m_ObjectHideFlags: 0
@@ -3812,6 +3932,8 @@ GameObject:
   - component: {fileID: 1760475480}
   - component: {fileID: 1760475482}
   - component: {fileID: 1760475481}
+  - component: {fileID: 1760475484}
+  - component: {fileID: 1760475483}
   m_Layer: 5
   m_Name: Level
   m_TagString: Untagged
@@ -3936,6 +4058,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760475479}
   m_CullTransparentMesh: 1
+--- !u!114 &1760475483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760475479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d1be90d23c42c4d812302d7f2c0481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e, type: 2}
+--- !u!114 &1760475484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760475479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 74acedb33d1607741b2bab4a8e6707d9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1760475483}
+        m_TargetAssemblyTypeName: LevelTextUpdater, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1786077457
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,6 +4110,8 @@ GameObject:
   - component: {fileID: 1786077458}
   - component: {fileID: 1786077460}
   - component: {fileID: 1786077459}
+  - component: {fileID: 1786077462}
+  - component: {fileID: 1786077461}
   m_Layer: 5
   m_Name: Cost
   m_TagString: Untagged
@@ -3967,7 +4132,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 821792854}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4071,6 +4236,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786077457}
   m_CullTransparentMesh: 1
+--- !u!114 &1786077461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786077457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 73697bce446a2a9418d58d8cec9df6ca, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1786077462}
+        m_TargetAssemblyTypeName: GoldTextUpdater, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1786077462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786077457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bdeacffe9c43448bd351168489cf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: {fileID: 11400000, guid: 91508db24e7e7e44e8527f168e361675, type: 2}
 --- !u!1 &1906632801
 GameObject:
   m_ObjectHideFlags: 0
@@ -4564,6 +4770,8 @@ GameObject:
   - component: {fileID: 2026621707}
   - component: {fileID: 2026621709}
   - component: {fileID: 2026621708}
+  - component: {fileID: 2026621711}
+  - component: {fileID: 2026621710}
   m_Layer: 5
   m_Name: Level
   m_TagString: Untagged
@@ -4688,6 +4896,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026621706}
   m_CullTransparentMesh: 1
+--- !u!114 &2026621710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026621706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d1be90d23c42c4d812302d7f2c0481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: {fileID: 11400000, guid: 91508db24e7e7e44e8527f168e361675, type: 2}
+--- !u!114 &2026621711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026621706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 73697bce446a2a9418d58d8cec9df6ca, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2026621710}
+        m_TargetAssemblyTypeName: LevelTextUpdater, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2106421608
 GameObject:
   m_ObjectHideFlags: 0

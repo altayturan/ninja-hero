@@ -8,48 +8,13 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
-    #region Singleton
-    private UIManager uiManager;
-    private static UIManager _instance;
-
-    public static UIManager Instance { get { return _instance; } }
-
-    private void Awake()
-    {
-
-        if (_instance != null && _instance != this)  // SINGLETON
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-        uiManager = new UIManager();
-    }
-    #endregion
-
-    [SerializeField] private TMP_Text timeText;
-    [SerializeField] private TMP_Text goldText;
-
-    [SerializeField] private TMP_Text attackSpeedCostText;
-    [SerializeField] private TMP_Text damageCostText;
-    [SerializeField] private TMP_Text numberShotCostText;
-    [SerializeField] private TMP_Text diagonalCostText;
-    [SerializeField] private TMP_Text damageAllCostText;
-    [SerializeField] private TMP_Text highAttackSpeedCostText;
-    [SerializeField] private Slider healthBar;
-
     [SerializeField] private PlayerData playerData;
-    
-    public GameObject WinScreen;
-    public GameObject LoseScreen;
-    public GameObject Hud;
 
-    public TMP_Text attackSpeedLevelText;
-    public TMP_Text damageLevelText;
-    public TMP_Text numberShotLevelText;
+    [SerializeField] private PowerUp attackSpeedPowerUp;
+    [SerializeField] private PowerUp damagePowerUp;
+    [SerializeField] private PowerUp numberOfShotsPowerUp;
+
+    
 
     private void Update()
     {
@@ -75,7 +40,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar.maxValue = playerData.MaxHealth;
-        healthBar.value = playerData.Health;
+        //uiData.HealthBar.maxValue = playerData.MaxHealth;
+        //uiData.HealthBar.value = playerData.Health;
     }
 }

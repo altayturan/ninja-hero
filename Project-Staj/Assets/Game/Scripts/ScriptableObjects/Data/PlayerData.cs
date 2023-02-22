@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum Phases { STOPED, MOVING }
 
 [CreateAssetMenu(fileName = "PlayerData", menuName = "Data/Create Player Data")]
 public class PlayerData : ScriptableObject
 {
+
     [SerializeField] private float speed;
     [SerializeField] private float health;
     [SerializeField] private int maxHealth;
@@ -13,6 +14,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] private int numberOfShots;
     [SerializeField] private float range;
     [SerializeField] private bool diagonalShot = false;
+    [SerializeField] private Phases currentPhase;
 
     public float Speed { get { return speed; } set { speed = value; } }
     public float Health { get { return health; } set { health = value;} }
@@ -22,4 +24,6 @@ public class PlayerData : ScriptableObject
     public float Range { get { return range; } set { range = value; } }
 
     public bool DiagonalShot { get { return diagonalShot; } set { diagonalShot = value; } }
+
+    public Phases CurrentPhase { get { return currentPhase; } set { currentPhase = value; } }
 }

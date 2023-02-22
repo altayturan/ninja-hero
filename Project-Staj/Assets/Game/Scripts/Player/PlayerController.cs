@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using ninjahero.events;
 public class PlayerController : MonoBehaviour
 {
     #region Variables

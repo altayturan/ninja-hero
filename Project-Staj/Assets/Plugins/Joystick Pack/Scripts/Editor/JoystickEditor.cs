@@ -29,6 +29,7 @@ public class JoystickEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        
         serializedObject.Update();
 
         DrawValues();

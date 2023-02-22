@@ -1,26 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "New Game Event", menuName = "Game Event", order = 52)]
-public class GameEvent : ScriptableObject
-{
-    private List<GameEventListener> listeners = new List<GameEventListener>();
 
-    public void Invoke() 
+namespace ninjahero.events
+{
+
+    [CreateAssetMenu(fileName = "New Game Event", menuName = "Game Event", order = 52)]
+    public class GameEvent : ScriptableObject
     {
-        for (int i = listeners.Count - 1; i >= 0; i--) 
+        private List<GameEventListener> listeners = new List<GameEventListener>();
+
+        public void Invoke()
         {
-            listeners[i].OnEventRaised();
+            for (int i = listeners.Count - 1; i >= 0; i--)
+            {
+                listeners[i].OnEventRaised();
+            }
+        }
+
+        public void SubscribeListener(GameEventListener listener)
+        {
+            listeners.Add(listener);
+        }
+
+        public void UnsubscribeListener(GameEventListener listener)
+        {
+            listeners.Remove(listener);
         }
     }
-
-    public void SubscribeListener(GameEventListener listener)
-    {
-        listeners.Add(listener);
-    }
-
-    public void UnsubscribeListener(GameEventListener listener) 
-    {
-        listeners.Remove(listener);
-    }
 }
+

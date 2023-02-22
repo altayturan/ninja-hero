@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyEventFunctions : MonoBehaviour
 {
+    [SerializeField] private Resource gold;
     public void KillEnemy()
     {
-        Debug.Log("Girdi"); // Altýn Arttýr
+        gold.Amount += 30;
     }
 }

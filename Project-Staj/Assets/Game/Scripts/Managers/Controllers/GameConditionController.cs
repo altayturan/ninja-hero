@@ -6,16 +6,15 @@ public class GameConditionController : MonoBehaviour
 {
     public void LoseGame()
     {
-        Debug.Log("Game End");
         Time.timeScale = 0;
-        UIManager.Instance.LoseScreen.SetActive(true);
-        UIManager.Instance.Hud.SetActive(false);
+        //UIManager.Instance.LoseScreen.SetActive(true);
+        //UIManager.Instance.Hud.SetActive(false);
     }
 
     public void WinGame()
     {
         Time.timeScale = 0;
-        UIManager.Instance.WinScreen.SetActive(true);
-        UIManager.Instance.Hud.SetActive(false);
+        //UIManager.Instance.WinScreen.SetActive(true);
+        //UIManager.Instance.Hud.SetActive(false);
     }
 }
