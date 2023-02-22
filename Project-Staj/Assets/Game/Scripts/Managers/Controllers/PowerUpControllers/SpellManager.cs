@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SpellManager : MonoBehaviour
 {
+    
     //public void AddDiagonalShot()
     //{
     //    if (GoldManager.Instance.GetGold() < GoldManager.Instance.diagonalShotCost) return;

@@ -4055,7 +4055,6 @@ GameObject:
   m_Component:
   - component: {fileID: 784361189}
   - component: {fileID: 784361188}
-  - component: {fileID: 784361190}
   - component: {fileID: 784361191}
   - component: {fileID: 784361192}
   - component: {fileID: 784361193}
@@ -4108,18 +4107,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &784361190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784361187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bba63bbc122b55f4da0e0a650d59fc8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &784361191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4149,8 +4136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133cc2ada5cc9954d9d0faf4685865d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: 120
+  time: {fileID: 11400000, guid: ab3b49b35bdeaf544939798b4c623319, type: 2}
   OnTimeEndEvent: {fileID: 11400000, guid: 30cd3df41e9931a40af225dae32b060d, type: 2}
+  OnTimeReduced: {fileID: 11400000, guid: 05b08795e1ca5af429057966e4ebe87f, type: 2}
 --- !u!114 &784361193
 MonoBehaviour:
   m_ObjectHideFlags: 0

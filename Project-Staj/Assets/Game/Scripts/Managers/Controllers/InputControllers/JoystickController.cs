@@ -1,4 +1,3 @@
-using ninjahero.events;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

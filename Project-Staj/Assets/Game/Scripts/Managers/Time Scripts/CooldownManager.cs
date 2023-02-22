@@ -1,17 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CountdownManager : MonoBehaviour
+public class CooldownManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text damageAllCooldowner;
-    [SerializeField] private TMP_Text highAttackSpeedCooldowner;
-
     [SerializeField] private SpellManager spellManager;
 
-    private float damageAllCooldown;
-    private float highAttackSpeedCooldown;
 
     private void Start()
     {
