@@ -2,17 +2,25 @@ using UnityEngine;
 
 public class GameConditionController : MonoBehaviour
 {
+    [SerializeField] private GameObject LoseScreen;
+    [SerializeField] private GameObject WinScreen;
+    [SerializeField] private GameObject Hud;
     public void LoseGame()
     {
         Time.timeScale = 0;
-        //UIManager.Instance.LoseScreen.SetActive(true);
-        //UIManager.Instance.Hud.SetActive(false);
+        LoseScreen.SetActive(true);
+        Hud.SetActive(false);
     }
 
     public void WinGame()
     {
         Time.timeScale = 0;
-        //UIManager.Instance.WinScreen.SetActive(true);
-        //UIManager.Instance.Hud.SetActive(false);
+        WinScreen.SetActive(true);
+        Hud.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+        SceneLoader.Instance.RestartGame();
     }
 }

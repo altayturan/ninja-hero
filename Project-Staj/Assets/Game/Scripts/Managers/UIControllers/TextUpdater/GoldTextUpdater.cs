@@ -1,4 +1,4 @@
-public class GoldTextUpdater : BoosterTextUpdater
+public class GoldTextUpdater : PowerUpTextUpdater
 {
 
     protected override string GetText()

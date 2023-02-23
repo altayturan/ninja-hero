@@ -11,7 +11,7 @@ public class HealthSliderUpdater : MonoBehaviour
     {
         healthBar = GetComponent<Slider>(); 
     }
-    private void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         healthBar.maxValue = playerData.MaxHealth;
         healthBar.value = playerData.Health;

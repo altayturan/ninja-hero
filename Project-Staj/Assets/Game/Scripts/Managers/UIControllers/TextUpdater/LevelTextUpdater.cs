@@ -1,4 +1,4 @@
-public class LevelTextUpdater : BoosterTextUpdater
+public class LevelTextUpdater : PowerUpTextUpdater
 {
     protected override string GetText()
     {

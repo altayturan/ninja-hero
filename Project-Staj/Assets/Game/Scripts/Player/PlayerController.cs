@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private PlayerData playerData;
     [SerializeField] private GameEvent OnPlayerDieEvent;
+    [SerializeField] private GameEvent OnPlayerGetDamage;
     [SerializeField] private TargetEnemy targetEnemy;
 
     #endregion
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.TryGetComponent(out EnemyController enemyController))
         {
             playerData.Health -= enemyController.GetDamage();
+            OnPlayerGetDamage.Invoke();
             if (playerData.Health <= 0)
             {
                 OnPlayerDieEvent.Invoke();

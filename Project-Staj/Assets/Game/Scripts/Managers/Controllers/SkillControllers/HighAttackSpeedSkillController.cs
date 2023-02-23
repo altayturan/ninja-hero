@@ -12,7 +12,7 @@ public class HighAttackSpeedSkillController : BaseSkillController
         playerData.FireInterval = 0.1f;
         yield return new WaitForSeconds(5);
         playerData.FireInterval = oldValue;
-        yield return new WaitForSeconds(skill.Cooldown);
+        yield return new WaitForSeconds(skill.Cooldown-5);
         skillButton.interactable = true;
     }
 

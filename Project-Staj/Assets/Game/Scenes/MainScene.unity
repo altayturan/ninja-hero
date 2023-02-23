@@ -4111,6 +4111,7 @@ MonoBehaviour:
   numberOfShotsPowerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e,
     type: 2}
   gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
+  time: {fileID: 11400000, guid: ab3b49b35bdeaf544939798b4c623319, type: 2}
   spawnInterval: {fileID: 11400000, guid: 01a400feca3815c45a15a2a254d38079, type: 2}
   enemyHealthMultiplier: {fileID: 11400000, guid: d4b9a74aa8e351040b36ff6fafdcdbb3,
     type: 2}
@@ -7511,6 +7512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e986cf09cab6d2448f6fdc209060ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LoseScreen: {fileID: 0}
+  WinScreen: {fileID: 0}
+  Hud: {fileID: 0}
 --- !u!1001 &1687248169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9832,6 +9836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   OnPlayerDieEvent: {fileID: 11400000, guid: cff93daa06bc14b488d0ea9c94f9a267, type: 2}
+  OnPlayerGetDamage: {fileID: 11400000, guid: 8e2b90eeee7893240b81dcaf1aa16dad, type: 2}
   targetEnemy: {fileID: 11400000, guid: bf03d83ec0885534abdd0cae9a83d570, type: 2}
 --- !u!114 &4109836095431572070
 MonoBehaviour:

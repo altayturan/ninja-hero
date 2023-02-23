@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class BoosterTextUpdater : BaseTextUpdater
+public abstract class PowerUpTextUpdater : BaseTextUpdater
 {
     [SerializeField] internal PowerUp powerUp;
 

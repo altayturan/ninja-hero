@@ -10,6 +10,7 @@ public class Resetter : MonoBehaviour
     [SerializeField] private PowerUp damagePowerUp;
     [SerializeField] private PowerUp numberOfShotsPowerUp;
     [SerializeField] private Resource gold;
+    [SerializeField] private Resource time;
     [SerializeField] private Stat spawnInterval;
     [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Stat spawnIntervalMultiplier;
@@ -50,6 +51,7 @@ public class Resetter : MonoBehaviour
         numberOfShotsPowerUp.StatChangeAmount = 1;
 
         gold.Amount = 1000;
+        time.Amount = 120;
 
         spawnInterval.Amount = 3;
 

@@ -31,4 +31,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(2,LoadSceneMode.Additive);
         SceneManager.LoadScene(3, LoadSceneMode.Additive);
     }
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3, LoadSceneMode.Additive);
+    }
 }
