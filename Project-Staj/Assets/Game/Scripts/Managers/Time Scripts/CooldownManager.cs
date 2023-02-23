@@ -3,13 +3,6 @@ using TMPro;
 
 public class CooldownManager : MonoBehaviour
 {
-    [SerializeField] private SpellManager spellManager;
-
-
-    private void Start()
-    {
-    }
-
     private void Update()
     {
         //if(!spellManager.damageAllCasted) { damageAllCooldowner.gameObject.SetActive(false); damageAllCooldown = spellManager.damageAllCooldownTime; }

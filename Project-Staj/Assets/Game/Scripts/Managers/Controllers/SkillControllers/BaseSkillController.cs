@@ -13,6 +13,7 @@ public abstract class BaseSkillController : MonoBehaviour
     public virtual void OnClickSkill()
     {
         if (!gold.isEnough(skill.Cost)) return;
+        skill.OnUsed.Invoke();
         OnGoldChange.Invoke();
     }
 

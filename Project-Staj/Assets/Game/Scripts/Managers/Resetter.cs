@@ -56,6 +56,7 @@ public class Resetter : MonoBehaviour
         enemyHealthMultiplier.Amount = 1.1f;
 
         spawnIntervalMultiplier.Amount = 1.1f;
+
     }
 
 }

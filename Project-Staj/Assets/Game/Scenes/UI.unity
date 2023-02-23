@@ -1914,6 +1914,7 @@ GameObject:
   - component: {fileID: 924843246}
   - component: {fileID: 924843245}
   - component: {fileID: 924843244}
+  - component: {fileID: 924843247}
   m_Layer: 5
   m_Name: DiagonalShotButton
   m_TagString: Untagged
@@ -1987,9 +1988,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1209956406}
-        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: AddDiagonalShot
+      - m_Target: {fileID: 924843247}
+        m_TargetAssemblyTypeName: DiagonalSkillController, Assembly-CSharp
+        m_MethodName: OnClickSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2037,6 +2038,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924843242}
   m_CullTransparentMesh: 1
+--- !u!114 &924843247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924843242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0740c3e104aac054e92a24bb7034149b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill: {fileID: 11400000, guid: b5272ec3324367245a3bcecda171487c, type: 2}
+  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
+  OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
+  skillButton: {fileID: 924843244}
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
 --- !u!1 &973376196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,7 +2801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817bc507deab2634192d29072eaa2f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellManager: {fileID: 1209956406}
 --- !u!1 &1214152165
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,6 +4281,7 @@ GameObject:
   - component: {fileID: 1906632805}
   - component: {fileID: 1906632804}
   - component: {fileID: 1906632803}
+  - component: {fileID: 1906632806}
   m_Layer: 5
   m_Name: DamageAllButton
   m_TagString: Untagged
@@ -4338,9 +4356,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1209956406}
-        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: StartDamageAllCountdown
+      - m_Target: {fileID: 1906632806}
+        m_TargetAssemblyTypeName: DamageAllSkillController, Assembly-CSharp
+        m_MethodName: OnClickSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4388,6 +4406,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906632801}
   m_CullTransparentMesh: 1
+--- !u!114 &1906632806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906632801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77704b4ba1094494fb2af6da02cea39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill: {fileID: 11400000, guid: 8ca30b281b3d53c47b8f6928abf413c8, type: 2}
+  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
+  OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
+  skillButton: {fileID: 1906632803}
 --- !u!1 &1911794598
 GameObject:
   m_ObjectHideFlags: 0

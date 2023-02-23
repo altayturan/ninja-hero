@@ -38,13 +38,24 @@ public class EnemyController : MonoBehaviour
         if (collision.collider.TryGetComponent(out BulletController bulletController))
         {
             enemyData.Health -= bulletData.Damage;
-            if (enemyData.Health <= 0)
-            {
-                Destroy(gameObject);
-                EnemyOnDie.Invoke();
-                OnGoldChange.Invoke();
-            }
+            CheckForDie();
         }
+    }
+    public bool CheckForDie()
+    {
+        if (enemyData.Health <= 0)
+        {
+            EnemyOnDie.Invoke();
+            OnGoldChange.Invoke();
+            Destroy(gameObject);
+            return true;
+        }
+        return false;
+    }
+    public void GetDamageFromSkill()
+    {
+        enemyData.Health -= 200;
+        CheckForDie();
     }
     #endregion
 }
