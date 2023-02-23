@@ -1512,6 +1512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95280761537052202}
   EnemyOnDie: {fileID: 11400000, guid: 16a96494af07228488a62f73b1d86822, type: 2}
+  OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
   bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
   enemyData: {fileID: 11400000, guid: f445f3adcba983c42adeae283eddcfdc, type: 2}
   enemyHealthMultiplier: {fileID: 11400000, guid: d4b9a74aa8e351040b36ff6fafdcdbb3,

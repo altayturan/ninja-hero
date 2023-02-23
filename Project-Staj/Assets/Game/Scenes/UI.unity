@@ -761,7 +761,6 @@ GameObject:
   - component: {fileID: 703356477}
   - component: {fileID: 703356476}
   - component: {fileID: 703356475}
-  - component: {fileID: 703356478}
   - component: {fileID: 703356479}
   m_Layer: 5
   m_Name: AttackSpeedButton
@@ -887,34 +886,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703356473}
   m_CullTransparentMesh: 1
---- !u!114 &703356478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703356473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 532b34505e1e86f44b1ab1e9dd649d9d, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 703356479}
-        m_TargetAssemblyTypeName: BasePowerUpButtonController, Assembly-CSharp
-        m_MethodName: UpdatePowerUpUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &703356479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +903,8 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   levelText: {fileID: 767730462}
   goldText: {fileID: 314767595}
+  powerUpButton: {fileID: 703356475}
+  OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
 --- !u!1 &733557910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1169,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1209956408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -1512,7 +1485,6 @@ GameObject:
   - component: {fileID: 821792857}
   - component: {fileID: 821792856}
   - component: {fileID: 821792855}
-  - component: {fileID: 821792858}
   - component: {fileID: 821792859}
   m_Layer: 5
   m_Name: IncreaseDamageButton
@@ -1638,34 +1610,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821792853}
   m_CullTransparentMesh: 1
---- !u!114 &821792858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821792853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 73697bce446a2a9418d58d8cec9df6ca, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 821792859}
-        m_TargetAssemblyTypeName: BasePowerUpButtonController, Assembly-CSharp
-        m_MethodName: UpdatePowerUpUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &821792859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,6 +1627,8 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   levelText: {fileID: 2026621708}
   goldText: {fileID: 1786077459}
+  powerUpButton: {fileID: 821792855}
+  OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
   bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
 --- !u!1 &844400863
 GameObject:
@@ -2263,7 +2209,6 @@ GameObject:
   - component: {fileID: 1046459343}
   - component: {fileID: 1046459342}
   - component: {fileID: 1046459341}
-  - component: {fileID: 1046459345}
   - component: {fileID: 1046459346}
   m_Layer: 5
   m_Name: IncreaseNumberShotButton
@@ -2389,34 +2334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046459339}
   m_CullTransparentMesh: 1
---- !u!114 &1046459345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046459339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 74acedb33d1607741b2bab4a8e6707d9, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1046459346}
-        m_TargetAssemblyTypeName: BasePowerUpButtonController, Assembly-CSharp
-        m_MethodName: UpdatePowerUpUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1046459346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2434,6 +2351,8 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   levelText: {fileID: 1760475481}
   goldText: {fileID: 1652051710}
+  powerUpButton: {fileID: 1046459341}
+  OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
 --- !u!1 &1058142117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,7 +2718,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1209956407}
   - component: {fileID: 1209956406}
-  - component: {fileID: 1209956408}
   - component: {fileID: 1209956409}
   m_Layer: 0
   m_Name: Manager
@@ -2835,23 +2753,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1209956408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209956405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127613b356156ab4d99bc676b29fd415, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
-  attackSpeedPowerUp: {fileID: 11400000, guid: 85f1971d4b934244e938e11c554078cc, type: 2}
-  damagePowerUp: {fileID: 11400000, guid: 91508db24e7e7e44e8527f168e361675, type: 2}
-  numberOfShotsPowerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e,
-    type: 2}
 --- !u!114 &1209956409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2876,6 +2777,8 @@ GameObject:
   - component: {fileID: 1214152168}
   - component: {fileID: 1214152167}
   - component: {fileID: 1214152166}
+  - component: {fileID: 1214152170}
+  - component: {fileID: 1214152169}
   m_Layer: 5
   m_Name: CurrentGoldText
   m_TagString: Untagged
@@ -3000,6 +2903,47 @@ RectTransform:
   m_AnchoredPosition: {x: -56, y: 2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1214152169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214152165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1214152170}
+        m_TargetAssemblyTypeName: BaseTextUpdater, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1214152170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214152165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47cb6a7131ba28348bfbde82e1e17004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
 --- !u!1 &1301503192
 GameObject:
   m_ObjectHideFlags: 0
@@ -4437,9 +4381,8 @@ GameObject:
   - component: {fileID: 1911794599}
   - component: {fileID: 1911794601}
   - component: {fileID: 1911794603}
-  - component: {fileID: 1911794604}
-  - component: {fileID: 1911794606}
   - component: {fileID: 1911794605}
+  - component: {fileID: 1911794606}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -4464,7 +4407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 109, y: -12}
+  m_AnchoredPosition: {x: -3, y: 1}
   m_SizeDelta: {x: 435.1509, y: 116.0073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1911794601
@@ -4491,7 +4434,7 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1911794604}
+      - m_Target: {fileID: 1911794606}
         m_TargetAssemblyTypeName: BaseTextUpdater, Assembly-CSharp
         m_MethodName: SetText
         m_Mode: 1
@@ -4503,19 +4446,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1911794604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911794598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47cb6a7131ba28348bfbde82e1e17004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resource: {fileID: 11400000, guid: ab3b49b35bdeaf544939798b4c623319, type: 2}
 --- !u!114 &1911794605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4525,7 +4455,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1911794598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -4536,7 +4466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: sdsdsdsdsd
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4563,15 +4493,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 75.49
+  m_fontSizeBase: 75.49
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4589,7 +4519,7 @@ MonoBehaviour:
   checkPaddingRequired: 0
   m_isRichText: 1
   m_parseCtrlCharacters: 1
-  m_isOrthographic: 0
+  m_isOrthographic: 1
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
@@ -4602,54 +4532,22 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1911794606}
-  m_maskType: 0
---- !u!23 &1911794606
-MeshRenderer:
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1911794606
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911794598}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571f313af996b8408b05a7679c7ada1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 11400000, guid: ab3b49b35bdeaf544939798b4c623319, type: 2}
 --- !u!1 &1921791445
 GameObject:
   m_ObjectHideFlags: 0
@@ -5122,7 +5020,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1209956408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1

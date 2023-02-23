@@ -49,7 +49,7 @@ public class Resetter : MonoBehaviour
         numberOfShotsPowerUp.MaxLevel = 3;
         numberOfShotsPowerUp.StatChangeAmount = 1;
 
-        gold.Amount = 10000;
+        gold.Amount = 1000;
 
         spawnInterval.Amount = 3;
 

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Resource : ScriptableObject
 {
     [SerializeField] private int amount;
+    
     public int Amount
     {
         get { return amount; }

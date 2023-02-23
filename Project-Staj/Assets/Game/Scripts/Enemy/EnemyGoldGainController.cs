@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyEventFunctions : MonoBehaviour
+public class EnemyGoldGainController : MonoBehaviour
 {
     [SerializeField] private Resource gold;
     public void KillEnemy()

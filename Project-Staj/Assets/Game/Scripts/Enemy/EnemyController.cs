@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
     #region Variables
     [SerializeField] private Animator animator;
     [SerializeField] private GameEvent EnemyOnDie;
+    [SerializeField] private GameEvent OnGoldChange;
     [SerializeField] private BulletData bulletData;
     [SerializeField] private EnemyData enemyData;
     [SerializeField] private Stat enemyHealthMultiplier;
@@ -26,7 +27,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out PlayerController playerController))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         if (collision.collider.TryGetComponent(out BulletController bulletController))
@@ -36,6 +37,7 @@ public class EnemyController : MonoBehaviour
             {
                 Destroy(gameObject);
                 EnemyOnDie.Invoke();
+                OnGoldChange.Invoke();
             }
         }
     }
