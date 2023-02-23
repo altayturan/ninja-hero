@@ -9,18 +9,15 @@ public abstract class BaseSkillController : MonoBehaviour
     [SerializeField] protected Skill skill;
     [SerializeField] private Resource gold;
     [SerializeField] private GameEvent OnGoldChange;
-    [SerializeField] private Button skillButton;
+    [SerializeField] protected Button skillButton;
     public virtual void OnClickSkill()
     {
         if (!gold.isEnough(skill.Cost)) return;
         OnGoldChange.Invoke();
     }
 
-    protected void StartCooldown(string methodName)
+    protected void StartCooldown(IEnumerator method)
     {
-        if (!gold.isEnough(skill.Cost)) return;
-        skillButton.interactable = false;
-        StartCoroutine(methodName);
-        skillButton.interactable = true;
+        StartCoroutine(method);
     }
 }

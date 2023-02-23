@@ -15,6 +15,11 @@ public class EnemyController : MonoBehaviour
     {
         return enemyData.Damage;
     }
+
+    public EnemyData GetEnemyData()
+    {
+        return enemyData;
+    }
     #endregion
 
     #region Monobehavior Functions
