@@ -2,7 +2,7 @@ using ninjahero.events;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "New PowerUp", menuName = "Create PowerUp")]
+[CreateAssetMenu(fileName = "New PowerUp", menuName = "Boosters/Create PowerUp")]
 public class PowerUp : ScriptableObject
 {
     [SerializeField] private int cost;
