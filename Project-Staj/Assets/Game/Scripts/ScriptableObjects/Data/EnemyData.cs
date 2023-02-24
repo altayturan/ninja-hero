@@ -10,7 +10,7 @@ public class EnemyData : ScriptableObject
 
     public float Health { get { return health; } set { health = value; }  }
     public float Speed { get { return speed; } set { speed = value; } }
-    public float Damage { get { return damage;} }
+    public float Damage { get { return damage;} set { damage = value; } }
 
     public int Prize { get { return prize; } set { prize = value; } }
 }

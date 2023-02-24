@@ -1,5 +1,7 @@
 using UnityEngine;
 using ninjahero.events;
+using Unity.VisualScripting;
+
 public class EnemyController : MonoBehaviour
 {
 
@@ -13,9 +15,25 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Resource gold;
 
 
-    [SerializeField] private float defaultHealth;
+    private float defaultHealth;
+    private float defaultDamage;
+    private float defaultSpeed;
+    private int defaultPrize;
 
     private float damageFromSkill = 200f;
+
+    private void Start()
+    {
+        enemyData.Health *= enemyHealthMultiplier.Amount;
+
+        defaultDamage = enemyData.Damage;
+        defaultPrize = enemyData.Prize;
+        defaultSpeed = enemyData.Speed;
+        defaultHealth = enemyData.Health;
+
+        animator.SetBool("isRunning", true);
+    }
+
     public float GetDamage()
     {
         return enemyData.Damage;
@@ -27,12 +45,6 @@ public class EnemyController : MonoBehaviour
     }
     #endregion
 
-    #region Monobehavior Functions
-    private void Start()
-    {
-        enemyData.Health *= enemyHealthMultiplier.Amount;
-        animator.SetBool("isRunning", true);
-    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.TryGetComponent(out PlayerController playerController))
@@ -46,6 +58,21 @@ public class EnemyController : MonoBehaviour
             CheckForDie();
         }
     }
+    public void GetDamageFromSkill()
+    {
+        enemyData.Health -= damageFromSkill;
+        CheckForDie();
+    }
+
+    public void RestartEnemy()
+    {
+        enemyData.Health = defaultHealth;
+        enemyData.Speed = defaultSpeed;
+        enemyData.Damage= defaultDamage;
+        enemyData.Prize = defaultPrize;
+
+        Destroy(gameObject);
+    }
     public bool CheckForDie()
     {
         if (enemyData.Health <= 0)
@@ -58,15 +85,4 @@ public class EnemyController : MonoBehaviour
         }
         return false;
     }
-    public void GetDamageFromSkill()
-    {
-        enemyData.Health -= damageFromSkill;
-        CheckForDie();
-    }
-
-    public void RestartEnemy()
-    {
-        enemyData.Health = 0;
-    }
-    #endregion
 }
