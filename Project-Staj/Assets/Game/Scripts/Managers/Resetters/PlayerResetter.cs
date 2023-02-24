@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class PlayerResetter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private PlayerData playerData;
+
+    private float defaultSpeed;
+    private float defaultHealth;
+    private float defaultFireInterval;
+    private int defaultNumbeOfShots;
+    private float defaultRange;
+    private bool defaultDiagonalShot;
+    private void Start()
     {
-        
+        defaultSpeed = playerData.Speed;
+        defaultHealth = playerData.Health;
+        defaultFireInterval = playerData.FireInterval;
+        defaultNumbeOfShots = playerData.NumberOfShots;
+        defaultRange = playerData.Range;
+        defaultDiagonalShot = playerData.DiagonalShot;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetPlayer()
     {
-        
+        playerData.Health = defaultHealth;
+        playerData.Speed = defaultSpeed;
+        playerData.Range = defaultRange;
+        playerData.DiagonalShot = defaultDiagonalShot;
+        playerData.FireInterval = defaultFireInterval;
+        playerData.NumberOfShots = defaultNumbeOfShots;
     }
 }

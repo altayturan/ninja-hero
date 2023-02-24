@@ -2,32 +2,15 @@ using UnityEngine;
 using ninjahero.events;
 public class PlayerController : MonoBehaviour
 {
-    #region Variables
 
     [SerializeField] private PlayerData playerData;
     [SerializeField] private GameEvent OnPlayerDieEvent;
     [SerializeField] private GameEvent OnPlayerGetDamage;
     [SerializeField] private TargetEnemy targetEnemy;
     [SerializeField] private GameEvent OnLoseGameEvent;
-
-    private float defaultSpeed;
-    private float defaultHealth;
-    private float defaultFireInterval;
-    private int defaultNumbeOfShots;
-    private float defaultRange;
-    private bool defaultDiagonalShot;
-
-    #endregion
     private void Start()
     {
         playerData.Transform = transform;
-
-        defaultSpeed = playerData.Speed;
-        defaultHealth = playerData.Health;
-        defaultFireInterval = playerData.FireInterval;
-        defaultNumbeOfShots = playerData.NumberOfShots;
-        defaultRange = playerData.Range;
-        defaultDiagonalShot = playerData.DiagonalShot;
     }
 
     public void RotatePlayer()
@@ -54,15 +37,5 @@ public class PlayerController : MonoBehaviour
                 OnLoseGameEvent.Invoke();
             }
         }
-    }
-
-    public void ResetPlayer()
-    {
-        playerData.Health = defaultHealth;
-        playerData.Speed = defaultSpeed;
-        playerData.Range = defaultRange;
-        playerData.DiagonalShot = defaultDiagonalShot;
-        playerData.FireInterval = defaultFireInterval;
-        playerData.NumberOfShots = defaultNumbeOfShots;
     }
 }
