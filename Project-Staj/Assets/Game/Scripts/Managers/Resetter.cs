@@ -24,23 +24,6 @@ public class Resetter : MonoBehaviour
 
     public void ResetGame()
     {
-        bulletData.Damage = 20;
-        bulletData.Speed = 20f;
-
-        playerData.Speed = 10;
-        playerData.MaxHealth = 100;
-        playerData.Health = playerData.MaxHealth;
-        playerData.FireInterval = 2;
-        playerData.NumberOfShots = 1;
-        playerData.Range = 18;
-        playerData.DiagonalShot = false;
-
-        speedyData.Health = 20;
-        speedyData.Speed = 10;
-
-        tankData.Health = 100;
-        tankData.Speed = 5;
-
         attackSpeedPowerUp.Cost = 20;
         attackSpeedPowerUp.Level = 0;
         attackSpeedPowerUp.MaxLevel = 11;
