@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class EnemyResetter : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private EnemyData enemyData;
+
+    private float defaultHealth;
+    private float defaultDamage;
+    private float defaultSpeed;
+    private int defaultPrize;
     void Start()
     {
-        
+        defaultDamage = enemyData.Damage;
+        defaultPrize = enemyData.Prize;
+        defaultSpeed = enemyData.Speed;
+        defaultHealth = enemyData.Health;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RestartEnemy()
     {
-        
+        enemyData.Health = defaultHealth;
+        enemyData.Speed = defaultSpeed;
+        enemyData.Damage = defaultDamage;
+        enemyData.Prize = defaultPrize;
+
+        Destroy(gameObject);
     }
+
 }

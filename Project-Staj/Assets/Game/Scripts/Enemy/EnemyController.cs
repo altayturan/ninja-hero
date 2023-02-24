@@ -15,10 +15,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Resource gold;
 
 
-    private float defaultHealth;
-    private float defaultDamage;
-    private float defaultSpeed;
-    private int defaultPrize;
+    
 
     private float damageFromSkill = 200f;
 
@@ -26,10 +23,7 @@ public class EnemyController : MonoBehaviour
     {
         enemyData.Health *= enemyHealthMultiplier.Amount;
 
-        defaultDamage = enemyData.Damage;
-        defaultPrize = enemyData.Prize;
-        defaultSpeed = enemyData.Speed;
-        defaultHealth = enemyData.Health;
+        
 
         animator.SetBool("isRunning", true);
     }
@@ -66,11 +60,6 @@ public class EnemyController : MonoBehaviour
 
     public void RestartEnemy()
     {
-        enemyData.Health = defaultHealth;
-        enemyData.Speed = defaultSpeed;
-        enemyData.Damage= defaultDamage;
-        enemyData.Prize = defaultPrize;
-
         Destroy(gameObject);
     }
     public bool CheckForDie()
