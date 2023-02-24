@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2388950080204088857}
   - component: {fileID: 5700685154638126371}
   - component: {fileID: 6488803776815852062}
+  - component: {fileID: 3150466686156190954}
   m_Layer: 0
   m_Name: Shuriken
   m_TagString: Untagged
@@ -82,7 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a8c4bbe89d9b04894fc52d3ea4a4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetEnemy: {fileID: 11400000, guid: bf03d83ec0885534abdd0cae9a83d570, type: 2}
   bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
 --- !u!65 &5700685154638126371
 BoxCollider:
@@ -113,6 +113,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!114 &3150466686156190954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3713431835161269747}
+        m_TargetAssemblyTypeName: BulletController, Assembly-CSharp
+        m_MethodName: ResetBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &171644
 GameObject:
   m_ObjectHideFlags: 0

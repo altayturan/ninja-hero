@@ -1420,6 +1420,7 @@ GameObject:
   - component: {fileID: 5447258327832235325}
   - component: {fileID: 4880933494433340408}
   - component: {fileID: 506094719506536700}
+  - component: {fileID: 8876315081176336580}
   m_Layer: 0
   m_Name: TankSkeleton
   m_TagString: Enemy
@@ -1561,6 +1562,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8876315081176336580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404409735730676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1409614339385140
 GameObject:
   m_ObjectHideFlags: 0

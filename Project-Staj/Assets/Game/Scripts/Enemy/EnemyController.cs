@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Resource gold;
 
+
+    [SerializeField] private float defaultHealth;
+
     private float damageFromSkill = 200f;
     public float GetDamage()
     {
@@ -59,6 +62,11 @@ public class EnemyController : MonoBehaviour
     {
         enemyData.Health -= damageFromSkill;
         CheckForDie();
+    }
+
+    public void RestartEnemy()
+    {
+        enemyData.Health = 0;
     }
     #endregion
 }
