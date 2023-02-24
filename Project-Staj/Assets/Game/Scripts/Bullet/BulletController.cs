@@ -18,7 +18,7 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    public void ResetBullet()
+    public void DestroyBullet()
     {
         Destroy(this.gameObject);
     }
