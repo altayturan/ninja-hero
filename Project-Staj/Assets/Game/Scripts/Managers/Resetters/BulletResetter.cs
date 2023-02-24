@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class BulletResetter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private BulletData bulletData;
+
+    private float defaultDamage;
+    private float defaultSpeed;
+    private void Start()
     {
-        
+        defaultDamage = bulletData.Damage;
+        defaultSpeed = bulletData.Speed;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RestartBullet()
     {
-        
+        bulletData.Damage = defaultDamage;
+        bulletData.Speed = defaultSpeed;
     }
 }
