@@ -11,9 +11,7 @@ public class Resetter : MonoBehaviour
     [SerializeField] private PowerUp numberOfShotsPowerUp;
     [SerializeField] private Resource gold;
     [SerializeField] private Resource time;
-    [SerializeField] private Stat spawnInterval;
-    [SerializeField] private Stat enemyHealthMultiplier;
-    [SerializeField] private Stat spawnIntervalMultiplier;
+    
     [SerializeField] private Transform playerTransform;
 
 
@@ -38,13 +36,6 @@ public class Resetter : MonoBehaviour
         numberOfShotsPowerUp.Level = 0;
         numberOfShotsPowerUp.MaxLevel = 3;
         numberOfShotsPowerUp.StatChangeAmount = 1;
-
-        gold.Amount = 1000;
-        time.Amount = 120;
-
-        spawnInterval.Amount = 3;
-        enemyHealthMultiplier.Amount = 1.1f;
-        spawnIntervalMultiplier.Amount = 1.1f;
 
         playerTransform.position = new Vector3(0, 0, 0);
     }
