@@ -10,7 +10,7 @@ public class EnemyResetter : MonoBehaviour
     private float defaultDamage;
     private float defaultSpeed;
     private int defaultPrize;
-    void Start()
+    void Awake()
     {
         defaultDamage = enemyData.Damage;
         defaultPrize = enemyData.Prize;

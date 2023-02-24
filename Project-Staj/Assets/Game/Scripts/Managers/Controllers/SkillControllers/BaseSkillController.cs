@@ -23,4 +23,9 @@ public abstract class BaseSkillController : MonoBehaviour
     }
 
     protected abstract IEnumerator GetCooldown();
+
+    public void ResetSkill()
+    {
+        StopAllCoroutines();
+    }
 }

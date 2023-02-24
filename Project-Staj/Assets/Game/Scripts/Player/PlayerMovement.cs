@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private enum Phases { }
 
     [SerializeField] private Rigidbody rb;
     [SerializeField] private JoystickController joystick;

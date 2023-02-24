@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class GameRestarter : MonoBehaviour
 {
-    [SerializeField] private GameObject LoseScreen;
-    [SerializeField] private GameObject WinScreen;
-    [SerializeField] private GameObject Hud;
+    [SerializeField] private Canvas LoseScreen;
+    [SerializeField] private Canvas WinScreen;
+    [SerializeField] private Canvas Hud;
 
     [SerializeField] private GameEvent OnRestart;
 
@@ -14,8 +14,8 @@ public class GameRestarter : MonoBehaviour
         OnRestart.Invoke();
 
         Time.timeScale = 1;
-        WinScreen.SetActive(false);
-        LoseScreen.SetActive(false);
-        Hud.SetActive(true);
+        WinScreen.enabled= false;
+        LoseScreen.enabled = false;
+        Hud.enabled = true;
     }
 }

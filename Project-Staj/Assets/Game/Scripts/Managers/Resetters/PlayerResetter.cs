@@ -12,7 +12,7 @@ public class PlayerResetter : MonoBehaviour
     private int defaultNumbeOfShots;
     private float defaultRange;
     private bool defaultDiagonalShot;
-    private void Start()
+    private void Awake()
     {
         defaultSpeed = playerData.Speed;
         defaultHealth = playerData.Health;
@@ -30,5 +30,6 @@ public class PlayerResetter : MonoBehaviour
         playerData.DiagonalShot = defaultDiagonalShot;
         playerData.FireInterval = defaultFireInterval;
         playerData.NumberOfShots = defaultNumbeOfShots;
+        playerData.Transform.position = new Vector3(0, 0, 0);
     }
 }

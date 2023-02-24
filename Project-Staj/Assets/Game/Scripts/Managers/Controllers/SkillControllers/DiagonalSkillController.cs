@@ -4,6 +4,11 @@ using UnityEngine;
 public class DiagonalSkillController : BaseSkillController
 {
     [SerializeField] private PlayerData playerData;
+
+    private void Start()
+    {
+        skillButton.interactable = true;
+    }
     public override void OnClickSkill()
     {
         base.OnClickSkill();
@@ -20,4 +25,5 @@ public class DiagonalSkillController : BaseSkillController
     {
         yield return new WaitForSeconds(skill.Cooldown);
     }
+
 }

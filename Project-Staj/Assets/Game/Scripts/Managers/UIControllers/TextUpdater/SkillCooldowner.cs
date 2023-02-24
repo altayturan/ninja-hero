@@ -30,7 +30,7 @@ public class SkillCooldowner : BaseTextUpdater
         yield return new WaitForSeconds(1);
         yield return ReduceCountdowner();
     }
-    private void DeactivateCooldown()
+    public void DeactivateCooldown()
     {
         StopAllCoroutines();
         tempCooldown = skill.Cooldown;

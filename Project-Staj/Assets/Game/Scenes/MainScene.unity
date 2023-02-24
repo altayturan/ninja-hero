@@ -4216,7 +4216,6 @@ GameObject:
   - component: {fileID: 784361191}
   - component: {fileID: 784361192}
   - component: {fileID: 784361193}
-  - component: {fileID: 784361194}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -4307,48 +4306,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 784361187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4955410024f8f1146a976887cc53b6b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d566da5b1b368342913ab5e2de13003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
-  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
-  speedyData: {fileID: 11400000, guid: dbbdfe0a933797b47a75e949afe199a1, type: 2}
-  tankData: {fileID: 11400000, guid: f445f3adcba983c42adeae283eddcfdc, type: 2}
-  attackSpeedPowerUp: {fileID: 11400000, guid: 85f1971d4b934244e938e11c554078cc, type: 2}
-  damagePowerUp: {fileID: 11400000, guid: 91508db24e7e7e44e8527f168e361675, type: 2}
-  numberOfShotsPowerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e,
-    type: 2}
-  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
-  time: {fileID: 11400000, guid: ab3b49b35bdeaf544939798b4c623319, type: 2}
-  playerTransform: {fileID: 4109836095431572064}
---- !u!114 &784361194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784361187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 784361193}
-        m_TargetAssemblyTypeName: Resetter, Assembly-CSharp
-        m_MethodName: ResetGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+  onRestart: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
 --- !u!4 &796445451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2733845855538509057, guid: 61364f025cf3e32469d90fbb605b101a,

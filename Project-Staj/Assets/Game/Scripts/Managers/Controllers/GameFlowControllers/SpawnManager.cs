@@ -31,7 +31,7 @@ public class SpawnManager : MonoBehaviour
     private IEnumerator SpawnCountdown()
     {
         Spawn(spawners[Random.Range(0, spawners.Length)]);
-        yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
+        yield return new WaitForSeconds(spawnInterval.Amount /* * spawnIntervalMultiplier.Amount*/);
         yield return SpawnCountdown();
     }
 

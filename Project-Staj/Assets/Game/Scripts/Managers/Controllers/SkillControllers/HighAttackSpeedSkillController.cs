@@ -4,6 +4,8 @@ using UnityEngine;
 public class HighAttackSpeedSkillController : BaseSkillController
 {
     [SerializeField] private PlayerData playerData;
+
+    
     protected IEnumerator HighAttackSpeedCoolDown()
     {
         skillButton.interactable = false;

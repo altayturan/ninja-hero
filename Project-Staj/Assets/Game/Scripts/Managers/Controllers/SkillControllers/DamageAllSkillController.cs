@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class DamageAllSkillController : BaseSkillController
 {
+    
     protected IEnumerator DamageAllCooldown()
     {
         skillButton.interactable = false;

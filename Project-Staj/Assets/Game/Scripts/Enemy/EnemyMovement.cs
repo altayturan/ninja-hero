@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();//drag drop
     }
     private void Update()
     {
@@ -19,12 +19,8 @@ public class EnemyMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Move();
-    }
-
-    private void Move()
-    {
         rb.velocity = direction * enemyData.Speed;
     }
+
 
 }

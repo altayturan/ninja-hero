@@ -9,7 +9,7 @@ public class PowerUpResetter : MonoBehaviour
     private int defaultCost;
     private int defaultLevel;
     private float defaultStatChangeAmount;
-    void Start()
+    void Awake()
     {
         defaultCost = powerUp.Cost;
         defaultLevel = powerUp.Level;

@@ -6,7 +6,7 @@ public class BulletController : MonoBehaviour
     {
         Destroy(this.gameObject, 6f);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)//trigger
     {
         if (collision.collider.TryGetComponent(out EnemyController enemyController))
         {

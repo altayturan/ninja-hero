@@ -8,7 +8,7 @@ public class BulletResetter : MonoBehaviour
 
     private float defaultDamage;
     private float defaultSpeed;
-    private void Start()
+    private void Awake()
     {
         defaultDamage = bulletData.Damage;
         defaultSpeed = bulletData.Speed;

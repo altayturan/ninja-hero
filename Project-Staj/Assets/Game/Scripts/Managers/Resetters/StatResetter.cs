@@ -11,7 +11,7 @@ public class StatResetter : MonoBehaviour
     private float defaultSpawnInterval;
     private float defaultEnemyHealthMultiplier;
     private float defaultSpawnIntervalMultiplier;
-    void Start()
+    void Awake()
     {
         defaultSpawnInterval = spawnInterval.Amount;
         defaultEnemyHealthMultiplier = enemyHealthMultiplier.Amount;
