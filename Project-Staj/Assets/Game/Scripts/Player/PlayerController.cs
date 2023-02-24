@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameEvent OnPlayerDieEvent;
     [SerializeField] private GameEvent OnPlayerGetDamage;
     [SerializeField] private TargetEnemy targetEnemy;
+    [SerializeField] private GameEvent OnLoseGameEvent;
 
     #endregion
+    private void Start()
+    {
+        playerData.Transform = transform;
+    }
 
-    #region Monobehavior Functions
     public void RotatePlayer()
     {
         if (targetEnemy.GetTarget(out Transform target))
@@ -24,7 +28,6 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerData.Range);
     }
-    #endregion
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -34,7 +37,7 @@ public class PlayerController : MonoBehaviour
             OnPlayerGetDamage.Invoke();
             if (playerData.Health <= 0)
             {
-                OnPlayerDieEvent.Invoke();
+                OnLoseGameEvent.Invoke();
             }
         }
     }

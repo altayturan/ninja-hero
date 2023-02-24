@@ -14,9 +14,15 @@ public class Resetter : MonoBehaviour
     [SerializeField] private Stat spawnInterval;
     [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Stat spawnIntervalMultiplier;
+    [SerializeField] private Transform playerTransform;
 
 
     private void Awake()
+    {
+        ResetGame();
+    }
+
+    public void ResetGame()
     {
         bulletData.Damage = 20;
         bulletData.Speed = 20f;
@@ -54,11 +60,10 @@ public class Resetter : MonoBehaviour
         time.Amount = 120;
 
         spawnInterval.Amount = 3;
-
         enemyHealthMultiplier.Amount = 1.1f;
-
         spawnIntervalMultiplier.Amount = 1.1f;
 
+        playerTransform.position = new Vector3(0, 0, 0);
     }
 
 }

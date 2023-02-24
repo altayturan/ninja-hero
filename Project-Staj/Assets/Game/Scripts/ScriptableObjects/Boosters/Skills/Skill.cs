@@ -1,6 +1,4 @@
 using ninjahero.events;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Skill", menuName = "Boosters/Create Skill")]

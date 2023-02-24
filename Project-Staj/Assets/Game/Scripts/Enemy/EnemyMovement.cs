@@ -2,21 +2,20 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private Transform playerTransform;
     private Rigidbody rb;
     private Vector3 direction;
 
     [SerializeField] private EnemyData enemyData;
+    [SerializeField] private PlayerData playerData;
 
     private void Start()
     {
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
-        transform.LookAt(playerTransform);
-        direction = (playerTransform.position - transform.position).normalized;
+        transform.LookAt(playerData.Transform);
+        direction = (playerData.Transform.position - transform.position).normalized;
     }
     private void FixedUpdate()
     {
@@ -27,6 +26,5 @@ public class EnemyMovement : MonoBehaviour
     {
         rb.velocity = direction * enemyData.Speed;
     }
-
 
 }

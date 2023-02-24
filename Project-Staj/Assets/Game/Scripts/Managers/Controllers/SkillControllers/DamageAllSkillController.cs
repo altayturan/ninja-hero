@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageAllSkillController : BaseSkillController
@@ -11,9 +10,8 @@ public class DamageAllSkillController : BaseSkillController
         skillButton.interactable = true;
     }
 
-    public override void OnClickSkill()
+    protected override IEnumerator GetCooldown()
     {
-        base.OnClickSkill();
-        base.StartCooldown(DamageAllCooldown());
+        return DamageAllCooldown();
     }
 }

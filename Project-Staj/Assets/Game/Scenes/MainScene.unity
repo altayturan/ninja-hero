@@ -526,7 +526,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1670411435}
   - {fileID: 1571658106}
   - {fileID: 1135130943}
   m_Father: {fileID: 0}
@@ -4009,6 +4008,7 @@ GameObject:
   - component: {fileID: 784361191}
   - component: {fileID: 784361192}
   - component: {fileID: 784361193}
+  - component: {fileID: 784361194}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -4117,6 +4117,35 @@ MonoBehaviour:
     type: 2}
   spawnIntervalMultiplier: {fileID: 11400000, guid: 9b0d350006bb35648bf886cd6ded3e1f,
     type: 2}
+  playerTransform: {fileID: 4109836095431572064}
+--- !u!114 &784361194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784361187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 784361193}
+        m_TargetAssemblyTypeName: Resetter, Assembly-CSharp
+        m_MethodName: ResetGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!4 &796445451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2733845855538509057, guid: 61364f025cf3e32469d90fbb605b101a,
@@ -5760,8 +5789,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1135130943}
-  - component: {fileID: 1135130944}
-  - component: {fileID: 1135130945}
   - component: {fileID: 1135130946}
   m_Layer: 0
   m_Name: PlayerListener
@@ -5783,49 +5810,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 87078680}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1135130944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135130942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: cff93daa06bc14b488d0ea9c94f9a267, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1135130945}
-        m_TargetAssemblyTypeName: PlayerEventFunctions, Assembly-CSharp
-        m_MethodName: OnPlayerDie
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1135130945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135130942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5159393ea1b68054da4a7be89b946868, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnLoseGameEvent: {fileID: 11400000, guid: 721c067132fab13458a778f7a5688ae7, type: 2}
 --- !u!114 &1135130946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6848,8 +6834,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1571658106}
-  - component: {fileID: 1571658107}
-  - component: {fileID: 1571658108}
   m_Layer: 0
   m_Name: EnemyListener
   m_TagString: Untagged
@@ -6870,49 +6854,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 87078680}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1571658107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571658105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 16a96494af07228488a62f73b1d86822, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1571658108}
-        m_TargetAssemblyTypeName: EnemyEventFunctions, Assembly-CSharp
-        m_MethodName: KillEnemy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1571658108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571658105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96b63e2b09094f448e3dc39a121d871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
 --- !u!1001 &1587357204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7410,111 +7353,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1670411434
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1670411435}
-  - component: {fileID: 1670411437}
-  - component: {fileID: 1670411436}
-  - component: {fileID: 1670411438}
-  m_Layer: 0
-  m_Name: GameConditionListener
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1670411435
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670411434}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 87078680}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1670411436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670411434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: cff93daa06bc14b488d0ea9c94f9a267, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1670411438}
-        m_TargetAssemblyTypeName: GameConditionController, Assembly-CSharp
-        m_MethodName: LoseGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1670411437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670411434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 30cd3df41e9931a40af225dae32b060d, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1670411438}
-        m_TargetAssemblyTypeName: GameConditionController, Assembly-CSharp
-        m_MethodName: WinGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1670411438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670411434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e986cf09cab6d2448f6fdc209060ee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LoseScreen: {fileID: 0}
-  WinScreen: {fileID: 0}
-  Hud: {fileID: 0}
 --- !u!1001 &1687248169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7983,7 +7821,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25076
+  m_Name: pb_Mesh46954
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9838,6 +9676,7 @@ MonoBehaviour:
   OnPlayerDieEvent: {fileID: 11400000, guid: cff93daa06bc14b488d0ea9c94f9a267, type: 2}
   OnPlayerGetDamage: {fileID: 11400000, guid: 8e2b90eeee7893240b81dcaf1aa16dad, type: 2}
   targetEnemy: {fileID: 11400000, guid: bf03d83ec0885534abdd0cae9a83d570, type: 2}
+  OnLoseGameEvent: {fileID: 11400000, guid: 721c067132fab13458a778f7a5688ae7, type: 2}
 --- !u!114 &4109836095431572070
 MonoBehaviour:
   m_ObjectHideFlags: 0

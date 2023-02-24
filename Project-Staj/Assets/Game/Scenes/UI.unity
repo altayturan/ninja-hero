@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 359352182}
   - component: {fileID: 359352181}
   - component: {fileID: 359352180}
+  - component: {fileID: 359352184}
   m_Layer: 0
   m_Name: GameConditionListener
   m_TagString: Untagged
@@ -874,6 +875,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &359352184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359352179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18eac61d1a66a9c4497967393e148282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoseScreen: {fileID: 844400863}
+  WinScreen: {fileID: 974179810}
+  Hud: {fileID: 1580796457}
+  OnRestart: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
 --- !u!1 &567844522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7720e5d8799ba54099baad1b2b5f9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 733557912}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
 --- !u!114 &733557914
 MonoBehaviour:
@@ -1365,9 +1383,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 359352180}
-        m_TargetAssemblyTypeName: GameConditionController, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 359352184}
+        m_TargetAssemblyTypeName: RestartEventTrigger, Assembly-CSharp
+        m_MethodName: TriggerRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5193,9 +5211,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 359352180}
-        m_TargetAssemblyTypeName: GameConditionController, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 359352184}
+        m_TargetAssemblyTypeName: RestartEventTrigger, Assembly-CSharp
+        m_MethodName: TriggerRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

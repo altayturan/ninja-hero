@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DiagonalSkillController : BaseSkillController
@@ -10,5 +9,15 @@ public class DiagonalSkillController : BaseSkillController
         base.OnClickSkill();
         playerData.DiagonalShot = true;
         skillButton.interactable = false;
+    }
+
+    protected override IEnumerator GetCooldown()
+    {
+        return DiagonalCooldowner();
+    }
+
+    private IEnumerator DiagonalCooldowner()
+    {
+        yield return new WaitForSeconds(skill.Cooldown);
     }
 }

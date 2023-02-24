@@ -18,9 +18,4 @@ public class GameConditionController : MonoBehaviour
         WinScreen.SetActive(true);
         Hud.SetActive(false);
     }
-
-    public void RestartGame()
-    {
-        SceneLoader.Instance.RestartGame();
-    }
 }

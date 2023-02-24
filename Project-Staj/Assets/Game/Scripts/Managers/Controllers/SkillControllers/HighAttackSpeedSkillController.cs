@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HighAttackSpeedSkillController : BaseSkillController
@@ -15,10 +14,8 @@ public class HighAttackSpeedSkillController : BaseSkillController
         yield return new WaitForSeconds(skill.Cooldown-5);
         skillButton.interactable = true;
     }
-
-    public override void OnClickSkill()
+    protected override IEnumerator GetCooldown()
     {
-        base.OnClickSkill();
-        base.StartCooldown(HighAttackSpeedCoolDown());
+        return HighAttackSpeedCoolDown();
     }
 }

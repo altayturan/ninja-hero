@@ -302,6 +302,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: dbbdfe0a933797b47a75e949afe199a1, type: 2}
   enemyHealthMultiplier: {fileID: 11400000, guid: d4b9a74aa8e351040b36ff6fafdcdbb3,
     type: 2}
+  gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
 --- !u!114 &2481629666387241583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: dbbdfe0a933797b47a75e949afe199a1, type: 2}
+  playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
 --- !u!114 &3099417778661505271
 MonoBehaviour:
   m_ObjectHideFlags: 0

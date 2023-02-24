@@ -12,6 +12,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] private int numberOfShots;
     [SerializeField] private float range;
     [SerializeField] private bool diagonalShot = false;
+    [SerializeField] private Transform transform;
     [SerializeField] private Phases currentPhase;
 
     public float Speed { get { return speed; } set { speed = value; } }
@@ -24,4 +25,8 @@ public class PlayerData : ScriptableObject
     public bool DiagonalShot { get { return diagonalShot; } set { diagonalShot = value; } }
 
     public Phases CurrentPhase { get { return currentPhase; } set { currentPhase = value; } }
+
+    public Transform Transform { get { return transform; } set { transform = value; } }
+
+    
 }

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -8,12 +7,10 @@ public class SkillCooldowner : BaseTextUpdater
     [SerializeField] private Skill skill;
     [SerializeField] private TMP_Text cooldownText;
     private float tempCooldown;
-    private bool isActivated = false;
 
     public void ActivateCooldown()
     {
         tempCooldown = skill.Cooldown;
-        isActivated = true;
         cooldownText.enabled = true;
         StartCoroutine(ReduceCountdowner());
     }
@@ -37,7 +34,6 @@ public class SkillCooldowner : BaseTextUpdater
     {
         StopAllCoroutines();
         tempCooldown = skill.Cooldown;
-        isActivated = false;
         cooldownText.enabled = false;
     }
 }

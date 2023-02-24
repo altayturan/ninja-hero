@@ -10,7 +10,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private BulletData bulletData;
     [SerializeField] private EnemyData enemyData;
     [SerializeField] private Stat enemyHealthMultiplier;
+    [SerializeField] private Resource gold;
 
+    private float damageFromSkill = 200f;
     public float GetDamage()
     {
         return enemyData.Damage;
@@ -45,6 +47,7 @@ public class EnemyController : MonoBehaviour
     {
         if (enemyData.Health <= 0)
         {
+            gold.Amount += enemyData.Prize;
             EnemyOnDie.Invoke();
             OnGoldChange.Invoke();
             Destroy(gameObject);
@@ -54,7 +57,7 @@ public class EnemyController : MonoBehaviour
     }
     public void GetDamageFromSkill()
     {
-        enemyData.Health -= 200;
+        enemyData.Health -= damageFromSkill;
         CheckForDie();
     }
     #endregion

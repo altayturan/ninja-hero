@@ -1,6 +1,5 @@
 using ninjahero.events;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,10 +14,13 @@ public abstract class BaseSkillController : MonoBehaviour
         if (!gold.isEnough(skill.Cost)) return;
         skill.OnUsed.Invoke();
         OnGoldChange.Invoke();
+        StartCooldown(GetCooldown());
     }
 
     protected void StartCooldown(IEnumerator method)
     {
         StartCoroutine(method);
     }
+
+    protected abstract IEnumerator GetCooldown();
 }
