@@ -24,8 +24,6 @@ public class EnemyResetter : MonoBehaviour
         enemyData.Speed = defaultSpeed;
         enemyData.Damage = defaultDamage;
         enemyData.Prize = defaultPrize;
-
-        Destroy(gameObject);
     }
 
 }

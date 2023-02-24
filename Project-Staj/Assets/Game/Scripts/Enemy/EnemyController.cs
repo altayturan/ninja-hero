@@ -22,9 +22,6 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         enemyData.Health *= enemyHealthMultiplier.Amount;
-
-        
-
         animator.SetBool("isRunning", true);
     }
 
@@ -58,7 +55,7 @@ public class EnemyController : MonoBehaviour
         CheckForDie();
     }
 
-    public void RestartEnemy()
+    public void DestroyEnemy()
     {
         Destroy(gameObject);
     }
