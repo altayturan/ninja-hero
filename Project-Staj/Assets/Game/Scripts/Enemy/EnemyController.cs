@@ -11,13 +11,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameEvent OnGoldChange;
     [SerializeField] private BulletData bulletData;
     [SerializeField] private EnemyData enemyData;
+    [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Resource gold;
     [SerializeField] private float health;
     private float damageFromSkill = 200f;
 
     private void Start()
     {
-        health = enemyData.Health;
+        health = enemyData.Health * enemyHealthMultiplier.Amount;
         animator.SetBool("isRunning", true);
     }
 
