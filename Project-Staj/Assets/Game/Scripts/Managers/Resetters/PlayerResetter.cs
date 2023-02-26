@@ -6,30 +6,14 @@ public class PlayerResetter : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData;
 
-    private float defaultSpeed;
-    private float defaultHealth;
-    private float defaultFireInterval;
-    private int defaultNumbeOfShots;
-    private float defaultRange;
-    private bool defaultDiagonalShot;
-    private void Awake()
-    {
-        defaultSpeed = playerData.Speed;
-        defaultHealth = playerData.Health;
-        defaultFireInterval = playerData.FireInterval;
-        defaultNumbeOfShots = playerData.NumberOfShots;
-        defaultRange = playerData.Range;
-        defaultDiagonalShot = playerData.DiagonalShot;
-    }
-
     public void ResetPlayer()
     {
-        playerData.Health = defaultHealth;
-        playerData.Speed = defaultSpeed;
-        playerData.Range = defaultRange;
-        playerData.DiagonalShot = defaultDiagonalShot;
-        playerData.FireInterval = defaultFireInterval;
-        playerData.NumberOfShots = defaultNumbeOfShots;
+        playerData.Health = playerData.BaseHealth;
+        playerData.Speed = playerData.BaseSpeed;
+        playerData.Range = playerData.BaseRange;
+        playerData.DiagonalShot = playerData.BaseDiagonalShot;
+        playerData.FireInterval = playerData.BaseFireInterval;
+        playerData.NumberOfShots = playerData.BaseNumberOfShots;
         playerData.Transform.position = new Vector3(0, 0, 0);
     }
 }

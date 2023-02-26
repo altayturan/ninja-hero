@@ -4,9 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Resource", menuName = "Create Resource")]
 public class Resource : ScriptableObject
 {
-    [SerializeField] private int amount;
+    [SerializeField] private int baseAmount;
+
     [SerializeField] private GameEvent onResourceChange;
 
+    private int amount;
     public int Amount
     {
         get { return amount; }
@@ -17,6 +19,8 @@ public class Resource : ScriptableObject
         }
     }
 
+    public int BaseAmount { get => baseAmount; }
+
     public bool isEnough(int val)
     {
         if (Amount >= val)
@@ -24,9 +28,12 @@ public class Resource : ScriptableObject
             Amount -= val;
             return true;
         }
-
-
         return false;
+    }
+
+    private void OnEnable()
+    {
+        amount = BaseAmount;
     }
 
 }

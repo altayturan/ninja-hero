@@ -5,8 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New PowerUp", menuName = "Boosters/Create PowerUp")]
 public class PowerUp : Booster
 {
-    [SerializeField] private int maxLevel;
-    [SerializeField] private float statChangeAmount;
+    [SerializeField] private int baseMaxLevel;
+    [SerializeField] private float baseStatChangeAmount;
+
+    private int maxLevel;
+    private float statChangeAmount;
 
     [SerializeField] private GameEvent OnLevelChanged;
     public override int Level
@@ -35,8 +38,20 @@ public class PowerUp : Booster
             statChangeAmount = value;
         }
     }
+
+    public int BaseMaxLevel { get => baseMaxLevel; }
+    public float BaseStatChangeAmount { get => baseStatChangeAmount; }
+
     public void LevelUp()
     {
         Level++;
+    }
+
+    private void OnEnable()
+    {
+        statChangeAmount = BaseStatChangeAmount;
+        maxLevel = BaseMaxLevel;
+        cost = baseCost;
+        level = baseLevel;
     }
 }

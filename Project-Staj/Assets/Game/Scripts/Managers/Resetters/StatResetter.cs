@@ -8,21 +8,11 @@ public class StatResetter : MonoBehaviour
     [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Stat spawnIntervalMultiplier;
 
-    private float defaultSpawnInterval;
-    private float defaultEnemyHealthMultiplier;
-    private float defaultSpawnIntervalMultiplier;
-    void Awake()
-    {
-        defaultSpawnInterval = spawnInterval.Amount;
-        defaultEnemyHealthMultiplier = enemyHealthMultiplier.Amount;
-        defaultSpawnIntervalMultiplier = spawnIntervalMultiplier.Amount;
-    }
-
     public void RestartStats()
     {
-        spawnInterval.Amount = defaultSpawnInterval;
-        enemyHealthMultiplier.Amount = defaultEnemyHealthMultiplier;
-        spawnIntervalMultiplier.Amount = defaultSpawnIntervalMultiplier;
+        spawnInterval.Amount = spawnInterval.BaseAmount;
+        enemyHealthMultiplier.Amount = enemyHealthMultiplier.BaseAmount;
+        spawnIntervalMultiplier.Amount = spawnIntervalMultiplier.BaseAmount;
     }
 
 }
