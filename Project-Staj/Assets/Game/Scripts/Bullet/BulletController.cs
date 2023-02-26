@@ -2,11 +2,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField] private BulletData bulletData;
-    private float bulletDamage;
     private void Start()
     {
-        bulletDamage = bulletData.Damage;
         Destroy(this.gameObject, 6f);
     }
     private void OnCollisionEnter(Collision collision)//trigger
