@@ -1,8 +1,8 @@
-public class GoldTextUpdater : PowerUpTextUpdater
+public class GoldTextUpdater : BoosterTextUpdater
 {
 
     protected override string GetText()
     {
-        return powerUp.Cost.ToString();
+        return booster.Cost.ToString();
     }
 }

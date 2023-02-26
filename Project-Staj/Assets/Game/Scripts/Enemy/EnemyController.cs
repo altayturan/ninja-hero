@@ -1,6 +1,5 @@
 using UnityEngine;
 using ninjahero.events;
-using Unity.VisualScripting;
 
 public class EnemyController : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Resource gold;
     [SerializeField] private float health;
+
     private float damageFromSkill = 200f;
 
     private void Start()

@@ -1,7 +1,8 @@
-public class LevelTextUpdater : PowerUpTextUpdater
+public class LevelTextUpdater : BoosterTextUpdater
 {
+    
     protected override string GetText()
     {
-        return "Lvl. " + powerUp.Level.ToString();
+        return "Lvl. " + booster.Level.ToString();
     }
 }

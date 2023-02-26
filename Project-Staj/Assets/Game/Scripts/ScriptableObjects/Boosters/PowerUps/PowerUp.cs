@@ -3,23 +3,13 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "New PowerUp", menuName = "Boosters/Create PowerUp")]
-public class PowerUp : ScriptableObject
+public class PowerUp : Booster
 {
-    [SerializeField] private int cost;
-    [SerializeField] private int level;
     [SerializeField] private int maxLevel;
     [SerializeField] private float statChangeAmount;
 
     [SerializeField] private GameEvent OnLevelChanged;
-    public int Cost
-    {
-        get { return cost; }
-        set
-        {
-            cost = value;
-        }
-    }
-    public int Level
+    public override int Level
     {
         get { return level; }
         set
