@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField] private EnemyData enemyData;
     private void Start()
     {
         DestroyBullet(2f);
@@ -32,13 +31,4 @@ public class BulletController : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-    public void StopBullet()
-    {
-        enemyData.Speed = 0;
-    }
-
-    
-
-
 }

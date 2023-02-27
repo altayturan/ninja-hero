@@ -18,7 +18,7 @@ public class ClosestEnemyDetector : MonoBehaviour
 
         foreach (Collider collider in objectsInRange)
         {
-            if (!collider.CompareTag("Enemy")) continue;
+            if (!collider.TryGetComponent(out EnemyController ec)) continue;
 
             if (Vector3.Distance(transform.position, collider.transform.position) < closestDistance)
             {

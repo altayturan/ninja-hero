@@ -34,9 +34,9 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator SpawnCountdown()
     {
+        yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
         if (stateData.CurrentState == States.PLAY)
         {
-            yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
             Spawn(spawners[Random.Range(0, spawners.Length)]);
         }
         yield return SpawnCountdown();

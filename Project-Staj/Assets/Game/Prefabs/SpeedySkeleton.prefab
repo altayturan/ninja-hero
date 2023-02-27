@@ -209,7 +209,6 @@ GameObject:
   - component: {fileID: 2481629666387241583}
   - component: {fileID: 3099417778661505271}
   - component: {fileID: 311015330841809895}
-  - component: {fileID: 420768239610175248}
   m_Layer: 0
   m_Name: SpeedySkeleton
   m_TagString: Enemy
@@ -320,6 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: dbbdfe0a933797b47a75e949afe199a1, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &3099417778661505271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,34 +367,6 @@ MonoBehaviour:
       - m_Target: {fileID: 163138850794128006}
         m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
         m_MethodName: DestroyEnemy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &420768239610175248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144028080539786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 63bbcb78508cbfe4e89b6000a3419386, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 163138850794128006}
-        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
-        m_MethodName: StopEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
