@@ -16,7 +16,6 @@ public class BulletShooter : MonoBehaviour
 
     private IEnumerator FireBullet()
     {
-        yield return new WaitUntil(()=>stateData.CurrentState == States.PLAY);
         for (int i = 0; i < playerData.NumberOfShots; i++)
         {
             OnFireEvent.Invoke();
