@@ -11,6 +11,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private Stat spawnInterval;
     [SerializeField] private Stat spawnIntervalMultiplier;
 
+    [SerializeField] private StateData stateData;
+
     #endregion
 
     #region Monobehavior Functions
@@ -27,13 +29,16 @@ public class SpawnManager : MonoBehaviour
     private void Spawn(Transform spawnerTransform)
     {
         Vector3 spawnPosition = new Vector3(spawnerTransform.position.x, 0, spawnerTransform.position.z);
-        ObjectPooler.Instance.SpawnFromPool(enemyTags[Random.Range(0,enemyTags.Count)], spawnPosition,Quaternion.identity);
+        ObjectPooler.Instance.SpawnFromPool(enemyTags[Random.Range(0, enemyTags.Count)], spawnPosition, Quaternion.identity);
     }
 
     private IEnumerator SpawnCountdown()
     {
-        yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
-        Spawn(spawners[Random.Range(0, spawners.Length)]);
+        if (stateData.CurrentState == States.PLAY)
+        {
+            yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
+            Spawn(spawners[Random.Range(0, spawners.Length)]);
+        }
         yield return SpawnCountdown();
     }
 

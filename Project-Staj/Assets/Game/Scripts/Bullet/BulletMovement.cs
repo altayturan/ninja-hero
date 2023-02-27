@@ -4,6 +4,7 @@ public class BulletMovement : MonoBehaviour
 {
     #region Variables
     [SerializeField] private BulletData bulletData;
+    [SerializeField] private StateData stateData;
     #endregion
 
     #region Monobehavior Functions
@@ -11,7 +12,10 @@ public class BulletMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * bulletData.Speed * Time.deltaTime);
+        if (stateData.CurrentState == States.PLAY)
+        {
+            transform.Translate(Vector3.forward * bulletData.Speed * Time.deltaTime);
+        }
     }
 
 

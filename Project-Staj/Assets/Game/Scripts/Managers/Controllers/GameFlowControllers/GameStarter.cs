@@ -8,6 +8,6 @@ public class GameStarter : MonoBehaviour
     [SerializeField] private GameEvent onRestart;
     void Awake()
     {
-      onRestart.Invoke();
+        onRestart.Invoke();
     }
 }

@@ -7,19 +7,20 @@ public class EnemyMovement : MonoBehaviour
 
     [SerializeField] private EnemyData enemyData;
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private StateData stateData;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();//drag drop
     }
-    private void Update()
-    {
-        transform.LookAt(playerData.Transform);
-        direction = (playerData.Transform.position - transform.position).normalized;
-    }
     private void FixedUpdate()
     {
-        rb.velocity = direction * enemyData.Speed;
+        if (stateData.CurrentState == States.PLAY)
+        {
+            transform.LookAt(playerData.Transform);
+            direction = (playerData.Transform.position - transform.position).normalized;
+            rb.velocity = direction * enemyData.Speed;
+        }
     }
 
 

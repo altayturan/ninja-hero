@@ -7,13 +7,15 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] private GameEvent OnTimeEndEvent;
     [SerializeField] private GameEvent OnTimeReduced;
- 
+    [SerializeField] private StateData stateData; 
     private void Start()
     {
         InvokeRepeating("ReduceTime", 1f, 1f);
     }
     private void ReduceTime()
     {
+        if (stateData.CurrentState != States.PLAY) return;
+
         time.Amount--;
         OnTimeReduced.Invoke();
         if(time.Amount <= 0)

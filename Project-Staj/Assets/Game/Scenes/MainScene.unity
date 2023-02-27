@@ -586,7 +586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 87078680}
   m_Layer: 0
-  m_Name: Listeners
+  m_Name: ---- Listeners ----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,7 +611,7 @@ Transform:
   - {fileID: 19008811}
   - {fileID: 464644791}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &95844255 stripped
 Transform:
@@ -3019,7 +3019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401619815}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: ---- Environment ----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3042,7 +3042,7 @@ Transform:
   - {fileID: 1161129446}
   - {fileID: 882648929}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &402684120 stripped
 Transform:
@@ -4217,7 +4217,7 @@ GameObject:
   - component: {fileID: 784361192}
   - component: {fileID: 784361193}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: ---- Managers ----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4250,6 +4250,7 @@ MonoBehaviour:
   spawnInterval: {fileID: 11400000, guid: 01a400feca3815c45a15a2a254d38079, type: 2}
   spawnIntervalMultiplier: {fileID: 11400000, guid: 9b0d350006bb35648bf886cd6ded3e1f,
     type: 2}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!4 &784361189
 Transform:
   m_ObjectHideFlags: 0
@@ -4263,7 +4264,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &784361191
 MonoBehaviour:
@@ -4296,6 +4297,7 @@ MonoBehaviour:
   time: {fileID: 11400000, guid: ab3b49b35bdeaf544939798b4c623319, type: 2}
   OnTimeEndEvent: {fileID: 11400000, guid: 30cd3df41e9931a40af225dae32b060d, type: 2}
   OnTimeReduced: {fileID: 11400000, guid: 05b08795e1ca5af429057966e4ebe87f, type: 2}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &784361193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6030,6 +6032,7 @@ GameObject:
   - component: {fileID: 1135130946}
   - component: {fileID: 1135130948}
   - component: {fileID: 1135130947}
+  - component: {fileID: 1135130949}
   m_Layer: 0
   m_Name: PlayerListener
   m_TagString: Untagged
@@ -6128,6 +6131,34 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1135130949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135130942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 63bbcb78508cbfe4e89b6000a3419386, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3621670956708569306}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6254,7 +6285,7 @@ GameObject:
   - component: {fileID: 1194342909}
   - component: {fileID: 1194342908}
   m_Layer: 0
-  m_Name: ObjectPooler
+  m_Name: ---- ObjectPooler ----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6295,7 +6326,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1207481523 stripped
 Transform:
@@ -7824,7 +7855,7 @@ RectTransform:
   m_Children:
   - {fileID: 1567643100}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8758,7 +8789,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25436
+  m_Name: pb_Mesh48226
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8985,7 +9016,7 @@ Transform:
   m_Children:
   - {fileID: 382276806}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 65.5, y: 0, z: 0}
 --- !u!4 &1977838018 stripped
 Transform:
@@ -10071,7 +10102,7 @@ Transform:
   - {fileID: 7483731021062725666}
   - {fileID: 34839288167884687}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4109836095431572065
 Animator:
@@ -10138,6 +10169,7 @@ MonoBehaviour:
   joystick: {fileID: 1815248315}
   animator: {fileID: 4109836095431572065}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &4109836095431572069
 MonoBehaviour:
   m_ObjectHideFlags: 0
