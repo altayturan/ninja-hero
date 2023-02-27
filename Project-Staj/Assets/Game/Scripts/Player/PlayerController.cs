@@ -19,12 +19,16 @@ public class PlayerController : MonoBehaviour
         else
             transform.eulerAngles = Vector3.zero;
     }
+
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerData.Range);
     }
 
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.TryGetComponent(out EnemyController enemyController))

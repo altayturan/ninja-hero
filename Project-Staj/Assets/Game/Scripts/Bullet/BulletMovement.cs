@@ -13,6 +13,8 @@ public class BulletMovement : MonoBehaviour
     {
         transform.Translate(Vector3.forward * bulletData.Speed * Time.deltaTime);
     }
+
+
     #endregion
 
 

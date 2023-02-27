@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5700685154638126371}
   - component: {fileID: 6488803776815852062}
   - component: {fileID: 3150466686156190954}
+  - component: {fileID: 8446979467111309944}
   m_Layer: 0
   m_Name: Shuriken
   m_TagString: Untagged
@@ -71,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3172c6b7f7100654caca290fb8375348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
+  enemyData: {fileID: 0}
 --- !u!114 &2388950080204088857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +134,34 @@ MonoBehaviour:
       - m_Target: {fileID: 3713431835161269747}
         m_TargetAssemblyTypeName: BulletController, Assembly-CSharp
         m_MethodName: DestroyBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8446979467111309944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 63bbcb78508cbfe4e89b6000a3419386, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3713431835161269747}
+        m_TargetAssemblyTypeName: BulletController, Assembly-CSharp
+        m_MethodName: StopBullet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

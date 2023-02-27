@@ -6281,7 +6281,7 @@ MonoBehaviour:
     size: 15
   - tag: bullet
     prefab: {fileID: 171642, guid: 70a640a2f3135a245818b33c0cdfcb87, type: 3}
-    size: 50
+    size: 100
 --- !u!4 &1194342909
 Transform:
   m_ObjectHideFlags: 0

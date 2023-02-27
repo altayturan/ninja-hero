@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private PlayerData playerData;
 
-
+    
     private void FixedUpdate()
     {
         var speed = playerData.Speed;

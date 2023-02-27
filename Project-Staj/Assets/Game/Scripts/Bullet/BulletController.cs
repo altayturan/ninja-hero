@@ -2,24 +2,43 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    [SerializeField] private EnemyData enemyData;
     private void Start()
     {
-        Destroy(this.gameObject, 6f);
+        DestroyBullet(2f);
     }
     private void OnCollisionEnter(Collision collision)//trigger
     {
         if (collision.collider.TryGetComponent(out EnemyController enemyController))
         {
-            Destroy(this.gameObject);
+            DestroyBullet();
         }
         if (collision.collider.CompareTag("Rock"))
         {
-            Destroy(this.gameObject);
+            DestroyBullet();
         }
     }
 
     public void DestroyBullet()
     {
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
+
+    private void DestroyBullet(float t)
+    {
+        var startTime = Time.time;
+        if (Time.time - startTime > t)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void StopBullet()
+    {
+        enemyData.Speed = 0;
+    }
+
+    
+
+
 }
