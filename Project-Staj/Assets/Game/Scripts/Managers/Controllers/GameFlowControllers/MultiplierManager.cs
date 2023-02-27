@@ -13,11 +13,11 @@ public class MultiplierManager : MonoBehaviour
     }
     public void MultiplyEnemyHealth()
     {
-        enemyHealthMultiplier.Amount *= 1.1f;
+            enemyHealthMultiplier.Amount *= 1.1f;
     }
 
     public void MultiplySpawnInterval()
     {
-        spawnIntervalMultiplier.Amount *= 1.1f;
+            spawnIntervalMultiplier.Amount *= 1.1f;
     }
 }

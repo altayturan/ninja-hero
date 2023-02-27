@@ -7,6 +7,10 @@ public class Skill : Booster
     [SerializeField] private float cooldown;
     [SerializeField] private GameEvent onUsed;
     public float Cooldown { get { return cooldown;} }
+    public GameEvent OnUsed { get { return onUsed; } }
 
-    public GameEvent OnUsed { get { return onUsed; } }  
+    private void OnEnable()
+    {
+        cost = baseCost;
+    }
 }

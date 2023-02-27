@@ -8,6 +8,7 @@ public class BulletShooter : MonoBehaviour
 
     [SerializeField] private BulletData bulletData;
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private StateData stateData;
     private void Start()
     {
         StartCoroutine(FireBullet());
@@ -15,7 +16,7 @@ public class BulletShooter : MonoBehaviour
 
     private IEnumerator FireBullet()
     {
-        //while
+        yield return new WaitUntil(()=>stateData.CurrentState == States.PLAY);
         for (int i = 0; i < playerData.NumberOfShots; i++)
         {
             OnFireEvent.Invoke();
@@ -29,9 +30,6 @@ public class BulletShooter : MonoBehaviour
                 ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, 30, 0));
                 ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, -30, 0));
                 ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation);
-                //Instantiate(bulletData.BulletObject, bulletSpawner.position, transform.rotation * Quaternion.Euler(0, 30, 0));  // Þimdilik sadece 3 atýþlýk bir kod ama shot sayýsýna göre otomatik açý
-                //Instantiate(bulletData.BulletObject, bulletSpawner.position, transform.rotation * Quaternion.Euler(0, -30, 0)); // ayarlayan bir kod yazýlabilir.
-                //Instantiate(bulletData.BulletObject, bulletSpawner.position, transform.rotation);
             }
 
             yield return new WaitForSeconds(0.3f);
