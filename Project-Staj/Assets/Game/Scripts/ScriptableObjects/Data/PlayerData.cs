@@ -24,16 +24,7 @@ public class PlayerData : ScriptableObject
     private float range;
     private bool diagonalShot;
 
-    private void OnEnable()
-    {
-        speed = baseSpeed;
-        health = baseHealth;
-        maxHealth = baseMaxHealth;
-        fireInterval = baseFireInterval;
-        numberOfShots = baseNumberOfShots;
-        range = baseRange;
-        diagonalShot = baseDiagonalShot;
-    }
+    
 
     public float Speed { get { return speed; } set { speed = value; } }
     public float Health { get { return health; } set { health = value; onHealthChange.Invoke(); } }
@@ -45,11 +36,14 @@ public class PlayerData : ScriptableObject
     public Transform Transform { get { return transform; } set { transform = value; } }
 
     // Base Properties
-    public float BaseSpeed { get => baseSpeed; }
-    public float BaseHealth { get => baseHealth;  }
-    public int BaseMaxHealth { get => baseMaxHealth; }
-    public float BaseFireInterval { get => baseFireInterval; }
-    public int BaseNumberOfShots { get => baseNumberOfShots; }
-    public float BaseRange { get => baseRange; }
-    public bool BaseDiagonalShot { get => baseDiagonalShot; }
+    public void ResetPlayer()
+    {
+        maxHealth = baseMaxHealth;
+        Health = maxHealth;
+        speed = baseSpeed;
+        range = baseRange;
+        diagonalShot = baseDiagonalShot;
+        fireInterval = baseFireInterval;
+        numberOfShots = baseNumberOfShots;
+    }
 }

@@ -11,9 +11,7 @@ public class Stat : ScriptableObject
         get { return amount; }
         set { amount = value; }
     }
-    public float BaseAmount { get => baseAmount; }
-
-    private void OnEnable()
+    public void ResetStats()
     {
         amount = baseAmount;
     }

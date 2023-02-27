@@ -8,9 +8,11 @@ public class GameConditionController : MonoBehaviour
     [SerializeField] private Canvas Hud;
 
     [SerializeField] private GameEvent OnRestart;
+    [SerializeField] private GameEvent OnStop;
     [SerializeField] private StateData stateData;
     public void LoseGame()
     {
+        OnStop.Invoke();
         stateData.CurrentState = States.STOP;
         LoseScreen.enabled = true;
         Hud.enabled = false;
@@ -18,6 +20,7 @@ public class GameConditionController : MonoBehaviour
 
     public void WinGame()
     {
+        OnStop.Invoke();
         stateData.CurrentState = States.STOP;
         WinScreen.enabled = true;
         Hud.enabled = false;
@@ -25,7 +28,6 @@ public class GameConditionController : MonoBehaviour
 
     public void RestartGame()
     {
-        stateData.CurrentState = States.PLAY;
         OnRestart.Invoke();
         WinScreen.enabled = false;
         LoseScreen.enabled = false;

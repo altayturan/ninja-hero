@@ -9,7 +9,7 @@ public class Skill : Booster
     public float Cooldown { get { return cooldown;} }
     public GameEvent OnUsed { get { return onUsed; } }
 
-    private void OnEnable()
+    public void ResetSkill()
     {
         cost = baseCost;
     }

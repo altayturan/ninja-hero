@@ -948,6 +948,7 @@ MonoBehaviour:
   WinScreen: {fileID: 974179813}
   Hud: {fileID: 1580796460}
   OnRestart: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
+  OnStop: {fileID: 11400000, guid: 63bbcb78508cbfe4e89b6000a3419386, type: 2}
   stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &359352181
 MonoBehaviour:

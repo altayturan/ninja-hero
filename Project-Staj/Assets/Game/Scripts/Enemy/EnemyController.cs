@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Resource gold;
     [SerializeField] private float health;
+
     private float damageFromSkill = 200f;
     private float tempSpeed;
 
@@ -56,18 +57,5 @@ public class EnemyController : MonoBehaviour
     public void DestroyEnemy()
     {
         gameObject.SetActive(false);
-    }
-    public void StopEnemy()
-    {
-        Debug.Log("Girdi");
-        tempSpeed = enemyData.Speed;
-        enemyData.Speed = 0;
-        animator.SetBool("isRunning", false);
-    }
-
-    public void StartEnemy()
-    {
-        enemyData.Speed = tempSpeed;
-        animator.SetBool("isRunning", true);
     }
 }

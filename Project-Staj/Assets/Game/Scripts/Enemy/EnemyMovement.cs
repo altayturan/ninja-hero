@@ -21,6 +21,10 @@ public class EnemyMovement : MonoBehaviour
             direction = (playerData.Transform.position - transform.position).normalized;
             rb.velocity = direction * enemyData.Speed;
         }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
 

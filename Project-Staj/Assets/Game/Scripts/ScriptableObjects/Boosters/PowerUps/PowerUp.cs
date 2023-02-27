@@ -39,19 +39,17 @@ public class PowerUp : Booster
         }
     }
 
-    public int BaseMaxLevel { get => baseMaxLevel; }
-    public float BaseStatChangeAmount { get => baseStatChangeAmount; }
 
     public void LevelUp()
     {
         Level++;
     }
 
-    private void OnEnable()
+    public void ResetPowerUp()
     {
-        statChangeAmount = BaseStatChangeAmount;
-        maxLevel = BaseMaxLevel;
         cost = baseCost;
-        level = baseLevel;
+        Level = baseLevel;
+        maxLevel = baseMaxLevel;
+        statChangeAmount = baseStatChangeAmount;
     }
 }

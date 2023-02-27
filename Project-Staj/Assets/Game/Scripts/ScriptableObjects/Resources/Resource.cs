@@ -18,9 +18,6 @@ public class Resource : ScriptableObject
             onResourceChange.Invoke();
         }
     }
-
-    public int BaseAmount { get => baseAmount; }
-
     public bool isEnough(int val)
     {
         if (Amount >= val)
@@ -31,9 +28,9 @@ public class Resource : ScriptableObject
         return false;
     }
 
-    private void OnEnable()
+    public void ResetResources()
     {
-        amount = BaseAmount;
+        amount = baseAmount;
     }
 
 }
