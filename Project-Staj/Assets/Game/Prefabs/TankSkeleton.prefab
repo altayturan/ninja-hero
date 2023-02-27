@@ -1421,6 +1421,7 @@ GameObject:
   - component: {fileID: 4880933494433340408}
   - component: {fileID: 506094719506536700}
   - component: {fileID: 8876315081176336580}
+  - component: {fileID: -1169492248462383999}
   m_Layer: 0
   m_Name: TankSkeleton
   m_TagString: Enemy
@@ -1583,6 +1584,34 @@ MonoBehaviour:
       - m_Target: {fileID: 5447258327832235325}
         m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
         m_MethodName: DestroyEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-1169492248462383999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404409735730676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 63bbcb78508cbfe4e89b6000a3419386, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5447258327832235325}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
+        m_MethodName: StopEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class JoystickController : DynamicJoystick
 {
-    [SerializeField] private PlayerData playerData;
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);

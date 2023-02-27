@@ -12,14 +12,14 @@ public class SkillCooldowner : BaseTextUpdater
     {
         tempCooldown = skill.Cooldown;
         cooldownText.enabled = true;
-        StartCoroutine(ReduceCountdowner());
+        StartCoroutine(ReduceCooldowner());
     }
     protected override string GetText()
     {
         return tempCooldown.ToString();
     }
 
-    public IEnumerator ReduceCountdowner()
+    public IEnumerator ReduceCooldowner()
     {
         SetText();
         tempCooldown--;
@@ -28,7 +28,7 @@ public class SkillCooldowner : BaseTextUpdater
             DeactivateCooldown();
         }
         yield return new WaitForSeconds(1);
-        yield return ReduceCountdowner();
+        yield return ReduceCooldowner();
     }
     public void DeactivateCooldown()
     {

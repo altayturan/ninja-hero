@@ -6,7 +6,7 @@ public class StatResetter : MonoBehaviour
     [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Stat spawnIntervalMultiplier;
 
-    public void RestartStats()
+    public void ResetStats()
     {
         spawnInterval.Amount = spawnInterval.BaseAmount;
         enemyHealthMultiplier.Amount = enemyHealthMultiplier.BaseAmount;

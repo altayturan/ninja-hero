@@ -15,7 +15,6 @@ public class SceneLoader : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 60;
-
         StartGame();
     }
     private void StartGame()

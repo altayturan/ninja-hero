@@ -59,6 +59,7 @@ public class EnemyController : MonoBehaviour
     }
     public void StopEnemy()
     {
+        Debug.Log("Girdi");
         tempSpeed = enemyData.Speed;
         enemyData.Speed = 0;
         animator.SetBool("isRunning", false);
