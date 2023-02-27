@@ -30,7 +30,7 @@ public class Resource : ScriptableObject
 
     public void ResetResources()
     {
-        amount = baseAmount;
+        Amount = baseAmount;
     }
 
 }
