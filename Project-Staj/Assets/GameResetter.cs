@@ -21,10 +21,9 @@ public class GameResetter : MonoBehaviour
     [SerializeField] private Skill highAttackSpeed;
     [SerializeField] private StateData stateData;
 
-    private void Awake()
+    private void Start()
     {
         ResetAll();
-        Debug.Log("Reseted");
     }
     public void ResetAll()
     {
@@ -44,7 +43,6 @@ public class GameResetter : MonoBehaviour
         damageAll.ResetSkill();
         highAttackSpeed.ResetSkill();
         stateData.CurrentState = States.PLAY;
-        Debug.Log("Girdi");
     }
 
 }

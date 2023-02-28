@@ -9,31 +9,46 @@ public class BulletShooter : MonoBehaviour
     [SerializeField] private BulletData bulletData;
     [SerializeField] private PlayerData playerData;
     [SerializeField] private StateData stateData;
+
+    private float countdown;
     private void Start()
+    {
+    }
+    public void StartFireBullet()
     {
         StartCoroutine(FireBullet());
     }
-
     private IEnumerator FireBullet()
     {
-        for (int i = 0; i < playerData.NumberOfShots; i++)
+        while (true)
         {
-            OnFireEvent.Invoke();
-
-            if (!playerData.DiagonalShot)
+            countdown = playerData.FireInterval;
+            while (countdown > 0 && stateData.CurrentState == States.PLAY)
             {
-                ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation);
+                countdown -= Time.fixedDeltaTime;
+                yield return null;
             }
-            else
+            if(stateData.CurrentState == States.STOP)
             {
-                ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, 30, 0));
-                ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, -30, 0));
-                ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation);
+                StopCoroutine(FireBullet());
             }
+            for (int i = 0; i < playerData.NumberOfShots; i++)
+            {
+                OnFireEvent.Invoke();
 
-            yield return new WaitForSeconds(0.3f);
+                if (!playerData.DiagonalShot)
+                {
+                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation);
+                }
+                else
+                {
+                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, 30, 0));
+                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, -30, 0));
+                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation);
+                }
+
+                yield return new WaitForSeconds(0.3f);
+            }
         }
-        yield return new WaitForSeconds(playerData.FireInterval);
-        yield return FireBullet();
     }
 }

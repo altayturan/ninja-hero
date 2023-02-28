@@ -21,14 +21,16 @@ public class SkillCooldowner : BaseTextUpdater
 
     public IEnumerator ReduceCooldowner()
     {
-        SetText();
-        tempCooldown--;
-        if (tempCooldown < 0)
+        while (true)
         {
-            DeactivateCooldown();
+            SetText();
+            tempCooldown--;
+            if (tempCooldown < 0)
+            {
+                DeactivateCooldown();
+            }
+            yield return new WaitForSeconds(1);
         }
-        yield return new WaitForSeconds(1);
-        yield return ReduceCooldowner();
     }
     public void DeactivateCooldown()
     {
