@@ -11,7 +11,6 @@ namespace ninjahero.events
 
         public void Invoke()
         {
-            Debug.LogWarning($"{name} Invoked");
             for (int i = listeners.Count - 1; i >= 0; i--)
             {
                 listeners[i].OnEventRaised();

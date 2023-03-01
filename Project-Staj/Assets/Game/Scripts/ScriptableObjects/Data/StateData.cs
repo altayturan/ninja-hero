@@ -17,7 +17,6 @@ public class StateData : ScriptableObject
         set
         {
             currentState = value;
-            Debug.Log(value);
             if(currentState == States.STOP)
                 OnStop.Invoke();
             else if(currentState == States.PLAY)

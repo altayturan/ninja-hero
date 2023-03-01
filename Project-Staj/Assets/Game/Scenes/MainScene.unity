@@ -3977,6 +3977,7 @@ GameObject:
   - component: {fileID: 784361193}
   - component: {fileID: 784361195}
   - component: {fileID: 784361194}
+  - component: {fileID: 784361196}
   m_Layer: 0
   m_Name: ---- Managers ----
   m_TagString: Untagged
@@ -4130,6 +4131,34 @@ MonoBehaviour:
   damageAll: {fileID: 11400000, guid: 8ca30b281b3d53c47b8f6928abf413c8, type: 2}
   highAttackSpeed: {fileID: 11400000, guid: a165856ffe2be164c850c1bd7160dc7e, type: 2}
   stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
+--- !u!114 &784361196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784361187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 06ea433f56d142141843e8e797417498, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 784361188}
+        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
+        m_MethodName: StartSpawner
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &796445451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2733845855538509057, guid: 61364f025cf3e32469d90fbb605b101a,
@@ -8215,7 +8244,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh48226
+  m_Name: pb_Mesh26432
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

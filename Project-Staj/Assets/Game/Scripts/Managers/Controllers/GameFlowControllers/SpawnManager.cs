@@ -15,17 +15,12 @@ public class SpawnManager : MonoBehaviour
 
     #endregion
 
-    #region Monobehavior Functions
-    private void Start()
-    {
-        List<string> list = new List<string>();
-        StartCoroutine(SpawnCountdown());
-    }
-    #endregion
-
-
     #region Functions
 
+    public void StartSpawner()
+    {
+        StartCoroutine(SpawnCountdown());
+    }
     private void Spawn(Transform spawnerTransform)
     {
         Vector3 spawnPosition = new Vector3(spawnerTransform.position.x, 0, spawnerTransform.position.z);
@@ -34,12 +29,18 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator SpawnCountdown()
     {
-        yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
-        if (stateData.CurrentState == States.PLAY)
+        while (true)
         {
-            Spawn(spawners[Random.Range(0, spawners.Length)]);
+            yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
+            if (stateData.CurrentState == States.PLAY)
+            {
+                Spawn(spawners[Random.Range(0, spawners.Length)]);
+            }
+            else if(stateData.CurrentState == States.STOP)
+            {
+                StopCoroutine(SpawnCountdown());
+            }
         }
-        yield return SpawnCountdown();
     }
 
 
