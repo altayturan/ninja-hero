@@ -11,34 +11,36 @@ public class SkillCooldowner : BaseTextUpdater
     private float tempCooldown;
     public void ActivateCooldown()
     {
+        tempCooldown = skill.Cooldown;
         cooldownText.enabled = true;
         StartCoroutine(ReduceCooldowner());
     }
     protected override string GetText()
     {
-        return tempCooldown.ToString();
+        return Mathf.FloorToInt(tempCooldown).ToString();
     }
 
-    public IEnumerator ReduceCooldowner()
+    private IEnumerator ReduceCooldowner()
     {
-        while (true)
+        while (tempCooldown > 0)
         {
-            tempCooldown = skill.Cooldown;
-            if (tempCooldown > 0 && stateData.CurrentState == States.PLAY)
+            if (stateData.CurrentState == States.PLAY)
             {
                 SetText();
-                tempCooldown-=Time.fixedDeltaTime;
+                tempCooldown -= Time.deltaTime;
                 yield return null;
             }
             if (stateData.CurrentState == States.STOP)
             {
                 StopCoroutine(ReduceCooldowner());
+                yield break;
             }
-            DeactivateCooldown();
         }
+        DeactivateCooldown();
     }
     public void DeactivateCooldown()
     {
+        Debug.Log("Deactivated");
         StopAllCoroutines();
         tempCooldown = skill.Cooldown;
         cooldownText.enabled = false;
