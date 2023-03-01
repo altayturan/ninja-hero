@@ -9,38 +9,60 @@ public class MultiplierManager : MonoBehaviour
     [SerializeField] private float enemyHealthCooldown;
     [SerializeField] private float spawnIntervalCooldown;
 
+    private void Start()
+    {
+        enemyHealthCooldown = 3f;
+        spawnIntervalCooldown = 3f;
+    }
     public void StartMultipliers()
     {
         StartCoroutine(MultiplyEnemyHealth());
         StartCoroutine(MultiplySpawnInterval());
     }
+
+    public void StopMultipliers()
+    {
+        StopCoroutine(MultiplyEnemyHealth());
+        StopCoroutine(MultiplySpawnInterval());
+    }
     private IEnumerator MultiplyEnemyHealth()
     {
-        enemyHealthCooldown = enemyHealthMultiplier.Amount;
-        if (enemyHealthCooldown > 0 && stateData.CurrentState == States.PLAY)
+        while (true)
         {
-            enemyHealthCooldown -= Time.fixedDeltaTime;
-            yield return null;
+           
+            if (stateData.CurrentState == States.PLAY && enemyHealthCooldown > 0)
+            {
+                enemyHealthCooldown -= Time.deltaTime;
+                yield return null;
+                continue;
+            }
+            if (stateData.CurrentState == States.STOP)
+            {
+                StopCoroutine(MultiplyEnemyHealth());
+                yield break;
+            }
+            enemyHealthMultiplier.Amount *= 1.1f;
+            enemyHealthCooldown = 3f;
         }
-        if (stateData.CurrentState == States.STOP)
-        {
-            StopCoroutine(MultiplyEnemyHealth());
-        }
-        enemyHealthMultiplier.Amount *= 1.1f;
     }
 
     private IEnumerator MultiplySpawnInterval()
     {
-        spawnIntervalCooldown = spawnIntervalMultiplier.Amount;
-        if (spawnIntervalCooldown > 0 && stateData.CurrentState == States.PLAY)
+        while (true)
         {
-            spawnIntervalCooldown -= Time.fixedDeltaTime;
-            yield return null;
+            if(stateData.CurrentState == States.PLAY && spawnIntervalCooldown > 0)
+            {
+                spawnIntervalCooldown -= Time.deltaTime;
+                yield return null;
+                continue;
+            }
+            if (stateData.CurrentState == States.STOP)
+            {
+                StopCoroutine(MultiplySpawnInterval());
+                yield break;
+            }
+            spawnIntervalMultiplier.Amount *= 0.9f;
+            spawnIntervalCooldown = 3f;
         }
-        if (stateData.CurrentState == States.STOP)
-        {
-            StopCoroutine(MultiplyEnemyHealth());
-        }
-        spawnIntervalMultiplier.Amount *= 1.1f;
     }
 }

@@ -15,7 +15,6 @@ public class TimeManager : MonoBehaviour
     private void ReduceTime()
     {
         if (stateData.CurrentState != States.PLAY) return;
-
         time.Amount--;
         OnTimeReduced.Invoke();
         if(time.Amount <= 0)

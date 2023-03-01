@@ -11,26 +11,26 @@ public class BulletShooter : MonoBehaviour
     [SerializeField] private StateData stateData;
 
     private float countdown;
-    private void Start()
-    {
-    }
+
     public void StartFireBullet()
     {
+        countdown = playerData.FireInterval;
         StartCoroutine(FireBullet());
     }
     private IEnumerator FireBullet()
     {
         while (true)
         {
-            countdown = playerData.FireInterval;
-            while (countdown > 0 && stateData.CurrentState == States.PLAY)
+            if (countdown > 0 && stateData.CurrentState == States.PLAY)
             {
-                countdown -= Time.fixedDeltaTime;
+                countdown -= Time.deltaTime;
                 yield return null;
+                continue;
             }
             if(stateData.CurrentState == States.STOP)
             {
                 StopCoroutine(FireBullet());
+                yield break;
             }
             for (int i = 0; i < playerData.NumberOfShots; i++)
             {
@@ -49,6 +49,7 @@ public class BulletShooter : MonoBehaviour
 
                 yield return new WaitForSeconds(0.3f);
             }
+            countdown = playerData.FireInterval;
         }
     }
 }

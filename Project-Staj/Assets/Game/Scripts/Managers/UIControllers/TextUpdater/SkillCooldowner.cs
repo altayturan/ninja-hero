@@ -9,6 +9,10 @@ public class SkillCooldowner : BaseTextUpdater
     [SerializeField] private StateData stateData;
 
     private float tempCooldown;
+
+    private void Start()
+    {
+    }
     public void ActivateCooldown()
     {
         tempCooldown = skill.Cooldown;
@@ -22,21 +26,22 @@ public class SkillCooldowner : BaseTextUpdater
 
     private IEnumerator ReduceCooldowner()
     {
-        while (tempCooldown > 0)
+        while (true)
         {
-            if (stateData.CurrentState == States.PLAY)
+            if (tempCooldown > 0 && stateData.CurrentState == States.PLAY)
             {
                 SetText();
                 tempCooldown -= Time.deltaTime;
                 yield return null;
+                continue;
             }
             if (stateData.CurrentState == States.STOP)
             {
                 StopCoroutine(ReduceCooldowner());
                 yield break;
             }
+            DeactivateCooldown(); 
         }
-        DeactivateCooldown();
     }
     public void DeactivateCooldown()
     {

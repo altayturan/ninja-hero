@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -12,15 +13,28 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private Stat spawnIntervalMultiplier;
 
     [SerializeField] private StateData stateData;
+    private float tempInterval;
 
     #endregion
 
     #region Functions
 
+    
     public void StartSpawner()
     {
+        tempInterval = spawnInterval.Amount * spawnIntervalMultiplier.Amount;
         StartCoroutine(SpawnCountdown());
     }
+
+    private void PauseSpawner()
+    {
+        StopCoroutine(SpawnCountdown());
+    }
+    public void StopSpawner()
+    {
+        StopCoroutine(SpawnCountdown());
+    }
+
     private void Spawn(Transform spawnerTransform)
     {
         Vector3 spawnPosition = new Vector3(spawnerTransform.position.x, 0, spawnerTransform.position.z);
@@ -31,13 +45,19 @@ public class SpawnManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
-            Spawn(spawners[Random.Range(0, spawners.Length)]);
-            
+            while (tempInterval > 0 && stateData.CurrentState == States.PLAY)
+            {
+                tempInterval -= Time.deltaTime;
+                yield return null;
+                continue;
+            }
             if (stateData.CurrentState == States.STOP)
             {
-                StopCoroutine(SpawnCountdown());
+                PauseSpawner();
+                yield break;
             }
+            Spawn(spawners[Random.Range(0, spawners.Length)]);
+            tempInterval = spawnInterval.Amount * spawnIntervalMultiplier.Amount;
         }
     }
 
