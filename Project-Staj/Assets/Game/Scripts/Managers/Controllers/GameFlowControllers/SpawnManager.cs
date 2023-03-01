@@ -32,11 +32,9 @@ public class SpawnManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnInterval.Amount * spawnIntervalMultiplier.Amount);
-            if (stateData.CurrentState == States.PLAY)
-            {
-                Spawn(spawners[Random.Range(0, spawners.Length)]);
-            }
-            else if(stateData.CurrentState == States.STOP)
+            Spawn(spawners[Random.Range(0, spawners.Length)]);
+            
+            if (stateData.CurrentState == States.STOP)
             {
                 StopCoroutine(SpawnCountdown());
             }

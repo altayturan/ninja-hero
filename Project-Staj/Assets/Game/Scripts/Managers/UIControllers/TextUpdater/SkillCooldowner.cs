@@ -6,11 +6,11 @@ public class SkillCooldowner : BaseTextUpdater
 {
     [SerializeField] private Skill skill;
     [SerializeField] private TMP_Text cooldownText;
-    private float tempCooldown;
+    [SerializeField] private StateData stateData;
 
+    private float tempCooldown;
     public void ActivateCooldown()
     {
-        tempCooldown = skill.Cooldown;
         cooldownText.enabled = true;
         StartCoroutine(ReduceCooldowner());
     }
@@ -23,13 +23,18 @@ public class SkillCooldowner : BaseTextUpdater
     {
         while (true)
         {
-            SetText();
-            tempCooldown--;
-            if (tempCooldown < 0)
+            tempCooldown = skill.Cooldown;
+            if (tempCooldown > 0 && stateData.CurrentState == States.PLAY)
             {
-                DeactivateCooldown();
+                SetText();
+                tempCooldown-=Time.fixedDeltaTime;
+                yield return null;
             }
-            yield return new WaitForSeconds(1);
+            if (stateData.CurrentState == States.STOP)
+            {
+                StopCoroutine(ReduceCooldowner());
+            }
+            DeactivateCooldown();
         }
     }
     public void DeactivateCooldown()

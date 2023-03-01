@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 8ca30b281b3d53c47b8f6928abf413c8, type: 2}
   cooldownText: {fileID: 60315973}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &60315976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6044,6 +6045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: a165856ffe2be164c850c1bd7160dc7e, type: 2}
   cooldownText: {fileID: 2143791053}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &2143791058
 MonoBehaviour:
   m_ObjectHideFlags: 0

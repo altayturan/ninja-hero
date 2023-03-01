@@ -1,23 +1,46 @@
+using System.Collections;
 using UnityEngine;
 
 public class MultiplierManager : MonoBehaviour
 {
     [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Stat spawnIntervalMultiplier;
+    [SerializeField] private StateData stateData;
+    [SerializeField] private float enemyHealthCooldown;
+    [SerializeField] private float spawnIntervalCooldown;
 
-
-    private void Start()
+    public void StartMultipliers()
     {
-        InvokeRepeating("MultiplyEnemyHealth", 3f, 3f);
-        InvokeRepeating("MultiplySpawnInterval", 3f, 3f);
+        StartCoroutine(MultiplyEnemyHealth());
+        StartCoroutine(MultiplySpawnInterval());
     }
-    public void MultiplyEnemyHealth()
+    private IEnumerator MultiplyEnemyHealth()
     {
-            enemyHealthMultiplier.Amount *= 1.1f;
+        enemyHealthCooldown = enemyHealthMultiplier.Amount;
+        if (enemyHealthCooldown > 0 && stateData.CurrentState == States.PLAY)
+        {
+            enemyHealthCooldown -= Time.fixedDeltaTime;
+            yield return null;
+        }
+        if (stateData.CurrentState == States.STOP)
+        {
+            StopCoroutine(MultiplyEnemyHealth());
+        }
+        enemyHealthMultiplier.Amount *= 1.1f;
     }
 
-    public void MultiplySpawnInterval()
+    private IEnumerator MultiplySpawnInterval()
     {
-            spawnIntervalMultiplier.Amount *= 1.1f;
+        spawnIntervalCooldown = spawnIntervalMultiplier.Amount;
+        if (spawnIntervalCooldown > 0 && stateData.CurrentState == States.PLAY)
+        {
+            spawnIntervalCooldown -= Time.fixedDeltaTime;
+            yield return null;
+        }
+        if (stateData.CurrentState == States.STOP)
+        {
+            StopCoroutine(MultiplyEnemyHealth());
+        }
+        spawnIntervalMultiplier.Amount *= 1.1f;
     }
 }
