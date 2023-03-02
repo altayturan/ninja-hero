@@ -3978,6 +3978,7 @@ GameObject:
   - component: {fileID: 784361194}
   - component: {fileID: 784361196}
   - component: {fileID: 784361197}
+  - component: {fileID: 784361198}
   m_Layer: 0
   m_Name: ---- Managers ----
   m_TagString: Untagged
@@ -4061,7 +4062,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 11400000, guid: ab3b49b35bdeaf544939798b4c623319, type: 2}
   OnTimeEndEvent: {fileID: 11400000, guid: 30cd3df41e9931a40af225dae32b060d, type: 2}
-  OnTimeReduced: {fileID: 11400000, guid: 05b08795e1ca5af429057966e4ebe87f, type: 2}
+  OnTimeReducedInSeconds: {fileID: 11400000, guid: 05b08795e1ca5af429057966e4ebe87f,
+    type: 2}
   stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &784361194
 MonoBehaviour:
@@ -4082,18 +4084,6 @@ MonoBehaviour:
       - m_Target: {fileID: 784361195}
         m_TargetAssemblyTypeName: GameResetter, Assembly-CSharp
         m_MethodName: ResetAll
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 784361191}
-        m_TargetAssemblyTypeName: MultiplierManager, Assembly-CSharp
-        m_MethodName: StopMultipliers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4210,6 +4200,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
+--- !u!114 &784361198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784361187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 05b08795e1ca5af429057966e4ebe87f, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 784361191}
+        m_TargetAssemblyTypeName: MultiplierManager, Assembly-CSharp
+        m_MethodName: CheckHealthMultiplyCooldown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 784361191}
+        m_TargetAssemblyTypeName: MultiplierManager, Assembly-CSharp
+        m_MethodName: CheckSpawnIntervalMultiplyCooldown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &796445451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2733845855538509057, guid: 61364f025cf3e32469d90fbb605b101a,

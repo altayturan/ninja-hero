@@ -4,13 +4,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Skill", menuName = "Boosters/Create Skill")]
 public class Skill : Booster
 {
-    [SerializeField] private float cooldown;
+    [SerializeField] private float baseCooldown;
     [SerializeField] private GameEvent onUsed;
-    public float Cooldown { get { return cooldown;} }
+    [SerializeField] private float cooldown;
+    [SerializeField] private GameEvent OnCooldownChanged;
+    public float BaseCooldown { get { return baseCooldown;} }
     public GameEvent OnUsed { get { return onUsed; } }
+    public float Cooldown { get => cooldown; set { cooldown = value; OnCooldownChanged.Invoke(); } }
 
     public void ResetSkill()
     {
         cost = baseCost;
+        cooldown = baseCooldown;
     }
 }

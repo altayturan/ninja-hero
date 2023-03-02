@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 60315976}
   - component: {fileID: 60315975}
   - component: {fileID: 60315977}
+  - component: {fileID: 60315978}
   m_Layer: 5
   m_Name: Cooldown
   m_TagString: Untagged
@@ -332,6 +333,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &60315978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60315971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ca25a963ab498da4583b09592fc15b6f, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 60315975}
+        m_TargetAssemblyTypeName: BaseTextUpdater, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &87104401
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,19 +450,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 87104404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 87104407}
-        m_TargetAssemblyTypeName: BaseSkillController, Assembly-CSharp
-        m_MethodName: OnClickSkill
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &87104404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +506,7 @@ MonoBehaviour:
   OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
   skillButton: {fileID: 87104403}
   gameStatistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
 --- !u!114 &87104408
 MonoBehaviour:
@@ -509,6 +527,18 @@ MonoBehaviour:
       - m_Target: {fileID: 87104409}
         m_TargetAssemblyTypeName: ButtonActivator, Assembly-CSharp
         m_MethodName: EnableButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 87104407}
+        m_TargetAssemblyTypeName: BaseSkillController, Assembly-CSharp
+        m_MethodName: ResetSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -543,13 +573,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
+  gameEvent: {fileID: 11400000, guid: 05b08795e1ca5af429057966e4ebe87f, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 87104407}
         m_TargetAssemblyTypeName: BaseSkillController, Assembly-CSharp
-        m_MethodName: ResetSkill
+        m_MethodName: CheckSkillCooldown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 87104407}
+        m_TargetAssemblyTypeName: HighAttackSpeedSkillController, Assembly-CSharp
+        m_MethodName: CheckEffectTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2501,6 +2543,7 @@ MonoBehaviour:
   OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
   skillButton: {fileID: 924843244}
   gameStatistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
 --- !u!114 &924843248
 MonoBehaviour:
@@ -4962,19 +5005,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1906632804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1906632806}
-        m_TargetAssemblyTypeName: DamageAllSkillController, Assembly-CSharp
-        m_MethodName: OnClickSkill
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1906632804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5030,6 +5061,7 @@ MonoBehaviour:
   OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
   skillButton: {fileID: 1906632803}
   gameStatistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &1906632807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5049,6 +5081,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1906632808}
         m_TargetAssemblyTypeName: ButtonActivator, Assembly-CSharp
         m_MethodName: EnableButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1906632806}
+        m_TargetAssemblyTypeName: BaseSkillController, Assembly-CSharp
+        m_MethodName: ResetSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5083,13 +5127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
+  gameEvent: {fileID: 11400000, guid: 05b08795e1ca5af429057966e4ebe87f, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1906632806}
         m_TargetAssemblyTypeName: BaseSkillController, Assembly-CSharp
-        m_MethodName: ResetSkill
+        m_MethodName: CheckSkillCooldown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5885,6 +5929,7 @@ GameObject:
   - component: {fileID: 2143791057}
   - component: {fileID: 2143791056}
   - component: {fileID: 2143791058}
+  - component: {fileID: 2143791059}
   m_Layer: 5
   m_Name: Cooldown
   m_TagString: Untagged
@@ -6071,6 +6116,34 @@ MonoBehaviour:
       - m_Target: {fileID: 2143791057}
         m_TargetAssemblyTypeName: SkillCooldowner, Assembly-CSharp
         m_MethodName: DeactivateCooldown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2143791059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143791051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ca25a963ab498da4583b09592fc15b6f, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2143791057}
+        m_TargetAssemblyTypeName: BaseTextUpdater, Assembly-CSharp
+        m_MethodName: SetText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
