@@ -5,19 +5,16 @@ public class HighAttackSpeedSkillController : BaseSkillController
 {
     [SerializeField] private PlayerData playerData;
 
-    
-    protected IEnumerator HighAttackSpeedCoolDown()
+    public override void OnClickSkill()
     {
-        skillButton.interactable = false;
+        base.OnClickSkill();
+        StartCoroutine(ApplySkill());
+    }
+    protected IEnumerator ApplySkill() 
+    {
         float oldValue = playerData.FireInterval;
         playerData.FireInterval = 0.1f;
         yield return new WaitForSeconds(5);
         playerData.FireInterval = oldValue;
-        yield return new WaitForSeconds(skill.Cooldown-5);
-        skillButton.interactable = true;
-    }
-    protected override IEnumerator GetCooldown()
-    {
-        return HighAttackSpeedCoolDown();
     }
 }

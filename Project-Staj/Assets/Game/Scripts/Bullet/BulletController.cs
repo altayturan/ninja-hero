@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    [SerializeField] private BulletData bulletData;
     private void Start()
     {
         DestroyBullet(2f);
@@ -10,9 +11,11 @@ public class BulletController : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out EnemyController enemyController))
         {
+            enemyController.GetDamage(bulletData.Damage);
             DestroyBullet();
+            return;
         }
-        if (collision.collider.CompareTag("Rock"))
+        if (collision.collider.TryGetComponent(out RockController rc)) 
         {
             DestroyBullet();
         }

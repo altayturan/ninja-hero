@@ -27,17 +27,12 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerData.Range);
     }
-
-    
-    private void OnCollisionEnter(Collision collision)
+    public void GetDamage(float damage)
     {
-        if (collision.collider.TryGetComponent(out EnemyController enemyController))
+        playerData.Health -= damage;
+        if (playerData.Health <= 0)
         {
-            playerData.Health -= enemyController.GetDamage();
-            if (playerData.Health <= 0)
-            {
-                OnLoseGameEvent.Invoke();
-            }
+            OnLoseGameEvent.Invoke();
         }
     }
 }

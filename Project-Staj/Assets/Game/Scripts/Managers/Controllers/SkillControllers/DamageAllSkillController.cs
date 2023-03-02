@@ -3,16 +3,8 @@ using UnityEngine;
 
 public class DamageAllSkillController : BaseSkillController
 {
-    
-    protected IEnumerator DamageAllCooldown()
+    public override void OnClickSkill()
     {
-        skillButton.interactable = false;
-        yield return new WaitForSeconds(skill.Cooldown);
-        skillButton.interactable = true;
-    }
-
-    protected override IEnumerator GetCooldown()
-    {
-        return DamageAllCooldown();
+        base.OnClickSkill();
     }
 }

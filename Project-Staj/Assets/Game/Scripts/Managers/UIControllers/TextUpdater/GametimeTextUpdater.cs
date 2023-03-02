@@ -4,6 +4,9 @@ public class GametimeTextUpdater : ResourceTextUpdater
 {
     protected override string GetText()
     {
-        return Mathf.FloorToInt(resource.Amount / 60).ToString("00") + " : " + Mathf.FloorToInt(resource.Amount % 60).ToString("00");
+        var minute = Mathf.FloorToInt(resource.Amount / 60).ToString("00");
+        var seconds = Mathf.FloorToInt(resource.Amount % 60).ToString("00");
+        var text = $"{minute} : {seconds}";
+        return text;
     }
 }

@@ -9,6 +9,7 @@ public class BulletShooter : MonoBehaviour
     [SerializeField] private BulletData bulletData;
     [SerializeField] private PlayerData playerData;
     [SerializeField] private StateData stateData;
+    [SerializeField] 
 
     private float countdown;
 

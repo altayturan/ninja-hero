@@ -7,12 +7,8 @@ public class SkillCooldowner : BaseTextUpdater
     [SerializeField] private Skill skill;
     [SerializeField] private TMP_Text cooldownText;
     [SerializeField] private StateData stateData;
-
     private float tempCooldown;
 
-    private void Start()
-    {
-    }
     public void ActivateCooldown()
     {
         tempCooldown = skill.Cooldown;
@@ -24,7 +20,7 @@ public class SkillCooldowner : BaseTextUpdater
         return Mathf.FloorToInt(tempCooldown).ToString();
     }
 
-    private IEnumerator ReduceCooldowner()
+    private IEnumerator ReduceCooldowner() 
     {
         while (true)
         {
@@ -45,7 +41,6 @@ public class SkillCooldowner : BaseTextUpdater
     }
     public void DeactivateCooldown()
     {
-        Debug.Log("Deactivated");
         StopAllCoroutines();
         tempCooldown = skill.Cooldown;
         cooldownText.enabled = false;

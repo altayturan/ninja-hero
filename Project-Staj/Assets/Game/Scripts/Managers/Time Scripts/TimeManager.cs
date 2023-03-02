@@ -1,25 +1,35 @@
 using UnityEngine;
 using ninjahero.events;
+using System.Collections;
 
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] private Resource time;
 
     [SerializeField] private GameEvent OnTimeEndEvent;
-    [SerializeField] private GameEvent OnTimeReduced;
-    [SerializeField] private StateData stateData; 
+    [SerializeField] private GameEvent OnTimeReducedInSeconds;
+    [SerializeField] private StateData stateData;
     private void Start()
     {
         InvokeRepeating("ReduceTime", 1f, 1f);
     }
-    private void ReduceTime()
+    private void CheckForTimeEnd()
     {
-        if (stateData.CurrentState != States.PLAY) return;
-        time.Amount--;
-        OnTimeReduced.Invoke();
-        if(time.Amount <= 0)
+        if (time.Amount <= 0)
         {
             OnTimeEndEvent.Invoke();
+        }
+    }
+    private IEnumerator ReduceTimeInSeconds()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            OnTimeReducedInSeconds.Invoke();
+            if (stateData.CurrentState == States.PLAY)
+            {
+                time.Amount--;
+            }
         }
     }
 

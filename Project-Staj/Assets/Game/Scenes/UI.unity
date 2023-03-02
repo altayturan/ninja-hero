@@ -423,7 +423,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 87104407}
-        m_TargetAssemblyTypeName: HighAttackSpeedSkillController, Assembly-CSharp
+        m_TargetAssemblyTypeName: BaseSkillController, Assembly-CSharp
         m_MethodName: OnClickSkill
         m_Mode: 1
         m_Arguments:
@@ -488,6 +488,7 @@ MonoBehaviour:
   gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
   OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
   skillButton: {fileID: 87104403}
+  gameStatistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
 --- !u!114 &87104408
 MonoBehaviour:
@@ -1219,6 +1220,7 @@ MonoBehaviour:
   gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
   powerUp: {fileID: 11400000, guid: 85f1971d4b934244e938e11c554078cc, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
+  gameStatistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
   levelText: {fileID: 767730462}
   goldText: {fileID: 314767595}
   powerUpButton: {fileID: 703356475}
@@ -2044,6 +2046,7 @@ MonoBehaviour:
   gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
   powerUp: {fileID: 11400000, guid: 91508db24e7e7e44e8527f168e361675, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
+  gameStatistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
   levelText: {fileID: 2026621708}
   goldText: {fileID: 1786077459}
   powerUpButton: {fileID: 821792855}
@@ -2497,6 +2500,7 @@ MonoBehaviour:
   gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
   OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
   skillButton: {fileID: 924843244}
+  gameStatistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
 --- !u!114 &924843248
 MonoBehaviour:
@@ -2871,6 +2875,7 @@ MonoBehaviour:
   gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
   powerUp: {fileID: 11400000, guid: 70cb0b368f9a50c48bccfbeeda46371e, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
+  gameStatistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
   levelText: {fileID: 1760475481}
   goldText: {fileID: 1652051710}
   powerUpButton: {fileID: 1046459341}
@@ -5024,6 +5029,7 @@ MonoBehaviour:
   gold: {fileID: 11400000, guid: 45e70957577fa1a4995129ed6068649c, type: 2}
   OnGoldChange: {fileID: 11400000, guid: c462a7c7c437d2e4fa694b98401a38a8, type: 2}
   skillButton: {fileID: 1906632803}
+  gameStatistics: {fileID: 11400000, guid: 34c3b05698a30a74c99d9a138e831b41, type: 2}
 --- !u!114 &1906632807
 MonoBehaviour:
   m_ObjectHideFlags: 0

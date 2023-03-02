@@ -15,7 +15,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float health;
 
     private float damageFromSkill = 200f;
-    private float tempSpeed;
 
     private void Start()
     {
@@ -23,21 +22,12 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isRunning", true);
     }
 
-    public float GetDamage()
-    {
-        return enemyData.Damage;
-    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.TryGetComponent(out PlayerController playerController))
         {
+            playerController.GetDamage(enemyData.Damage);
             DestroyEnemy();
-        }
-
-        else if (collision.collider.TryGetComponent(out BulletController bulletController))
-        {
-            health -= bulletData.Damage;
-            CheckForDie();
         }
     }
     public void GetDamageFromSkill()
@@ -58,4 +48,10 @@ public class EnemyController : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void GetDamage(float damage)
+    {
+        health -= damage;
+        CheckForDie();
+    } 
 }

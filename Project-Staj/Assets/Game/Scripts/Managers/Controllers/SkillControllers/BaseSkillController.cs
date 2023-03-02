@@ -9,23 +9,33 @@ public abstract class BaseSkillController : MonoBehaviour
     [SerializeField] private Resource gold;
     [SerializeField] private GameEvent OnGoldChange;
     [SerializeField] protected Button skillButton;
+    [SerializeField] protected GameStatistics gameStatistics;
+
+    private void OnEnable()
+    {
+        skillButton.onClick.AddListener(OnClickSkill);
+    }
+    private void OnDisable()
+    {
+        skillButton.onClick.RemoveListener(OnClickSkill);
+    }
     public virtual void OnClickSkill()
     {
         if (!gold.isEnough(skill.Cost)) return;
+        gameStatistics.TotalSpentGold += skill.Cost;
         skill.OnUsed.Invoke();
-        OnGoldChange.Invoke();
-        StartCooldown(GetCooldown());
+        StartCoroutine(Cooldown());
     }
-
-    protected void StartCooldown(IEnumerator method)
+    protected virtual IEnumerator Cooldown() 
     {
-        StartCoroutine(method);
+        skillButton.interactable = false;
+        yield return new WaitForSeconds(skill.Cooldown);
+        skillButton.interactable = true;
     }
-
-    protected abstract IEnumerator GetCooldown();
 
     public void ResetSkill()
     {
         StopAllCoroutines();
+        skillButton.interactable = true;
     }
 }
