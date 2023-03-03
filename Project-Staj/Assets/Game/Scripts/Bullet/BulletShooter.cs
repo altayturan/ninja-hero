@@ -9,9 +9,9 @@ public class BulletShooter : MonoBehaviour
     [SerializeField] private BulletData bulletData;
     [SerializeField] private PlayerData playerData;
     [SerializeField] private StateData stateData;
-    [SerializeField] 
+    [SerializeField] private float countdown;
+    private int diagonalAmount = 3;
 
-    private float countdown;
 
     public void StartFireBullet()
     {
@@ -28,7 +28,7 @@ public class BulletShooter : MonoBehaviour
                 yield return null;
                 continue;
             }
-            if(stateData.CurrentState == States.STOP)
+            if (stateData.CurrentState == States.STOP)
             {
                 StopCoroutine(FireBullet());
                 yield break;
@@ -43,9 +43,17 @@ public class BulletShooter : MonoBehaviour
                 }
                 else
                 {
-                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, 30, 0));
-                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, -30, 0));
-                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation);
+                    int angle = diagonalAmount/2*(-30);
+                    for (int j = 0; j < diagonalAmount; j++)
+                    {
+                        ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, angle, 0));
+                        angle += 30;
+                    }
+
+
+                    //ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, 30, 0));
+                    //ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, -30, 0));
+                    //ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation);
                 }
 
                 yield return new WaitForSeconds(0.3f);
