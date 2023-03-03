@@ -9,10 +9,7 @@ public class StatisticListener : MonoBehaviour
 
     public void IncreaseFiredBullet()
     {
-        if (playerData.DiagonalShot)
-            gameStatistics.TotalFiredBullet += 3;
-        else
-            gameStatistics.TotalFiredBullet++;
+        gameStatistics.TotalFiredBullet+=playerData.BulletAmount;
 
     }
 
@@ -33,7 +30,7 @@ public class StatisticListener : MonoBehaviour
     {
         while (true)
         {
-            if(stateData.CurrentState == States.PLAY)
+            if (stateData.CurrentState == States.PLAY)
             {
                 gameStatistics.TotalGameplayTime += Time.deltaTime;
                 yield return null;

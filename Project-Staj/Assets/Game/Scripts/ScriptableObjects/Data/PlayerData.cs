@@ -11,7 +11,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] private float baseFireInterval;
     [SerializeField] private int baseNumberOfShots;
     [SerializeField] private float baseRange;
-    [SerializeField] private bool baseDiagonalShot = false;
+    [SerializeField] private int baseBulletAmount;
 
     [SerializeField] private Transform transform;
     [SerializeField] private GameEvent onHealthChange;
@@ -22,7 +22,7 @@ public class PlayerData : ScriptableObject
     private float fireInterval;
     private int numberOfShots;
     private float range;
-    private bool diagonalShot;
+    private int bulletAmount;
 
     
 
@@ -32,8 +32,8 @@ public class PlayerData : ScriptableObject
     public float FireInterval { get { return fireInterval; } set { fireInterval = value; } }
     public int NumberOfShots { get { return numberOfShots; } set { numberOfShots = value; } }
     public float Range { get { return range; } set { range = value; } }
-    public bool DiagonalShot { get { return diagonalShot; } set { diagonalShot = value; } }
     public Transform Transform { get { return transform; } set { transform = value; } }
+    public int BulletAmount { get => bulletAmount; set => bulletAmount = value; }
 
     // Base Properties
     public void ResetPlayer()
@@ -42,7 +42,7 @@ public class PlayerData : ScriptableObject
         Health = maxHealth;
         speed = baseSpeed;
         range = baseRange;
-        diagonalShot = baseDiagonalShot;
+        bulletAmount = baseBulletAmount;
         fireInterval = baseFireInterval;
         numberOfShots = baseNumberOfShots;
     }

@@ -7,8 +7,8 @@ public class DiagonalSkillController : BaseSkillController
     public override void OnClickSkill()
     {
         base.OnClickSkill();
-        playerData.DiagonalShot = true;
-        skillButton.interactable = false;
+        Debug.Log("OnClickSkill");
+        playerData.BulletAmount += 2;
     }
 
 }

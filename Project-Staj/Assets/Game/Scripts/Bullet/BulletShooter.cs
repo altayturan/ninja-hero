@@ -10,7 +10,6 @@ public class BulletShooter : MonoBehaviour
     [SerializeField] private PlayerData playerData;
     [SerializeField] private StateData stateData;
     [SerializeField] private float countdown;
-    private int diagonalAmount = 3;
 
 
     public void StartFireBullet()
@@ -36,26 +35,12 @@ public class BulletShooter : MonoBehaviour
             for (int i = 0; i < playerData.NumberOfShots; i++)
             {
                 OnFireEvent.Invoke();
-
-                if (!playerData.DiagonalShot)
+                int angle = playerData.BulletAmount / 2 * (-30);
+                for (int j = 0; j < playerData.BulletAmount; j++)
                 {
-                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation);
+                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, angle, 0));
+                    angle += 30;
                 }
-                else
-                {
-                    int angle = diagonalAmount/2*(-30);
-                    for (int j = 0; j < diagonalAmount; j++)
-                    {
-                        ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, angle, 0));
-                        angle += 30;
-                    }
-
-
-                    //ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, 30, 0));
-                    //ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, -30, 0));
-                    //ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation);
-                }
-
                 yield return new WaitForSeconds(0.3f);
             }
             countdown = playerData.FireInterval;

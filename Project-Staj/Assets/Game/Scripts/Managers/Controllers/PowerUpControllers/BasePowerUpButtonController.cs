@@ -13,6 +13,15 @@ public class BasePowerUpButtonController : MonoBehaviour
     [SerializeField] private TMP_Text goldText;
     [SerializeField] private Button powerUpButton;
 
+    private void OnEnable()
+    {
+        powerUpButton.onClick.AddListener(OnClickPowerUp);
+    }
+    private void OnDisable()
+    {
+        powerUpButton.onClick.RemoveListener(OnClickPowerUp);
+    }
+
     public virtual void OnClickPowerUp()
     {
         if (!gold.isEnough(powerUp.Cost)) return;
