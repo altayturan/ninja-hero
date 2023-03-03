@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 8135886326569738822}
   - component: {fileID: 8135886326569738821}
   - component: {fileID: 8135886326569738820}
-  - component: {fileID: 8135886326569738823}
-  - component: {fileID: 7447186946537116872}
   m_Layer: 5
   m_Name: Dynamic Joystick
   m_TagString: Untagged
@@ -79,47 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8135886326569738823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8135886326569738825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handleRange: 1
-  deadZone: 0
-  axisOptions: 0
-  snapX: 0
-  snapY: 0
-  background: {fileID: 8135886327475159579}
-  handle: {fileID: 8135886327784587633}
-  moveThreshold: 1
---- !u!114 &7447186946537116872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8135886326569738825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce51563e1aa9ec4e8c1c2c596989acd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handleRange: 1
-  deadZone: 0
-  axisOptions: 0
-  snapX: 0
-  snapY: 0
-  background: {fileID: 8135886327475159579}
-  handle: {fileID: 8135886327784587633}
-  moveThreshold: 1
-  onMove: {fileID: 0}
 --- !u!1 &8135886327475159578
 GameObject:
   m_ObjectHideFlags: 0

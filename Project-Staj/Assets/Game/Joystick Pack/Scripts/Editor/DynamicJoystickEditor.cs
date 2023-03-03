@@ -13,6 +13,7 @@ public class DynamicJoystickEditor : JoystickEditor
         moveThreshold = serializedObject.FindProperty("moveThreshold");
     }
 
+    
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();

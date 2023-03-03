@@ -7,13 +7,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody rb;
     [SerializeField] private JoystickController joystick;
-    [SerializeField] private Animator animator;
-
     [SerializeField] private PlayerData playerData;
     [SerializeField] private StateData stateData;
 
 
-    private void FixedUpdate()
+    public void SetPlayerVelocity()
     {
         var speed = playerData.Speed;
 
@@ -25,18 +23,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
-
-
-
-        if (rb.velocity != Vector3.zero)
-        {
-            animator.SetBool("isRunning", true);
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
-        }
     }
+
+    
 
 
 

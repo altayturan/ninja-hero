@@ -26,6 +26,4 @@ public class EnemyMovement : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
-
-
 }

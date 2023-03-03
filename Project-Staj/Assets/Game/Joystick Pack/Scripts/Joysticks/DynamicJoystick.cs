@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿using ninjahero.events;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 public class DynamicJoystick : Joystick
 {
+    public GameEvent OnMoveEvent;
+    public GameEvent OnStopEvent;
+    public GameEvent OnDragEvent;
     public float MoveThreshold { get { return moveThreshold; } set { moveThreshold = Mathf.Abs(value); } }
 
     [SerializeField] private float moveThreshold = 1;

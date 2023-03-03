@@ -3,7 +3,12 @@ guid: bce51563e1aa9ec4e8c1c2c596989acd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - background: {instanceID: 0}
+  - handle: {instanceID: 0}
+  - OnDragEvent: {fileID: 11400000, guid: 6ba63d47c730372439dba85f364a4095, type: 2}
+  - OnMoveEvent: {fileID: 11400000, guid: 1844e38e7d860b84f93189a1ade88df9, type: 2}
+  - OnStopEvent: {fileID: 11400000, guid: 5a5acf5b453fecf40a799af741cd554f, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
