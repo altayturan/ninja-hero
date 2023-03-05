@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
+  onBulletDie: {fileID: 11400000, guid: b259909ca2c4ca543bcdff70ec95ea16, type: 2}
 --- !u!114 &2388950080204088857
 MonoBehaviour:
   m_ObjectHideFlags: 0

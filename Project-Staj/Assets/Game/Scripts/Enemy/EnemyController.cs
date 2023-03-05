@@ -47,11 +47,16 @@ public class EnemyController : MonoBehaviour
     public void DestroyEnemy()
     {
         gameObject.SetActive(false);
-    }
+    }      
 
     public void GetDamage(float damage)
     {
         health -= damage;
         CheckForDie();
     } 
+
+    public void SetTransformAndPosition(Vector3 pos)
+    {
+        transform.position = pos;
+    }
 }

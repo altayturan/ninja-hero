@@ -17,6 +17,8 @@ public class EnemyData : ScriptableObject
     public float Damage { get { return damage; } set { damage = value; } }
 
     public int Prize { get { return prize; } set { prize = value; } }
+
+
     public void RestartEnemy()
     {
         health = baseHealth;

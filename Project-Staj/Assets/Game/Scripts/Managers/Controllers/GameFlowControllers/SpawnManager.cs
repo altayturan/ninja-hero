@@ -7,10 +7,9 @@ public class SpawnManager : MonoBehaviour
     #region Variables
 
     [SerializeField] private Transform[] spawners;
-    [SerializeField] private List<string> enemyTags;
+    [SerializeField] private List<Pooler<EnemyController>> enemyPools;
     [SerializeField] private Stat spawnInterval;
     [SerializeField] private Stat spawnIntervalMultiplier;
-
     [SerializeField] private StateData stateData;
     private float tempInterval;
 
@@ -18,7 +17,7 @@ public class SpawnManager : MonoBehaviour
 
     #region Functions
 
-    
+
     public void StartSpawner()
     {
         tempInterval = spawnInterval.Amount * spawnIntervalMultiplier.Amount;
@@ -37,7 +36,9 @@ public class SpawnManager : MonoBehaviour
     private void Spawn(Transform spawnerTransform)
     {
         Vector3 spawnPosition = new Vector3(spawnerTransform.position.x, 0, spawnerTransform.position.z);
-        ObjectPooler.Instance.SpawnFromPool(enemyTags[Random.Range(0, enemyTags.Count)], spawnPosition, Quaternion.identity);
+        var enemy = enemyPools[Random.Range(0, enemyPools.Count)].GetFromPool();
+        enemy.SetTransformAndPosition(spawnPosition);
+        enemy.gameObject.SetActive(true);
     }
 
     private IEnumerator SpawnCountdown()

@@ -1,8 +1,12 @@
+using ninjahero.events;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
     [SerializeField] private BulletData bulletData;
+    [SerializeField] private BulletPooler bulletPooler;
+    public BulletPooler BulletPooler { get => bulletPooler; set => bulletPooler = value; }
+
     private void Start()
     {
         DestroyBullet(2f);
@@ -15,7 +19,7 @@ public class BulletController : MonoBehaviour
             DestroyBullet();
             return;
         }
-        if (collision.collider.TryGetComponent(out RockController rc)) 
+        if (collision.collider.TryGetComponent(out RockController rc))
         {
             DestroyBullet();
         }
@@ -23,15 +27,14 @@ public class BulletController : MonoBehaviour
 
     public void DestroyBullet()
     {
-        gameObject.SetActive(false);
+        BulletPooler.PutToPool(this);
     }
-
     private void DestroyBullet(float t)
     {
         var startTime = Time.time;
         if (Time.time - startTime > t)
         {
-            gameObject.SetActive(false);
+            BulletPooler.PutToPool(this);
         }
     }
 }

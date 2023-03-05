@@ -5,7 +5,7 @@ public class BulletShooter : MonoBehaviour
 {
     [SerializeField] private Transform bulletSpawner;
     [SerializeField] private GameEvent OnFireEvent;
-
+    [SerializeField] private BulletPooler bulletPool;
     [SerializeField] private BulletData bulletData;
     [SerializeField] private PlayerData playerData;
     [SerializeField] private StateData stateData;
@@ -38,8 +38,11 @@ public class BulletShooter : MonoBehaviour
                 int angle = playerData.BulletAmount / 2 * (-30);
                 for (int j = 0; j < playerData.BulletAmount; j++)
                 {
-                    ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawner.position, transform.rotation * Quaternion.Euler(0, angle, 0));
+                    var bullet = bulletPool.GetFromPool();
+                    bullet.transform.position = bulletSpawner.transform.position;
+                    bullet.transform.rotation  *= transform.rotation * Quaternion.Euler(0, angle, 0);
                     angle += 30;
+
                 }
                 yield return new WaitForSeconds(0.3f);
             }

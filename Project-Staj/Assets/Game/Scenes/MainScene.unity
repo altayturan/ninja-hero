@@ -4007,9 +4007,9 @@ MonoBehaviour:
   - {fileID: 546381398}
   - {fileID: 1997092432}
   - {fileID: 1523819657}
-  enemyTags:
-  - speedy
-  - tank
+  enemyPools:
+  - {fileID: 1194342912}
+  - {fileID: 1194342911}
   spawnInterval: {fileID: 11400000, guid: 01a400feca3815c45a15a2a254d38079, type: 2}
   spawnIntervalMultiplier: {fileID: 11400000, guid: 9b0d350006bb35648bf886cd6ded3e1f,
     type: 2}
@@ -6009,7 +6009,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194342909}
-  - component: {fileID: 1194342908}
+  - component: {fileID: 1194342910}
+  - component: {fileID: 1194342912}
+  - component: {fileID: 1194342911}
   m_Layer: 0
   m_Name: ---- ObjectPooler ----
   m_TagString: Untagged
@@ -6017,28 +6019,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1194342908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194342907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cb2fb27c81aafc4ca5658fc9fcfa714, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pools:
-  - tag: speedy
-    prefab: {fileID: 1144028080539786, guid: b5e8d403db2eb7e4eb759eed9c756f99, type: 3}
-    size: 15
-  - tag: tank
-    prefab: {fileID: 1404409735730676, guid: b52f45c7201d1784b8e2d4b4e4341259, type: 3}
-    size: 15
-  - tag: bullet
-    prefab: {fileID: 171642, guid: 70a640a2f3135a245818b33c0cdfcb87, type: 3}
-    size: 100
 --- !u!4 &1194342909
 Transform:
   m_ObjectHideFlags: 0
@@ -6054,6 +6034,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1194342910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194342907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358682964f1acb94da5c66688400d60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3713431835161269747, guid: 70a640a2f3135a245818b33c0cdfcb87, type: 3}
+--- !u!114 &1194342911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194342907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b0c686b8979794ca2f4399998fa66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5447258327832235325, guid: b52f45c7201d1784b8e2d4b4e4341259, type: 3}
+--- !u!114 &1194342912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194342907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf569138863a74249927091aa5090d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 163138850794128006, guid: b5e8d403db2eb7e4eb759eed9c756f99, type: 3}
 --- !u!4 &1207481523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2733845855538509057, guid: 61364f025cf3e32469d90fbb605b101a,
@@ -9676,9 +9695,9 @@ GameObject:
   - component: {fileID: 4109836095431572070}
   - component: {fileID: 4109836095431572071}
   - component: {fileID: 4109836095431572077}
-  - component: {fileID: 4109836095431572072}
   - component: {fileID: 4109836095431572067}
   - component: {fileID: 4109836095431572066}
+  - component: {fileID: 4109836095431572072}
   - component: {fileID: 4109836095431572073}
   - component: {fileID: 4109836095431572074}
   - component: {fileID: 4109836095431572076}
@@ -9902,6 +9921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawner: {fileID: 959937978}
   OnFireEvent: {fileID: 11400000, guid: a3206285d9cd69649ae2dea48c7d50d8, type: 2}
+  bulletPool: {fileID: 1194342910}
   bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
   playerData: {fileID: 11400000, guid: 2dfa6484700d61a4f83773828ee262e7, type: 2}
   stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
