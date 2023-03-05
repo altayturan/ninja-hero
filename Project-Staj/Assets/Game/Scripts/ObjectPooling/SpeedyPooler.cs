@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedyPooler : Pooler<EnemyController>
+public class SpeedyPooler : Pooler<SpeedyEnemy>
 {
     public override void CreateNew()
     {
-        EnemyController newItem = Instantiate(prefab, pos, Quaternion.identity);
+        SpeedyEnemy newItem = Instantiate(prefab, pos, Quaternion.identity);
         PutToPool(newItem);
+        newItem.SpeedyPooler = this;
     }
 }

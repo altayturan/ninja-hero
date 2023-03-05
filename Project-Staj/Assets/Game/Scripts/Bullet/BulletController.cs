@@ -1,4 +1,3 @@
-using ninjahero.events;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
@@ -7,34 +6,25 @@ public class BulletController : MonoBehaviour
     [SerializeField] private BulletPooler bulletPooler;
     public BulletPooler BulletPooler { get => bulletPooler; set => bulletPooler = value; }
 
-    private void Start()
+    private void OnEnable()
     {
-        DestroyBullet(2f);
+        Invoke("DestroyBullet", 2f);
     }
-    private void OnCollisionEnter(Collision collision)//trigger
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.collider.TryGetComponent(out EnemyController enemyController))
+        if (collider.TryGetComponent(out BaseEnemy enemyController))
         {
             enemyController.GetDamage(bulletData.Damage);
             DestroyBullet();
             return;
         }
-        if (collision.collider.TryGetComponent(out RockController rc))
+        if (collider.TryGetComponent(out RockController rc))
         {
             DestroyBullet();
         }
     }
-
     public void DestroyBullet()
     {
         BulletPooler.PutToPool(this);
-    }
-    private void DestroyBullet(float t)
-    {
-        var startTime = Time.time;
-        if (Time.time - startTime > t)
-        {
-            BulletPooler.PutToPool(this);
-        }
     }
 }

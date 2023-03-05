@@ -1,10 +1,8 @@
-using UnityEngine;
 using ninjahero.events;
+using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public abstract class BaseEnemy : MonoBehaviour
 {
-
-
     [SerializeField] private Animator animator;
     [SerializeField] private GameEvent EnemyOnDie;
     [SerializeField] private GameEvent OnGoldChange;
@@ -12,19 +10,18 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private EnemyData enemyData;
     [SerializeField] private Stat enemyHealthMultiplier;
     [SerializeField] private Resource gold;
+
     [SerializeField] private float health;
-
     private float damageFromSkill = 200f;
-
     private void Start()
     {
         health = enemyData.Health * enemyHealthMultiplier.Amount;
         animator.SetBool("isRunning", true);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.collider.TryGetComponent(out PlayerController playerController))
+        if (collider.TryGetComponent(out PlayerController playerController))
         {
             playerController.GetDamage(enemyData.Damage);
             DestroyEnemy();
@@ -33,6 +30,11 @@ public class EnemyController : MonoBehaviour
     public void GetDamageFromSkill()
     {
         health -= damageFromSkill;
+        CheckForDie();
+    }
+    public void GetDamage(float damage)
+    {
+        health -= damage;
         CheckForDie();
     }
     public void CheckForDie()
@@ -44,16 +46,7 @@ public class EnemyController : MonoBehaviour
             DestroyEnemy();
         }
     }
-    public void DestroyEnemy()
-    {
-        gameObject.SetActive(false);
-    }      
-
-    public void GetDamage(float damage)
-    {
-        health -= damage;
-        CheckForDie();
-    } 
+    public abstract void DestroyEnemy();
 
     public void SetTransformAndPosition(Vector3 pos)
     {

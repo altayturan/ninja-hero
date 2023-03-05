@@ -1,6 +1,4 @@
 using UnityEngine.EventSystems;
-using UnityEngine;
-using ninjahero.events;
 
 public class JoystickController : DynamicJoystick
 {

@@ -4007,13 +4007,12 @@ MonoBehaviour:
   - {fileID: 546381398}
   - {fileID: 1997092432}
   - {fileID: 1523819657}
-  enemyPools:
-  - {fileID: 1194342912}
-  - {fileID: 1194342911}
   spawnInterval: {fileID: 11400000, guid: 01a400feca3815c45a15a2a254d38079, type: 2}
   spawnIntervalMultiplier: {fileID: 11400000, guid: 9b0d350006bb35648bf886cd6ded3e1f,
     type: 2}
   stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
+  speedyPooler: {fileID: 1194342912}
+  tankPooler: {fileID: 1194342911}
 --- !u!4 &784361189
 Transform:
   m_ObjectHideFlags: 0
@@ -9854,7 +9853,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3621670956708569306}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.6793523, z: 0.6314292}

@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
-  onBulletDie: {fileID: 11400000, guid: b259909ca2c4ca543bcdff70ec95ea16, type: 2}
+  bulletPooler: {fileID: 0}
 --- !u!114 &2388950080204088857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171642}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.06328154, y: 0.0592961, z: 0.0084968945}
@@ -115,7 +115,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &3150466686156190954
 MonoBehaviour:
   m_ObjectHideFlags: 0
