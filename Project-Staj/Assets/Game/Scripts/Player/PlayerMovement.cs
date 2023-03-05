@@ -21,16 +21,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector3.zero;
+            SetPlayVelocityToZero();
         }
     }
 
-    
-
-
-
-
-
-
-
+    public void SetPlayVelocityToZero()
+    {
+        rb.velocity = Vector3.zero;
+    }
 }
