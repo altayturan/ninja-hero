@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class BulletPooler : Pooler<BulletController>
 {
     public override BulletController GetFromPool()

@@ -27,7 +27,7 @@ public class BulletShooter : MonoBehaviour
                 yield return null;
                 continue;
             }
-            if (stateData.CurrentState == States.STOP)
+            if (stateData.CurrentState == States.PAUSE || stateData.CurrentState == States.STOP)
             {
                 StopCoroutine(FireBullet());
                 yield break;
