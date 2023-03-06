@@ -5,7 +5,6 @@ public class SkillCooldowner : BaseTextUpdater
 {
     [SerializeField] private Skill skill;
     [SerializeField] private TMP_Text cooldownText;
-    [SerializeField] private StateData stateData;
 
     public void ActivateCooldown()
     {
