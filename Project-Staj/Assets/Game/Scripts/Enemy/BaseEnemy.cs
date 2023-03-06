@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class BaseEnemy : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private GameEvent EnemyOnDie;
     [SerializeField] private GameEvent OnGoldChange;
     [SerializeField] private BulletData bulletData;
@@ -15,6 +16,7 @@ public abstract class BaseEnemy : MonoBehaviour
     private void Start()
     {
         health = enemyData.Health * enemyHealthMultiplier.Amount;
+        animator.SetBool("isRunning", true);
     }
 
     private void OnTriggerEnter(Collider collider)

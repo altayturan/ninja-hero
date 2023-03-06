@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class SpeedyPooler : Pooler<SpeedyEnemy>
 {
     public override void CreateNew()
