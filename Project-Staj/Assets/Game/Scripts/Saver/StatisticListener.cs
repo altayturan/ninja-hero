@@ -9,7 +9,7 @@ public class StatisticListener : MonoBehaviour
 
     public void IncreaseFiredBullet()
     {
-        gameStatistics.TotalFiredBullet+=playerData.BulletAmount;
+        gameStatistics.TotalFiredBullet += playerData.BulletAmount;
 
     }
 
@@ -21,24 +21,9 @@ public class StatisticListener : MonoBehaviour
     {
         gameStatistics.TotalDie++;
     }
-
-    public void StartGamePlayTimer()
+    public void IncreaseGamePlayTime()
     {
-        StartCoroutine(IncreaseGamePlayTime());
-    }
-    private IEnumerator IncreaseGamePlayTime()
-    {
-        while (true)
-        {
-            if (stateData.CurrentState == States.PLAY)
-            {
-                gameStatistics.TotalGameplayTime += Time.deltaTime;
-                yield return null;
-                continue;
-            }
-            StopCoroutine(IncreaseGamePlayTime());
-            yield break;
-        }
+        gameStatistics.TotalGameplayTime++;
     }
 
 }

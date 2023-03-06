@@ -13,7 +13,6 @@ public class TimeManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ReduceTimeInSeconds());
-
     }
     private void CheckForTimeEnd()
     {

@@ -7043,13 +7043,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 06ea433f56d142141843e8e797417498, type: 2}
+  gameEvent: {fileID: 11400000, guid: 05b08795e1ca5af429057966e4ebe87f, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1595629785}
         m_TargetAssemblyTypeName: StatisticListener, Assembly-CSharp
-        m_MethodName: StartGamePlayTimer
+        m_MethodName: IncreaseGamePlayTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
