@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5700685154638126371}
   - component: {fileID: 6488803776815852062}
   - component: {fileID: 3150466686156190954}
+  - component: {fileID: 1882809888067538939}
   m_Layer: 0
   m_Name: Shuriken
   m_TagString: Untagged
@@ -73,6 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletData: {fileID: 11400000, guid: af5bdcd455b0ff64d99e9af835403aad, type: 2}
   bulletPooler: {fileID: 0}
+  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
+  timeout: 2
 --- !u!114 &2388950080204088857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,8 +101,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06328154, y: 0.0592961, z: 0.0084968945}
-  m_Center: {x: 0.0010217646, y: 0.000027806245, z: -0.010909378}
+  m_Size: {x: 0.101662815, y: 0.007637382, z: 0.102357835}
+  m_Center: {x: -0.000431384, y: -0.001672803, z: 0.0014294608}
 --- !u!54 &6488803776815852062
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,6 +138,34 @@ MonoBehaviour:
       - m_Target: {fileID: 3713431835161269747}
         m_TargetAssemblyTypeName: BulletController, Assembly-CSharp
         m_MethodName: DestroyBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1882809888067538939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed473550bcbe73b45846ad9d9faa5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 05b08795e1ca5af429057966e4ebe87f, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3713431835161269747}
+        m_TargetAssemblyTypeName: BulletController, Assembly-CSharp
+        m_MethodName: CheckForTimeout
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

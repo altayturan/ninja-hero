@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    #region Variables
 
     [SerializeField] private Transform[] spawners;
     [SerializeField] private Stat spawnInterval;
@@ -15,55 +15,30 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private TankPooler tankPooler;
     private float tempInterval;
 
-    #endregion
-
-    #region Functions
-
-
-    public void StartSpawner()
+    private void Start()
     {
         tempInterval = spawnInterval.Amount * spawnIntervalMultiplier.Amount;
-        StartCoroutine(SpawnCountdown());
-    }
-
-    private void PauseSpawner()
-    {
-        StopCoroutine(SpawnCountdown());
-    }
-    public void StopSpawner()
-    {
-        StopCoroutine(SpawnCountdown());
     }
 
     private void Spawn(Transform spawnerTransform)
     {
         Vector3 spawnPosition = new Vector3(spawnerTransform.position.x, 0, spawnerTransform.position.z);
-        BaseEnemy enemy = Random.Range(0,2) == 0 ? speedyPooler.GetFromPool() : tankPooler.GetFromPool(); 
+        BaseEnemy enemy = Random.Range(0, 2) == 0 ? speedyPooler.GetFromPool() : tankPooler.GetFromPool();
         enemy.SetTransformAndPosition(spawnPosition);
         enemy.gameObject.SetActive(true);
     }
 
-    private IEnumerator SpawnCountdown()
+    public void CheckForSpawn()
     {
-        while (true)
+        if (stateData.CurrentState != States.PLAY) return;
+        if (tempInterval >= 0)
         {
-            while (tempInterval > 0 && stateData.CurrentState == States.PLAY)
-            {
-                tempInterval -= Time.deltaTime;
-                yield return null;
-                continue;
-            }
-            if (stateData.CurrentState == States.STOP)
-            {
-                PauseSpawner();
-                yield break;
-            }
+            tempInterval--;
+        }
+        else
+        {
             Spawn(spawners[Random.Range(0, spawners.Length)]);
             tempInterval = spawnInterval.Amount * spawnIntervalMultiplier.Amount;
         }
     }
-
-
-    #endregion
-
 }

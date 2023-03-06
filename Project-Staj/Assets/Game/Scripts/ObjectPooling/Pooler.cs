@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Pooler<T> : MonoBehaviour where T : MonoBehaviour
+public class Pooler<T> : MonoBehaviour where T : MonoBehaviour
 {
     protected Vector3 pos = new Vector3(200, 0, 200);
-    protected Queue<T> availablePool = new Queue<T>();
+    public Queue<T> availablePool = new Queue<T>();
     [SerializeField] protected T prefab;
+    protected T temp;
     public void PutToPool(T item)
     {
         item.gameObject.SetActive(false);
-        Debug.Log("PutToPool");
         availablePool.Enqueue(item);
     }
 
-    public T GetFromPool()
+    public virtual T GetFromPool()
     {
         if (!IsAny())
             CreateNew();
@@ -26,6 +26,9 @@ public abstract class Pooler<T> : MonoBehaviour where T : MonoBehaviour
     {
         return availablePool.Count > 0;
     }
-
-    public abstract void CreateNew();
+    public virtual void CreateNew()
+    {
+        temp = Instantiate(prefab);
+        PutToPool(temp);
+    }
 }

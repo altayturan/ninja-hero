@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class BulletPooler : Pooler<BulletController>
 {
+    public override BulletController GetFromPool()
+    {
+        return base.GetFromPool();
+    }
+    int counter;
     public override void CreateNew()
     {
-        BulletController newItem = Instantiate(prefab, pos, Quaternion.identity);
-        PutToPool(newItem);
-        newItem.BulletPooler = this;
+        base.CreateNew();
+        temp.BulletPooler = this;
     }
 
 }

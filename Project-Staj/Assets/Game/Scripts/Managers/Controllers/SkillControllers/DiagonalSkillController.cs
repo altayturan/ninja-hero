@@ -7,7 +7,6 @@ public class DiagonalSkillController : BaseSkillController
     public override void OnClickSkill()
     {
         base.OnClickSkill();
-        Debug.Log("OnClickSkill");
         playerData.BulletAmount += 2;
     }
 
