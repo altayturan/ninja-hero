@@ -8,12 +8,6 @@ public class HighAttackSpeedSkillController : BaseSkillController
     public override void OnClickSkill()
     {
         base.OnClickSkill();
-        ApplySkill();
-    }
-    protected void ApplySkill() 
-    {
-        oldValue = playerData.FireInterval;
-        playerData.FireInterval = 0.1f;
     }
 
     public void CheckEffectTime()
@@ -33,5 +27,11 @@ public class HighAttackSpeedSkillController : BaseSkillController
     {
         effectTime = 5;
         playerData.FireInterval = oldValue;
+    }
+
+    protected override void ApplySkill()
+    {
+        oldValue = playerData.FireInterval;
+        playerData.FireInterval = 0.1f;
     }
 }

@@ -1424,7 +1424,7 @@ GameObject:
   - component: {fileID: 4381180499577725500}
   - component: {fileID: 8315897122455124166}
   - component: {fileID: 3882601019923261570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TankSkeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}

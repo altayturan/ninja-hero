@@ -23,12 +23,13 @@ public abstract class BaseSkillController : MonoBehaviour
     public virtual void OnClickSkill()
     {
         if (!gold.isEnough(skill.Cost)) return;
+        ApplySkill();
         gameStatistics.TotalSpentGold += skill.Cost;
         skill.OnUsed.Invoke();
         isCasted = true;
         skillButton.interactable = false;
     }
-
+    protected abstract void ApplySkill();
     public void CheckSkillCooldown()
     {
         if (stateData.CurrentState != States.PLAY

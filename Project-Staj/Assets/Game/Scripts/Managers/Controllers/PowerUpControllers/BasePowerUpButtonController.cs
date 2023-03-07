@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BasePowerUpButtonController : MonoBehaviour
+public abstract class BasePowerUpButtonController : MonoBehaviour
 {
     [SerializeField] private Resource gold;
     [SerializeField] protected PowerUp powerUp;
@@ -25,8 +25,10 @@ public class BasePowerUpButtonController : MonoBehaviour
     public virtual void OnClickPowerUp()
     {
         if (!gold.isEnough(powerUp.Cost)) return;
+        ApplyUpgrade();
         gameStatistics.TotalSpentGold += powerUp.Cost;
         powerUp.LevelUp();
         if (powerUp.Level + 1 > powerUp.MaxLevel) { powerUpButton.interactable = false; return; }
     }
+    protected abstract void ApplyUpgrade();
 }

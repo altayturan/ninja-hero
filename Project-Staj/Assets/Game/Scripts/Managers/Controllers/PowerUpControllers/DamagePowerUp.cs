@@ -6,6 +6,10 @@ public class DamagePowerUp : BasePowerUpButtonController
     public override void OnClickPowerUp()
     {
         base.OnClickPowerUp();
+    }
+
+    protected override void ApplyUpgrade()
+    {
         bulletData.Damage += powerUp.StatChangeAmount;
     }
 }

@@ -4,4 +4,8 @@ public class DamageAllSkillController : BaseSkillController
     {
         base.OnClickSkill();
     }
+
+    protected override void ApplySkill()
+    {
+    }
 }

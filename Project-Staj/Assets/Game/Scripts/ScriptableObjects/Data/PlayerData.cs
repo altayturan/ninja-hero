@@ -45,5 +45,6 @@ public class PlayerData : ScriptableObject
         bulletAmount = baseBulletAmount;
         fireInterval = baseFireInterval;
         numberOfShots = baseNumberOfShots;
+        transform.position = new Vector3(0, 0, 0);
     }
 }

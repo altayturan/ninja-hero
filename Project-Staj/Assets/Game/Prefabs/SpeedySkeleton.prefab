@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 7647166559098810428}
   - component: {fileID: 4418978846958907963}
   - component: {fileID: 1186648304224995895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpeedySkeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}

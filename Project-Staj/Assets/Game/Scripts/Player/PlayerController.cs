@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameEvent OnPlayerGetDamage;
     [SerializeField] private TargetEnemy targetEnemy;
     [SerializeField] private GameEvent OnLoseGameEvent;
-    private void Start()
+    private void Awake()
     {
         playerData.Transform = transform;
     }
