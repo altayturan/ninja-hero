@@ -10,7 +10,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private GameEvent OnTimeReducedInSeconds;
     [SerializeField] private StateData stateData;
 
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(ReduceTimeInSeconds());
     }
@@ -26,9 +26,9 @@ public class TimeManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            OnTimeReducedInSeconds.Invoke();
             if (stateData.CurrentState == States.PLAY)
             {
+                OnTimeReducedInSeconds.Invoke();
                 time.Amount--;
                 CheckForTimeEnd();
             }

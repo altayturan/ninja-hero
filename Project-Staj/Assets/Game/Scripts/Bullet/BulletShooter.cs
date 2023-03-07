@@ -36,13 +36,13 @@ public class BulletShooter : MonoBehaviour
             {
                 OnFireEvent.Invoke();
                 var rotation = transform.rotation;
-                int angle = playerData.BulletAmount / 2 * (-80);
+                int angle = playerData.BulletAmount / 2 * (-30);
                 for (int j = 0; j < playerData.BulletAmount; j++)
                 {
                     var bullet = bulletPool.GetFromPool();
                     bullet.transform.position = bulletSpawner.transform.position;
                     bullet.transform.rotation = rotation * Quaternion.Euler(0, angle, 0);
-                    angle += 80;
+                    angle += 30;
                 }
                 yield return new WaitForSeconds(0.3f);
             }

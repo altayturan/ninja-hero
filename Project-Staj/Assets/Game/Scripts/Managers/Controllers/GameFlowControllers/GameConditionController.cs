@@ -15,7 +15,7 @@ public class GameConditionController : MonoBehaviour
         stateData.CurrentState = States.STOP;
         LoseScreen.enabled = true;
         Hud.enabled = false;
-        
+
     }
 
     public void WinGame()
@@ -23,7 +23,7 @@ public class GameConditionController : MonoBehaviour
         stateData.CurrentState = States.STOP;
         WinScreen.enabled = true;
         Hud.enabled = false;
-        
+
     }
     public void PauseGame()
     {

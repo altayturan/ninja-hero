@@ -6,11 +6,11 @@ public class EnemyAnimation : MonoBehaviour
 
     public void StartRunning()
     {
-        animator.SetBool("isRunning", true);
+        animator.speed = 2f;
     }
 
     public void StopRunning()
     {
-        animator.SetBool("isRunning", false);
+        animator.speed = 0f;
     }
 }

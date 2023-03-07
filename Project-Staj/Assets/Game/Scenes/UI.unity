@@ -276,7 +276,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 8ca30b281b3d53c47b8f6928abf413c8, type: 2}
   cooldownText: {fileID: 60315973}
-  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &60315976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,8 +992,6 @@ MonoBehaviour:
   PauseScreen: {fileID: 1473299090}
   Hud: {fileID: 1580796460}
   OnRestart: {fileID: 11400000, guid: 1091e087698d30e4e8d4898f3c8e25ba, type: 2}
-  OnStop: {fileID: 11400000, guid: 63bbcb78508cbfe4e89b6000a3419386, type: 2}
-  OnPause: {fileID: 11400000, guid: 8150ae7f76b0c514ea614766218993b1, type: 2}
   stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &359352181
 MonoBehaviour:
@@ -2248,10 +2245,10 @@ RectTransform:
   m_Father: {fileID: 1580796461}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 335.88, y: 734.57007}
-  m_SizeDelta: {x: 231.8963, y: 65.4766}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -204.12, y: -225.42993}
+  m_SizeDelta: {x: 231.8963, y: 65.47656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &823066341
 MonoBehaviour:
@@ -6338,7 +6335,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: a165856ffe2be164c850c1bd7160dc7e, type: 2}
   cooldownText: {fileID: 2143791053}
-  stateData: {fileID: 11400000, guid: 93e29e604ffeead4d816ec2aab82b6c7, type: 2}
 --- !u!114 &2143791058
 MonoBehaviour:
   m_ObjectHideFlags: 0

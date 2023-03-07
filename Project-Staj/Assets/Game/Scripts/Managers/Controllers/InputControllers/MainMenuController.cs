@@ -4,18 +4,20 @@ using UnityEngine;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] private GameEvent onRestart;
+    [SerializeField] private Canvas statsScreen;
     public void LoadGame()
     {
         SceneLoader.Instance.LoadGame();
     }
 
-    public void OpenSettings()
+    public void OpenStats()
     {
-
+        statsScreen.enabled = true;
     }
 
-    public void CloseSettings()
+    public void CloseStats()
     {
+        statsScreen.enabled = false;
     }
 
     public void Quit()

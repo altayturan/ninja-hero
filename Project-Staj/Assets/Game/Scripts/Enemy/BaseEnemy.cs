@@ -17,9 +17,9 @@ public abstract class BaseEnemy : MonoBehaviour
         health = enemyData.Health * enemyHealthMultiplier.Amount;
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collider.TryGetComponent(out PlayerController playerController))
+        if (collision.collider.TryGetComponent(out PlayerController playerController))
         {
             playerController.GetDamage(enemyData.Damage);
             DestroyEnemy();
